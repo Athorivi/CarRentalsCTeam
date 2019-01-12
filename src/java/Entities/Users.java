@@ -75,7 +75,7 @@ public class Users implements Serializable {
     @Column(nullable = false)
     private byte[] photo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
-    private Collection<UsersRentCars> usersRentCarsCollection;
+    private Collection<UserRentCar> usersRentCarsCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Collection<UsersRoles> usersRolesCollection;
 
@@ -179,11 +179,11 @@ public class Users implements Serializable {
     }
 
     @XmlTransient
-    public Collection<UsersRentCars> getUsersRentCarsCollection() {
+    public Collection<UserRentCar> getUsersRentCarsCollection() {
         return usersRentCarsCollection;
     }
 
-    public void setUsersRentCarsCollection(Collection<UsersRentCars> usersRentCarsCollection) {
+    public void setUsersRentCarsCollection(Collection<UserRentCar> usersRentCarsCollection) {
         this.usersRentCarsCollection = usersRentCarsCollection;
     }
 

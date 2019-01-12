@@ -82,7 +82,7 @@ public class Cars implements Serializable {
     @Lob
     private byte[] photo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carId")
-    private Collection<UsersRentCars> usersRentCarsCollection;
+    private Collection<UserRentCar> usersRentCarsCollection;
 
     public Cars() {
     }
@@ -211,11 +211,11 @@ public class Cars implements Serializable {
     }
 
     @XmlTransient
-    public Collection<UsersRentCars> getUsersRentCarsCollection() {
+    public Collection<UserRentCar> getUsersRentCarsCollection() {
         return usersRentCarsCollection;
     }
 
-    public void setUsersRentCarsCollection(Collection<UsersRentCars> usersRentCarsCollection) {
+    public void setUsersRentCarsCollection(Collection<UserRentCar> usersRentCarsCollection) {
         this.usersRentCarsCollection = usersRentCarsCollection;
     }
 

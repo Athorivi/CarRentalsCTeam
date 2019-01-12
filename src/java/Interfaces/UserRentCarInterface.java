@@ -1,13 +1,14 @@
 package Interfaces;
+import Entities.UserRentCar;
 
 public interface UserRentCarInterface {
     
-    public void createUserRentCar();
+    public void createUserRentCar(UserRentCar userRentCar);
 
     public void readUserRentCar();
 
-    public void updateUserRentCar();
+    public void updateUserRentCar(UserRentCar userRentCar);
 
-    public void deleteUserRentCar();
+    public void deleteUserRentCar(UserRentCar userRentCar);
 
 }

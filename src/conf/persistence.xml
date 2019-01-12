@@ -5,8 +5,8 @@
     <class>Entities.UsersRoles</class>
     <class>Entities.Users</class>
     <class>Entities.Cars</class>
-    <class>Entities.UsersRentCars</class>
     <class>Entities.Roles</class>
+    <class>Entities.UserRentCar</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ra1.anystream.eu:1011/cteam?zeroDateTimeBehavior=convertToNull"/>

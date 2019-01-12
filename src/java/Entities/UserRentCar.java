@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "UsersRentCars.findById", query = "SELECT u FROM UsersRentCars u WHERE u.id = :id")
     , @NamedQuery(name = "UsersRentCars.findByStartDate", query = "SELECT u FROM UsersRentCars u WHERE u.startDate = :startDate")
     , @NamedQuery(name = "UsersRentCars.findByEndDate", query = "SELECT u FROM UsersRentCars u WHERE u.endDate = :endDate")})
-public class UsersRentCars implements Serializable {
+public class UserRentCar implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -49,14 +49,14 @@ public class UsersRentCars implements Serializable {
     @ManyToOne(optional = false)
     private Cars carId;
 
-    public UsersRentCars() {
+    public UserRentCar() {
     }
 
-    public UsersRentCars(Integer id) {
+    public UserRentCar(Integer id) {
         this.id = id;
     }
 
-    public UsersRentCars(Integer id, Date startDate, Date endDate) {
+    public UserRentCar(Integer id, Date startDate, Date endDate) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -112,10 +112,10 @@ public class UsersRentCars implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof UsersRentCars)) {
+        if (!(object instanceof UserRentCar)) {
             return false;
         }
-        UsersRentCars other = (UsersRentCars) object;
+        UserRentCar other = (UserRentCar) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
