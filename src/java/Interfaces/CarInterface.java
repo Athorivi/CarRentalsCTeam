@@ -1,15 +1,17 @@
 package Interfaces;
 
+import Entities.Cars;
+
 public interface CarInterface {
     
     
-    public void createCar();
+    public void createCar(Cars car);
 
     public void readCar();
 
-    public void updateCar();
+    public void updateCar(Cars car);
 
-    public void deleteCar();
+    public void deleteCar(Cars car);
     
     
 }
