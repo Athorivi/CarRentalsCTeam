@@ -124,7 +124,9 @@ public class UsersRentCars implements Serializable {
 
     @Override
     public String toString() {
-        return "Entities.UsersRentCars[ id=" + id + " ]";
+        return "UsersRentCars{" + "id=" + id + ", startDate=" + startDate + ", endDate=" + endDate + ", userId=" + userId + ", carId=" + carId + '}';
     }
+
+    
     
 }

@@ -218,7 +218,9 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "Entities.Users[ id=" + id + " ]";
+        return "Users{" + "id=" + id + ", username=" + username + ", password=" + password + ", fname=" + fname + ", lname=" + lname + ", dob=" + dob + ", email=" + email + ", address=" + address + ", phone=" + phone + ", photo=" + photo + ", usersRentCarsCollection=" + usersRentCarsCollection + ", usersRolesCollection=" + usersRolesCollection + '}';
     }
+
+    
     
 }

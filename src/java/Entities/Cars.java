@@ -241,7 +241,9 @@ public class Cars implements Serializable {
 
     @Override
     public String toString() {
-        return "Entities.Cars[ id=" + id + " ]";
+        return "Cars{" + "id=" + id + ", owner=" + owner + ", model=" + model + ", location=" + location + ", brand=" + brand + ", km=" + km + ", fuel=" + fuel + ", cc=" + cc + ", price=" + price + ", categories=" + categories + ", releaseDate=" + releaseDate + ", color=" + color + ", photo=" + photo + ", usersRentCarsCollection=" + usersRentCarsCollection + '}';
     }
+
+    
     
 }

@@ -14,7 +14,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-
 @Entity
 @Table(name = "users_roles", catalog = "cteam", schema = "")
 @XmlRootElement
@@ -89,7 +88,7 @@ public class UsersRoles implements Serializable {
 
     @Override
     public String toString() {
-        return "Entities.UsersRoles[ id=" + id + " ]";
+        return "UsersRoles{" + "id=" + id + ", userId=" + userId + ", roleId=" + roleId + '}';
     }
-    
+
 }
