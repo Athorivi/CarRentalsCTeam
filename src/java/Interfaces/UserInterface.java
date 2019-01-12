@@ -1,13 +1,15 @@
 package Interfaces;
 
+import Entities.Users;
+
 public interface UserInterface {
 
-    public void createUser();
+    public void createUser(Users user);
 
     public void readUser();
 
-    public void updateUser();
+    public void updateUser(Users user);
 
-    public void deleteUser();
+    public void deleteUser(Users user);
 
 }
