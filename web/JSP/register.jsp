@@ -22,10 +22,10 @@
             <div class="loginRegisterDiv d-flex flex-column">
                 <div class="d-flex flex-row justify-content-center">
                     <div class="d-flex flex-column col-md-6">
-                        <a class="navbar-brand " href="Resources/JS/login.jsp">Login</a>
+                        <a class="navbar-brand " href="login.jsp">Login</a>
                     </div>
                     <div class="d-flex flex-column col-md-3">
-                        <a class="navbar-brand " href="Resources/JS/register.jsp">Register</a>
+                        <a class="navbar-brand " href="register.jsp">Register</a>
                     </div>
                 </div>
                 <div class="p-1 d-flex flex-row">
