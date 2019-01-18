@@ -28,9 +28,9 @@ public class searchByLocation extends HttpServlet {
 
             carList = carDb.searchByLocation(location, from, to);
         }
-
+//display
         try (PrintWriter out = response.getWriter()) {
-//            if (carList == null) {
+//             if (carList == null) {
 //                out.println("No records");
 
 //            } else {
