@@ -2,7 +2,6 @@
     Document   : index.jsp
     Created on : 12 Ιαν 2019, 2:46:09 μμ
     Author     : User
-    hola
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
