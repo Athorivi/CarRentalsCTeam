@@ -30,14 +30,14 @@ public class searchByLocation extends HttpServlet {
         }
 
         try (PrintWriter out = response.getWriter()) {
-            if (carList == null) {
-                out.println("No records");
+//            if (carList == null) {
+//                out.println("No records");
 
-            } else {
-                for (Car c : carList) {
-                    out.println(c.toString());
-                }
+//            } else {
+            for (Car c : carList) {
+                out.println(c.toString());
             }
+//            }
 
         }
 
