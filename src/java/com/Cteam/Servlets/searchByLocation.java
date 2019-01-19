@@ -1,10 +1,10 @@
-package Servlets;
+package com.Cteam.Servlets;
 
 import com.Cteam.DAO.CarDAO;
+import com.Cteam.StaticBeans.CarResults;
 import com.Cteam.Tables.Car;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,25 +22,29 @@ public class searchByLocation extends HttpServlet {
         String to = request.getParameter("toDate");
         CarDAO carDb = new CarDAO();
         List<Car> carList;
-        if (location == null && from == null && to == null) {
+        if (location.isEmpty() && from.isEmpty() && to.isEmpty()) {
             carList = carDb.readCar();
         } else {
 
             carList = carDb.searchByLocation(location, from, to);
         }
+        CarResults cr = new CarResults();
 
-        try (PrintWriter out = response.getWriter()) {
-            if (carList == null) {
-                out.println("No records");
+        CarResults.setCarResults((ArrayList<Car>) carList);
 
-            } else {
-                for (Car c : carList) {
-                    out.println(c.toString());
-                }
-            }
+        response.sendRedirect("results");
 
-        }
-
+//        try (PrintWriter out = response.getWriter()) {
+//            if (carList == null) {
+//                out.println("No records");
+//
+//            } else {
+//                for (Car c : carList) {
+//                    out.println(c.toString());
+//                }
+//            }
+//
+//        }
     }
 
 }

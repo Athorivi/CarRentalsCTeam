@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets;
+package com.Cteam.Servlets;
 
-import com.Cteam.DAO.Database;
 import com.Cteam.DAO.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,10 +35,13 @@ public class login extends HttpServlet {
             out.println(check);
             if (check) {
                 out.println("Logged in");
+                response.sendRedirect("search");
             } else {
                 out.println("Failed");
             }
         }
+        
+         
 
     }
 

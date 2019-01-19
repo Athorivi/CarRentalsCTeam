@@ -56,9 +56,9 @@ public class CarDAO implements CarInterface {
     }
 
     @Override
-    public List<Car> readCar() {
+    public ArrayList<Car> readCar() {
 
-        List<Car> cars = null;
+        ArrayList<Car> cars = null;
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT * FROM `CARS` ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -68,18 +68,19 @@ public class CarDAO implements CarInterface {
                             cars = new ArrayList();
                         }
                         Car car = new Car();
-                        car.setOwner(resultset.getInt(1));
-                        car.setModel(resultset.getString(2));
-                        car.setLocation(resultset.getString(3));
-                        car.setBrand(resultset.getString(4));
-                        car.setKm(resultset.getLong(5));
-                        car.setFuel(resultset.getString(6));
-                        car.setCc(resultset.getInt(7));
-                        car.setPrice(resultset.getDouble(8));
-                        car.setCategories(resultset.getString(9));
-                        car.setReleaseDate(resultset.getDate(10));
-                        car.setColor(resultset.getString(11));
-                        car.setPhoto(resultset.getBytes(12));
+                        car.setId(resultset.getInt(1));
+                        car.setOwner(resultset.getInt(2));
+                        car.setModel(resultset.getString(3));
+                        car.setLocation(resultset.getString(4));
+                        car.setBrand(resultset.getString(5));
+                        car.setKm(resultset.getLong(6));
+                        car.setFuel(resultset.getString(7));
+                        car.setCc(resultset.getInt(8));
+                        car.setPrice(resultset.getDouble(9));
+                        car.setCategories(resultset.getString(10));
+                        car.setReleaseDate(resultset.getDate(11));
+                        car.setColor(resultset.getString(12));
+                        car.setPhoto(resultset.getBytes(13));
                         cars.add(car);
                     }
                 }

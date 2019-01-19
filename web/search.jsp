@@ -19,7 +19,7 @@
 <body>
 
     <section class="d-flex justify-content-center">
-        <form method="POST" action="login">
+<!--        <form method="POST" action="login">
             <div class="loginRegisterDiv d-flex flex-column">
                 <div class="d-flex flex-row">
                     <div class="col-md-7">
@@ -49,7 +49,47 @@
                     <input type="submit" id="loginButton" value="Login" />
                 </div>
             </div>
-        </form>
+        </form>-->
+
+
+             <form method="POST" action="searchByLocation">
+                            <div class="indexDiv d-flex flex-column justify-content-center">
+                                <div class="index-search p-2">
+                                    <span class="index-search-text">Rent the car that suits to your needs.</span>
+                                </div>
+                                <div class="index-search p-2">
+                                    <div id="locationText">
+                                        <span>Location</span>
+                                    </div>
+                                    <div class="location-text">
+                                        <input type="text" id="location" name="location" placeholder="City..">
+                                    </div>
+                                </div>
+                                <div class="index-search p-2">
+                                    <div id="from">
+                                        <span>From</span>
+                                    </div>
+                                    <div class="date-text">
+                                        <input type="date" id="fromDate" name="fromDate">
+                                    </div>
+                                </div>
+                                <div class="index-search p-2">
+                                    <div id="to">
+                                        <span>To</span>
+                                    </div>
+                                    <div class="date-text">
+                                        <input type="date" id="toDate" name="toDate">
+                                    </div>
+                                </div>
+                                <div class="index-search p-2">
+                                    <a href="#">More Options</a>
+                                </div>
+                                <div class="index-search-button p-2">
+                                    <button id="searchButton">Search</button>
+                                </div>
+            
+                            </div>
+                        </form>
     </section>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="row">
-                            <img src="../img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
+                            <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
                         </div>
 
                         <div class="row">

@@ -2,15 +2,23 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>searchByLocation</servlet-name>
-        <servlet-class>Servlets.searchByLocation</servlet-class>
+        <servlet-class>com.Cteam.Servlets.searchByLocation</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>Servlets.login</servlet-class>
+        <servlet-class>com.Cteam.Servlets.login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>register</servlet-name>
-        <servlet-class>Servlets.register</servlet-class>
+        <servlet-class>com.Cteam.Servlets.register</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>results</servlet-name>
+        <jsp-file>/results.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <jsp-file>/search.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>register</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>results</servlet-name>
+        <url-pattern>/results</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
