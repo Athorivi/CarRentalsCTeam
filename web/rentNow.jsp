@@ -4,12 +4,13 @@
     Author     : manli
 --%>
 
+<%@page import="com.Cteam.StaticBeans.CarStaticClass"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Brand Model...</title>
+        <title><%=CarStaticClass.getBrand()%> <%= CarStaticClass.getModel()%></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
               crossorigin="anonymous" />
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -44,7 +45,7 @@
                 <div class="rounded bg-white col">
                     <div class="p-3">
                         <div class="row">
-                            Brand Model Release Date
+                            <%=CarStaticClass.getBrand()%> <%=CarStaticClass.getModel()%> <%=CarStaticClass.getReleaseDate()%>
                         </div>
 
                         <div class="row">
@@ -63,43 +64,43 @@
                                         <tbody>
                                             <tr>
                                                 <td>Brand:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getBrand()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Model:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getModel()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Price (per day):</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getPrice()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Category:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getCategories()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Release Date:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getReleaseDate()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Km:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getKm()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Fuel:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getFuel()%></td>
                                             </tr>
                                             <tr>
                                                 <td>CC:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getCc()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Color:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getColor()%></td>
                                             </tr>
                                             <tr>
                                                 <td>Location:</td>
-                                                <td>Example</td>
+                                                <td><%=CarStaticClass.getLocation()%></td>
                                             </tr>
                                         </tbody>
                                     </table>

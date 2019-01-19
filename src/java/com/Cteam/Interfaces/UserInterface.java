@@ -6,6 +6,7 @@
 package com.Cteam.Interfaces;
 
 import com.Cteam.Tables.User;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 public interface UserInterface {
     public void createUser(User user);
  
-    public void readUser(Integer id);
+    public ArrayList<User> readUser(Integer id);
  
     public void updateUser(User user);
  

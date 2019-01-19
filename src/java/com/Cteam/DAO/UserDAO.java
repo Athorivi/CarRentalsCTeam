@@ -4,11 +4,9 @@ import com.Cteam.Interfaces.UserInterface;
 import com.Cteam.Tables.User;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -43,8 +41,8 @@ public class UserDAO implements UserInterface {
     }
 
     @Override
-    public void readUser(Integer id) {
-
+    public ArrayList<User> readUser(Integer id) {
+        ArrayList<User> users = new ArrayList<>();
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT * FROM `USERS` WHERE `id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -62,12 +60,15 @@ public class UserDAO implements UserInterface {
                         user.setPhone(resultset.getString(8));
 //                        user.setPhoto(resultset.getBytes(9));
                         System.out.println(user.toString());
+                        users.add(user);
                     }
                 }
             }
+            
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return users;
     }
 
     @Override

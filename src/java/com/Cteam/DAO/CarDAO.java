@@ -7,13 +7,13 @@ package com.Cteam.DAO;
 
 import com.Cteam.Interfaces.CarInterface;
 import com.Cteam.Tables.Car;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,7 +44,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(9, car.getCategories());
                 statement.setDate(10, (Date) car.getReleaseDate());
                 statement.setString(11, car.getColor());
-                statement.setBytes(12, car.getPhoto());
+//                statement.setBytes(12, car.getPhoto());
                 int rowsAffected = statement.executeUpdate();
                 if (rowsAffected > 0) {
                     System.out.println(rowsAffected + "row(s) affected");
@@ -81,6 +81,7 @@ public class CarDAO implements CarInterface {
                         car.setReleaseDate(resultset.getDate(11));
                         car.setColor(resultset.getString(12));
                         car.setPhoto(resultset.getBytes(13));
+
                         cars.add(car);
                     }
                 }
@@ -112,7 +113,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(9, car.getCategories());
                 statement.setDate(10, (Date) car.getReleaseDate());
                 statement.setString(11, car.getColor());
-                statement.setBytes(12, car.getPhoto());
+//                statement.setBytes(12, car.getPhoto());
                 int rowsAffected = statement.executeUpdate();
                 System.out.println("The car was successfully updated");
             }
@@ -136,9 +137,9 @@ public class CarDAO implements CarInterface {
         }
     }
 
-    public List<Car> searchByLocation(String location, String from, String to) {
+    public ArrayList<Car> searchByLocation(String location, String from, String to) {
 
-        List<Car> cars = null;
+        ArrayList<Car> cars = null;
         try (Connection connection = Database.getConnection()) {
             String sql = "select * from CARS\n"
                     + "INNER JOIN USERS_RENT_CARS\n"
@@ -165,7 +166,7 @@ public class CarDAO implements CarInterface {
                         car.setCategories(resultset.getString(10));
                         car.setReleaseDate(resultset.getDate(11));
                         car.setColor(resultset.getString(12));
-                        car.setPhoto(resultset.getBytes(13));
+//                        car.setPhoto(resultset.getBytes(13));
                         cars.add(car);
                     }
                 }

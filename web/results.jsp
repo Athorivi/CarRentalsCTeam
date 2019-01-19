@@ -4,6 +4,7 @@
     Author     : manli
 --%>
 
+<%@page import="java.io.OutputStream"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.Cteam.Tables.Car"%>
 <%@page import="java.util.List"%>
@@ -76,10 +77,7 @@
                             <div class="d-flex flex-row p-2 ">
                                 <div class="col-4">
                                     <div class="">
-                                        <%
-                                            
 
-                                        %>
 
 
 
@@ -90,14 +88,14 @@
                                 <div class="col-6">
                                     <div class="d-flex flex-row">
                                         <div class="d-flex flex-column pr-1">
-                                           Brand: <%= x.getBrand()%>
+                                            Brand: <%= x.getBrand()%>
                                         </div>
                                         <div class="d-flex flex-column">
                                             <%= x.getModel()%>
                                         </div>
                                     </div>
                                     <p class="d-flex flex-row">
-                                      Release Date:  <%= x.getReleaseDate()%>
+                                        Release Date:  <%= x.getReleaseDate()%>
                                     </p>
                                     <p class="d-flex flex-row">
                                         <%= x.getCategories()%>
@@ -112,9 +110,10 @@
                                         <%= x.getPrice()%>
                                     </div>
                                     <div class="d-flex flex-row">
-                                        <form action="../JSP/rentNow.jsp" method="GET">
+                                       <a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">Update</a>
+<!--                                        <form action="../JSP/rentNow.jsp" method="GET">
                                             <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
-                                        </form>
+                                        </form>-->
                                     </div>
                                 </div>
 
