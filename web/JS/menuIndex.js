@@ -7,7 +7,11 @@
 $(document).ready(function () {
     $("ul#nav li a").click(function () {
         var page = $(this).attr('href');
+        $('#nav li a').removeClass('active');
+        $(this).addClass('active');
+        
         $('#content').load(page + '.jsp');
+        
         return false;
     });
 });

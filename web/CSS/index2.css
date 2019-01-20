@@ -1,0 +1,32 @@
+.main{
+    background-color: #DEB887;
+}
+.navbar{
+    background-color: #B22222 !important;
+}
+a{
+    color: #FFFFFF !important;
+}
+input, button{
+    border: 0;
+}
+button{
+    background-color: #B22222 !important;
+    color: white !important;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+}
+.search > #search{
+    flex: 6 1 0;
+    padding-left: 10px !important;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.search > #submit{
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    flex: 1 1 0;
+    transition: 0.5s;
+}

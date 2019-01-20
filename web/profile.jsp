@@ -64,7 +64,7 @@
                         </div>
                         <div class="col mr-3 pt-3">
                             <div class="col-sm-10 d-flex justify-content-end">
-                                <input type="submit" id="saveInfo" name="saveInfo" class="btn btn-primary w-50" value="Save">
+                                <button id="saveInfo" name="saveInfo" class="btn w-50">Save</button>
                             </div>
                         </div>
 
@@ -92,7 +92,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto d-block text-center">
-                                <input type="submit" id="savePhoto" name="savePhoto" class="btn btn-primary w-50" value="Save">
+                                <button id="savePhoto" name="savePhoto" class="btn w-50">Save</button>
                             </div>
                         </div>
                     </form>

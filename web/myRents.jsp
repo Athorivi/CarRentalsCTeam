@@ -40,11 +40,11 @@
                         <div class="row">
 
                             <div class="col text-center pb-1">
-                                <button class="btn btn-primary btn-block" id="view" name="view">View</button>
+                                <button class="btn btn-block" id="view" name="view">View</button>
                             </div>
 
                             <div class="col text-center">
-                                <button class="btn btn-primary btn-block" id="cancel" name="cancel">Cancel</button>
+                                <button class="btn btn-block" id="cancel" name="cancel">Cancel</button>
                             </div>
 
                         </div>
