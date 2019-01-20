@@ -30,8 +30,8 @@
     </head>
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Logo</a>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #B22222">
+            <a class="navbar-brand" href="#" style="color: white">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,16 +39,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav" id="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="myPosts">My Posts <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="myPosts" style="color: white">My Posts <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="myRents">My Rents</a>
+                        <a class="nav-link" href="myRents" style="color: white">My Rents</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile">Profile</a>
+                        <a class="nav-link" href="profile" style="color: white">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">Logout</a>
+                        <a class="nav-link" href="logout" style="color: white">Logout</a>
                     </li>
                 </ul>
             </div>

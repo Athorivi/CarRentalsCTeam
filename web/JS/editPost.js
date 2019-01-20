@@ -11,4 +11,17 @@ $(document).ready(function () {
         return false;
 
     });
+    
+    $("input").click(function () {
+
+        $('#saveInfo').prop('disabled', false);
+
+    });
+    
+    $("button#saveInfo").click(function () {
+        
+        $('#saveInfo').prop('disabled', true);
+        alert("Successfully Saved!");
+        
+    });
 });
