@@ -7,7 +7,8 @@
 $(document).ready(function () {
 
     $(function () {
-        $("#header").load("header.jsp");
+        $("#userHeader").load("userHeader.jsp");
+        $("#adminHeader").load("adminHeader.jsp");
         $("#footer").load("footer.jsp");
     });
     
