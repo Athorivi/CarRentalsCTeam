@@ -5,29 +5,44 @@
  */
 
 $(document).ready(function () {
-    $("ul#nav li a").click(function () {
-        var page = $(this).attr('id');
-        $('#nav li a').removeClass('active');
-        $(this).addClass('active');
-        
-        $('#content').load(page + '.jsp');
-        
-        return false;
+
+    $(function () {
+        $("#header").load("header.jsp");
+        $("#footer").load("footer.jsp");
     });
     
-    $("#edit").click(function (){
-        
-        window.location.href = 'editPost.jsp';
-    });
-    
-    $("#view").click(function (){
-        
-        window.location.href = 'viewRent.jsp';
-    });
-    
-    $("#back").click(function (){
-        
-        $('#content').load('userIndex.jsp');
-    });
-    
+//    $("ul#nav li a").click(function () {
+//        var page = $(this).attr('id');
+//        $('#nav li a').removeClass('active');
+//        $(this).addClass('active');
+//       // document.getElementById('bottom').innerHTML = loadPage(page + '.jsp');
+//       window.location.replace = (page + '.jsp');
+//
+//        return false;
+//    });
+
+//    $("#myPosts").click(function(){
+//        window.location.href = 'myPosts.jsp';
+//    });
+//    
+//    $("#edit").click(function () {
+//
+//        window.location.href = 'editPost.jsp';
+//    });
+//
+//    $("#view").click(function () {
+//
+//        window.location.href = 'viewRent.jsp';
+//    });
+//
+//    $("#back").click(function () {
+//
+//        window.location.href = ('userIndex.jsp');
+//    });
+//
+//    $("#search").click(function () {
+//
+//        $('#content').load('results.jsp');
+//    });
+
 });

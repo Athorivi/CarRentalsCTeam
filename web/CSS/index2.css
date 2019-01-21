@@ -7,6 +7,9 @@
 a{
     color: #FFFFFF !important;
 }
+.pading{
+    padding-top: 10%;
+}
 input, button{
     border: 0;
 }

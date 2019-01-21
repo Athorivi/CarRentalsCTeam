@@ -8,17 +8,144 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>
-            <%=CarStaticClass.getBrand()%>
-            <%= CarStaticClass.getModel()%>
-        </title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
               crossorigin="anonymous">
         <link rel="stylesheet" href="CSS/index2.css">
+    </head>
 
+    <body class="main">
+        <div id="header"></div>
+
+        <div class="container p-2">
+            <div class="row">
+                <div class="rounded bg-white col">
+                    <div class="p-3">
+                        <div class="row">
+                            <%=CarStaticClass.getBrand()%>
+                            <%=CarStaticClass.getModel()%>
+                            <%=CarStaticClass.getReleaseDate()%>
+                        </div>
+
+                        <div class="row">
+                            <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
+                        </div>
+
+                        <div class="row">
+                            <div class="col w-100">
+                                <div>
+                                    <form>
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="form-group">
+                                                    <th colspan="2">Car Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="form-group">
+                                                    <td class="">Brand:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="brand" value="<%=CarStaticClass.getBrand()%>"
+                                                               placeholder="Brand">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Model:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="model" value="<%=CarStaticClass.getModel()%>"
+                                                               placeholder="Model">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Price (per day):</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="price" value="<%=CarStaticClass.getPrice()%>"
+                                                               placeholder="Price">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Category:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="category" value="<%=CarStaticClass.getCategories()%>"
+                                                               placeholder="Category">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Release Date:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="releaseDate" value="<%=CarStaticClass.getReleaseDate()%>"
+                                                               placeholder="Release Date">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Km:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="km" value="<%=CarStaticClass.getKm()%>"
+                                                               placeholder="Km">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Fuel:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="fuel" value="<%=CarStaticClass.getFuel()%>"
+                                                               placeholder="Fuel">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">CC:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="cc" value="<%=CarStaticClass.getCc()%>"
+                                                               placeholder="CC">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Color:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="color" value="<%=CarStaticClass.getColor()%>"
+                                                               placeholder="Color">
+                                                    </td>
+                                                </tr>
+                                                <tr class="form-group">
+                                                    <td class="">Location:</td>
+                                                    <td class="col-sm-6 align-items-end">
+                                                        <input type="text" class="form-control" id="location" value="<%=CarStaticClass.getLocation()%>"
+                                                               placeholder="Location">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div classs="form-group">
+                                            <div class="col pt-2">
+                                                <div class="col d-flex justify-content-center">
+                                                    <div class="pr-2">
+                                                        <a href="">
+                                                            <button id="saveInfo" name="saveInfo" class="btn" disabled>Save</button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="">
+                                                        <a href="">
+                                                            <button id="back" name="back" class="btn">Back</button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                               
+        <div id="footer"></div>
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -27,163 +154,8 @@
         crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-
-    </head>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light shadow">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav" id="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="myPosts">My Posts <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="myRents">My Rents</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <body class="main">
-        <div id="content">
-            <div class="container p-2">
-                <div class="row">
-                    <div class="rounded bg-white col">
-                        <div class="p-3">
-                            <div class="row">
-                                <%=CarStaticClass.getBrand()%>
-                                <%=CarStaticClass.getModel()%>
-                                <%=CarStaticClass.getReleaseDate()%>
-                            </div>
-
-                            <div class="row">
-                                <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
-                            </div>
-
-                            <div class="row">
-                                <div class="col w-100">
-                                    <div>
-                                        <form>
-                                            <table class="table">
-                                                <thead>
-                                                    <tr class="form-group">
-                                                        <th colspan="2">Car Details</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="form-group">
-                                                        <td class="">Brand:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="brand" value="<%=CarStaticClass.getBrand()%>"
-                                                                   placeholder="Brand">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Model:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="model" value="<%=CarStaticClass.getModel()%>"
-                                                                   placeholder="Model">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Price (per day):</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="price" value="<%=CarStaticClass.getPrice()%>"
-                                                                   placeholder="Price">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Category:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="category" value="<%=CarStaticClass.getCategories()%>"
-                                                                   placeholder="Category">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Release Date:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="releaseDate" value="<%=CarStaticClass.getReleaseDate()%>"
-                                                                   placeholder="Release Date">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Km:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="km" value="<%=CarStaticClass.getKm()%>"
-                                                                   placeholder="Km">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Fuel:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="fuel" value="<%=CarStaticClass.getFuel()%>"
-                                                                   placeholder="Fuel">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">CC:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="cc" value="<%=CarStaticClass.getCc()%>"
-                                                                   placeholder="CC">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Color:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="color" value="<%=CarStaticClass.getColor()%>"
-                                                                   placeholder="Color">
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="form-group">
-                                                        <td class="">Location:</td>
-                                                        <td class="col-sm-6 align-items-end">
-                                                            <input type="text" class="form-control" id="location" value="<%=CarStaticClass.getLocation()%>"
-                                                                   placeholder="Location">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div classs="form-group">
-                                                <div class="col pt-2">
-                                                    <div class="col d-flex justify-content-center">
-                                                        <div class="pr-2">
-                                                            <a href="">
-                                                                <button id="saveInfo" name="saveInfo" class="btn" disabled>Save</button>
-                                                            </a>
-                                                        </div>
-                                                        <div class="">
-                                                            <a href="">
-                                                                <button id="back" name="back" class="btn">Back</button>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/edit.js"></script>
+        <script src="JS/userPosts.js"></script>
     </body>
 
 </html>
