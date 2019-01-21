@@ -31,7 +31,7 @@
     </head>
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
             <a class="navbar-brand" href="#" class="header">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
 
     <body class="main">
         <div class="container">
-            <div class="row pt-2 w-100">
+            <div class="row pt-2 w-100 shadow">
                 <div class="col d-flex justify-content-start">
                     onoma xrhsth
                 </div>

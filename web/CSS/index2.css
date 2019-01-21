@@ -10,6 +10,9 @@ a{
 input, button{
     border: 0;
 }
+.active{
+    background-color: #8B0000;
+}
 button{
     background-color: #B22222 !important;
     color: white !important;

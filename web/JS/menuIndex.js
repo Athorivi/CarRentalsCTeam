@@ -6,7 +6,7 @@
 
 $(document).ready(function () {
     $("ul#nav li a").click(function () {
-        var page = $(this).attr('href');
+        var page = $(this).attr('id');
         $('#nav li a').removeClass('active');
         $(this).addClass('active');
         
@@ -14,4 +14,20 @@ $(document).ready(function () {
         
         return false;
     });
+    
+    $("#edit").click(function (){
+        
+        window.location.href = 'editPost.jsp';
+    });
+    
+    $("#view").click(function (){
+        
+        window.location.href = 'viewRent.jsp';
+    });
+    
+    $("#back").click(function (){
+        
+        $('#content').load('userIndex.jsp');
+    });
+    
 });

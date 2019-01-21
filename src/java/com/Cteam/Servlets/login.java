@@ -37,7 +37,7 @@ public class login extends HttpServlet {
 
                     response.sendRedirect("adminMenu");
                 } else {
-                    response.sendRedirect("search");
+                    response.sendRedirect("userMenu");
                 }
             } else {
                 out.println("Failed");

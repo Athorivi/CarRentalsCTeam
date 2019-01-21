@@ -24,7 +24,7 @@
 
     </head>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg shadow">
             <div class="collapse navbar-collapse col-md-10">
                 <a class="navbar-brand " href="#">Logo</a>
             </div>

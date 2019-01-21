@@ -41,9 +41,6 @@
                         <li class="nav-item active">
                             <a class="nav-item" href="#">About <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-item" href="login.jsp">Login / Register</a>
-                        </li>
                     </ul>
                 </div>
             </nav>

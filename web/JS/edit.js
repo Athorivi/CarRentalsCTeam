@@ -14,14 +14,20 @@ $(document).ready(function () {
     
     $("input").click(function () {
 
-        $('#saveInfo').prop('disabled', false);
-
+        $('button#saveInfo').prop('disabled', false);
+        $('button#savePhoto').prop('disabled', false);
     });
     
     $("button#saveInfo").click(function () {
         
         $('#saveInfo').prop('disabled', true);
-        alert("Successfully Saved!");
+        //alert("Successfully Saved!");
+        
+    });
+    
+    $("button#savePhoto").click(function() {
+        
+        $('#savePhoto').prop('disabled', true);
         
     });
     

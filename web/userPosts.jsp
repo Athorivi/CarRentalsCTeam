@@ -9,7 +9,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col rounded bg-white w-100">
+        <div class="col rounded bg-white w-100 shadow">
             <div>
                 <form>
                     <table class="table">

@@ -6,7 +6,7 @@
 
 <div>
     <div class="container p-3">
-        <div class="bg-white rounded row pt-3 pb-3 w-100">
+        <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
             <div class="col-6">
                 <form>
                     <div class="form-group row">
@@ -62,11 +62,15 @@
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Phone">
                         </div>
-                        <div class="col mr-3 pt-3">
-                            <div class="col-sm-10 d-flex justify-content-end">
+
+                        <div class="col-sm-10 d-flex justify-content-end pt-3">
+
+                            <a href="">
                                 <button id="saveInfo" name="saveInfo" class="btn w-50">Save</button>
-                            </div>
+                            </a>
+
                         </div>
+
 
                     </div>
 
@@ -92,7 +96,9 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto d-block text-center">
-                                <button id="savePhoto" name="savePhoto" class="btn w-50">Save</button>
+                                <a href="">
+                                    <button id="savePhoto" name="savePhoto" class="btn w-50">Save</button>
+                                </a>
                             </div>
                         </div>
                     </form>

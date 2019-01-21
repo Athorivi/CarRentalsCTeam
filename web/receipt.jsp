@@ -26,7 +26,7 @@
 
     </head>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg shadow">
             <div class="collapse navbar-collapse col-md-10">
                 <a class="navbar-brand " href="#">Logo</a>
             </div>
@@ -47,7 +47,7 @@
         </nav>
     </header>
 
-    <body style="background-color:gainsboro">
+    <body class="main">
         <div class="container">
             <div class="row text-center">
                 <div class="col w-100">
@@ -63,7 +63,7 @@
 
         <div class="container p-2">
             <div class="row">
-                <div class="rounded bg-white col">
+                <div class="rounded bg-white col shadow">
                     <div class="">
                         <div class="p-3">
 

@@ -19,7 +19,7 @@
 
     </head>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg shadow">
             <div class="collapse navbar-collapse col-md-10">
                 <a class="navbar-brand " href="#">Logo</a>
             </div>
@@ -42,7 +42,7 @@
     <body class="bg-secondary">
         <div class="container p-2">
             <div class="row">
-                <div class="rounded bg-white col">
+                <div class="rounded bg-white col shadow">
                     <div class="p-3">
                         <div class="row">
                             <%=CarStaticClass.getBrand()%> <%=CarStaticClass.getModel()%> <%=CarStaticClass.getReleaseDate()%>

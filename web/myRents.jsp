@@ -7,7 +7,7 @@
 <div class="">
     <div class="container">
         <div class="row p-2">
-            <div class="bg-white rounded w-100">
+            <div class="bg-white rounded w-100 shadow">
 
                 <div class="d-flex flex-row p-2">
                     <div class="col-4">
@@ -40,11 +40,15 @@
                         <div class="row">
 
                             <div class="col text-center pb-1">
+
                                 <button class="btn btn-block" id="view" name="view">View</button>
+
                             </div>
 
                             <div class="col text-center">
-                                <button class="btn btn-block" id="cancel" name="cancel">Cancel</button>
+                                <a href="">
+                                    <button class="btn btn-block" id="cancel" name="cancel">Cancel</button>
+                                </a>
                             </div>
 
                         </div>
@@ -56,3 +60,4 @@
         </div>
     </div>
 </div>
+<script src="JS/menuIndex.js"></script>
