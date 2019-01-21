@@ -2,8 +2,9 @@ package com.Cteam.DAO;
 
 import com.Cteam.Interfaces.UserInterface;
 import com.Cteam.Tables.User;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.Part;
 
 public class UserDAO implements UserInterface {
 
     @Override
-    public void createUser(User user) {
+    public int createUser(User user) {
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder().append("INSERT INTO `USERS`")
                     .append("(`username`, `password`, `fname`, `lname`, `dob`, `email`, `address`, `phone`, `photo`)")
@@ -25,19 +27,23 @@ public class UserDAO implements UserInterface {
                 statement.setString(2, user.getPassword());
                 statement.setString(3, user.getFname());
                 statement.setString(4, user.getLname());
-                statement.setDate(5, (Date) user.getDob());
+                statement.setString(5, user.getDob());
                 statement.setString(6, user.getEmail());
                 statement.setString(7, user.getAddress());
                 statement.setString(8, user.getPhone());
-//                statement.setBytes(9, user.getPhoto());
+                statement.setBlob(9, (InputStream) user.getPhoto());
                 int rowsAffected = statement.executeUpdate();
                 if (rowsAffected > 0) {
                     System.out.println("1 row affected");
+                    return rowsAffected;
                 }
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return 0;
+
     }
 
     @Override
@@ -50,21 +56,22 @@ public class UserDAO implements UserInterface {
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
                         User user = new User();
-                        user.setUsername(resultset.getString(1));
-                        user.setPassword(resultset.getString(2));
-                        user.setFname(resultset.getString(3));
-                        user.setLname(resultset.getString(4));
-                        user.setDob(resultset.getDate(5));
-                        user.setEmail(resultset.getString(6));
-                        user.setAddress(resultset.getString(7));
-                        user.setPhone(resultset.getString(8));
-//                        user.setPhoto(resultset.getBytes(9));
+                        user.setId(resultset.getInt(1));
+                        user.setUsername(resultset.getString(2));
+                        user.setPassword(resultset.getString(3));
+                        user.setFname(resultset.getString(4));
+                        user.setLname(resultset.getString(5));
+                        user.setDob(resultset.getString(6));
+                        user.setEmail(resultset.getString(7));
+                        user.setAddress(resultset.getString(8));
+                        user.setPhone(resultset.getString(9));
+                        user.setPhoto((InputStream) resultset.getBlob(10));
                         System.out.println(user.toString());
                         users.add(user);
                     }
                 }
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -83,11 +90,11 @@ public class UserDAO implements UserInterface {
                 statement.setString(2, user.getPassword());
                 statement.setString(3, user.getFname());
                 statement.setString(4, user.getLname());
-                statement.setDate(5, (Date) user.getDob());
+                statement.setString(5, user.getDob());
                 statement.setString(6, user.getEmail());
                 statement.setString(7, user.getAddress());
                 statement.setString(8, user.getPhone());
-//                statement.setBytes(9, user.getPhoto());
+                statement.setBlob(9, (Blob) user.getPhoto());
                 statement.executeUpdate();
                 System.out.println("The User was successfully Updated");
             }
@@ -125,15 +132,16 @@ public class UserDAO implements UserInterface {
                             users = new ArrayList();
                         }
                         User user = new User();
-                        user.setUsername(resultset.getString(1));
-                        user.setPassword(resultset.getString(2));
-                        user.setFname(resultset.getString(3));
-                        user.setLname(resultset.getString(4));
-                        user.setDob(resultset.getDate(5));
-                        user.setEmail(resultset.getString(6));
-                        user.setAddress(resultset.getString(7));
-                        user.setPhone(resultset.getString(8));
-//                        user.setPhoto(resultset.getBytes(9));
+                        user.setId(resultset.getInt(1));
+                        user.setUsername(resultset.getString(2));
+                        user.setPassword(resultset.getString(3));
+                        user.setFname(resultset.getString(4));
+                        user.setLname(resultset.getString(5));
+                        user.setDob(resultset.getString(6));
+                        user.setEmail(resultset.getString(7));
+                        user.setAddress(resultset.getString(8));
+                        user.setPhone(resultset.getString(9));
+                        user.setPhoto((InputStream) resultset.getBlob(10));
                         users.add(user);
                     }
                 }

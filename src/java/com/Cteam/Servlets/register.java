@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.Cteam.Servlets;
 
+import com.Cteam.DAO.UserDAO;
+import com.Cteam.Tables.User;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.InputStream;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -14,29 +11,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author User
- */
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2,
-        maxFileSize = 1024 * 1024 * 10,
-        maxRequestSize = 1024 * 1024 * 50
-)
-
+@MultipartConfig(maxFileSize = 16177215)
 public class register extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String birthday = request.getParameter("birthday");
-        String address = request.getParameter("address");
-        String phone = request.getParameter("phone");
-        Part photo = request.getPart("uploadPhoto");
+
+        User user = new User();
+        System.out.println(request.getParameter("username"));
+        user.setUsername(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
+        user.setFname(request.getParameter("fName"));
+        user.setLname(request.getParameter("lName"));
+        user.setDob(request.getParameter("birthday"));
+        user.setEmail(request.getParameter("email"));
+        user.setAddress(request.getParameter("address"));
+        user.setPhone(request.getParameter("phone"));
+
+        InputStream inputStream = null; // input stream of the upload file
+
+        // obtains the upload file part in this multipart request
+        Part filePart = request.getPart("uploadPhoto");
+
+        if (filePart != null) {
+            // prints out some information for debugging
+            System.out.println(filePart.getName());
+            System.out.println(filePart.getSize());
+            System.out.println(filePart.getContentType());
+
+            // obtains input stream of the upload file
+            inputStream = filePart.getInputStream();
+            user.setPhoto(inputStream);
+        }
+
+        UserDAO userDb = new UserDAO();
+        System.out.println(user.getUsername());
+        userDb.createUser(user);
 
     }
 

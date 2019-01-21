@@ -1,5 +1,6 @@
 package com.Cteam.StaticBeans;
 
+import java.io.InputStream;
 import java.util.Date;
 
 public class CarStaticClass {
@@ -16,7 +17,7 @@ public class CarStaticClass {
     static private String categories;
     static private Date releaseDate;
     static private String color;
-    static private byte[] photo;
+    static private InputStream photo;
 
     public CarStaticClass() {
     }
@@ -117,11 +118,11 @@ public class CarStaticClass {
         color = aColor;
     }
 
-    public static byte[] getPhoto() {
+    public static InputStream getPhoto() {
         return photo;
     }
 
-    public static void setPhoto(byte[] aPhoto) {
+    public static void setPhoto(InputStream aPhoto) {
         photo = aPhoto;
     }
 

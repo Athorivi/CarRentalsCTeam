@@ -1,6 +1,8 @@
 package com.Cteam.Tables;
 
+import java.io.InputStream;
 import java.sql.Date;
+import javax.servlet.http.Part;
 
 public class User {
 
@@ -9,12 +11,11 @@ public class User {
     private String password;
     private String fname;
     private String lname;
-    private Date dob;
+    private String dob;
     private String email;
     private String address;
     private String phone;
-    private String filename;
-    private String path;
+    private InputStream photo;
 
     public User() {
     }
@@ -23,7 +24,7 @@ public class User {
         this.id = id;
     }
 
-    public User(int id, String username, String password, String fname, String lname, Date dob, String email, String address, String filename, String path) {
+    public User(int id, String username, String password, String fname, String lname, String dob, String email, String address, String phone, InputStream photo) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -32,8 +33,8 @@ public class User {
         this.dob = dob;
         this.email = email;
         this.address = address;
-        this.filename = filename;
-        this.path = path;
+        this.phone = phone;
+        this.photo = photo;
     }
 
     public int getId() {
@@ -76,11 +77,11 @@ public class User {
         this.lname = lname;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -108,25 +109,17 @@ public class User {
         this.phone = phone;
     }
 
-    public String getFilename() {
-        return filename;
+    public InputStream getPhoto() {
+        return photo;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
+    public void setPhoto(InputStream photo) {
+        this.photo = photo;
     }
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", fname=" + fname + ", lname=" + lname + ", dob=" + dob + ", email=" + email + ", address=" + address + ", phone=" + phone + ", filename=" + filename + ", path=" + path + '}';
+        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", fname=" + fname + ", lname=" + lname + ", dob=" + dob + ", email=" + email + ", address=" + address + ", phone=" + phone + ", photo=" + photo + '}';
     }
 
 }

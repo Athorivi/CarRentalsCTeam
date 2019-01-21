@@ -24,6 +24,10 @@
         <servlet-name>rentNow</servlet-name>
         <servlet-class>com.Cteam.Servlets.rentNow</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>adminMenu</servlet-name>
+        <jsp-file>/adminIndex.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>rentNow</servlet-name>
         <url-pattern>/rentNow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminMenu</servlet-name>
+        <url-pattern>/adminMenu</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
