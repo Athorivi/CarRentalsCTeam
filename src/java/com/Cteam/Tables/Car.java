@@ -1,5 +1,6 @@
 package com.Cteam.Tables;
 
+import java.io.InputStream;
 import java.util.Date;
 
 public class Car {
@@ -16,12 +17,12 @@ public class Car {
     private String categories;
     private Date releaseDate;
     private String color;
-    private byte[] photo;
+    private InputStream photo;
 
     public Car() {
     }
 
-    public Car(int id, int owner, String model, String location, String brand, long km, String fuel, int cc, double price, String categories, Date releaseDate, String color, byte[] photo) {
+    public Car(int id, int owner, String model, String location, String brand, long km, String fuel, int cc, double price, String categories, Date releaseDate, String color, InputStream photo) {
         this.id = id;
         this.owner = owner;
         this.model = model;
@@ -133,11 +134,11 @@ public class Car {
         this.color = color;
     }
 
-    public byte[] getPhoto() {
+    public InputStream getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(InputStream photo) {
         this.photo = photo;
     }
 

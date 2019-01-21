@@ -19,15 +19,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class login extends HttpServlet {
 
-  
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         UserDAO userDb = new UserDAO();
         String username = request.getParameter("username");
-        
+
         String password = request.getParameter("password");
         boolean check = userDb.checkLogin(username, password);
 
@@ -35,13 +33,16 @@ public class login extends HttpServlet {
             out.println(check);
             if (check) {
                 out.println("Logged in");
-                response.sendRedirect("search");
+                if (username.equals("admin")) {
+
+                    response.sendRedirect("adminMenu");
+                } else {
+                    response.sendRedirect("search");
+                }
             } else {
                 out.println("Failed");
             }
         }
-        
-         
 
     }
 

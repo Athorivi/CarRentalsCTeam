@@ -14,13 +14,14 @@ import java.util.List;
  * @author User
  */
 public interface UserInterface {
-    public void createUser(User user);
- 
+
+    public int createUser(User user);
+
     public ArrayList<User> readUser(Integer id);
- 
+
     public void updateUser(User user);
- 
+
     public void deleteUser(Integer id);
-    
+
     public List<User> AllUsers();
 }
