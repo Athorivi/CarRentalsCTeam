@@ -28,7 +28,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
         <script src="JS/userPosts.js"></script>
-        <script src="JS/editPost.js"></script>
+        <script src="JS/edit.js"></script>
 
     </head>
     <header>

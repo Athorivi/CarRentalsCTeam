@@ -1,3 +1,4 @@
+<%@page import="com.Cteam.StaticBeans.CarStaticClass"%>
 <div class="container">
     <div class="search p-2">
         <input type="search" id="search" name="search" placeholder="Search by username">
@@ -21,17 +22,30 @@
                         </thead>
                         <tbody>
                             <tr class="form-group">
-                                <td>id</td>
-                                <td>Username</td>
-                                <td>role</td>
+                                <td class="col-sm-1 align-items-end">
+                                    <input type="text" class="form-control" id="id" value="id"
+                                           placeholder="id">
+                                </td>
+                                <td class="col-sm-3 align-items-end">
+                                    <input type="text" class="form-control" id="username" value="username"
+                                           placeholder="username">
+                                </td>
+                                <td class="col-sm-2 align-items-end">
+                                    <input type="text" class="form-control" id="roles" value="role"
+                                           placeholder="roles">
+                                </td>
                                 <td>
                                     <div class="row">
                                         <div class="col-2">
-                                            <button class="btn" name="update" id="update">Update</button>
+                                            <a href="">
+                                                <button class="btn" name="update" id="update" disabled>Update</button>
+                                            </a>
                                         </div>
 
                                         <div class="col-2">
-                                            <button class="btn" name="delete" id="delete">Delete</button>
+                                            <a href="">
+                                                <button class="btn" name="delete" id="delete">Delete</button>
+                                            </a>
                                         </div>
 
                                     </div>
@@ -45,3 +59,4 @@
         </div>
     </div>
 </div>
+<script src="JS/edit.js"></script>

@@ -24,4 +24,17 @@ $(document).ready(function () {
         alert("Successfully Saved!");
         
     });
+    
+    $("input").click(function () {
+
+        $('#update').prop('disabled', false);
+
+    });
+    
+    $("button#update").click(function () {
+        
+        $('#update').prop('disabled', true);
+        //alert("Successfully Updated!");
+        
+    });
 });
