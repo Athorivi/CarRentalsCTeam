@@ -18,41 +18,13 @@
         <link rel="stylesheet" href="CSS/index2.css">
 
     </head>
-    <header>
-
-        <nav class="navbar navbar-expand-lg navbar-light shadow">
-            <a class="navbar-brand" href="#" class="header">Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav" id="nav">
-                    <li class="nav-item">
-                        <a class="nav-link header" href="userRoles">User's Roles <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header" href="userPosts">User's Posts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header" href="userRents">User's Rents</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header" href="profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header" href="logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    </header>
 
     <body class="main">
-        <div id="content">
+        
+        <div id="adminHeader"></div>
 
-        </div>
+        <div id="footer"></div>
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"

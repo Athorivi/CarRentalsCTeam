@@ -21,7 +21,9 @@
     </head>
 
     <body class="main">
-        <div id="footer"></div>
+        
+        <div id="userHeader"></div>
+        
         <div class="container p-3">
             <div class="row">
                 <div class="rounded bg-white col shadow">

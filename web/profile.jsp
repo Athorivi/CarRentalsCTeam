@@ -16,7 +16,10 @@
     </head>
 
     <body class="main">
-        <div id="header"></div>
+        
+        <div id="userHeader"></div>
+        
+        <div id="adminHeader"></div>
 
         <div class="container p-3">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
@@ -119,6 +122,7 @@
                 </div>
             </div>
         </div>
+        
         <div id="footer"></div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

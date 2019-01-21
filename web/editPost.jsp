@@ -19,7 +19,8 @@
     </head>
 
     <body class="main">
-        <div id="header"></div>
+        
+        <div id="userHeader"></div>
 
         <div class="container p-2">
             <div class="row">
