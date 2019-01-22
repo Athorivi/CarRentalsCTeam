@@ -16,11 +16,11 @@
     </head>
 
     <body class="main">
-        
+
         <div id="userHeader"></div>
 
-        <div class="container">
-            <div class="row p-2">
+        <div class="container fixPading">
+            <div class="row p-3">
                 <div class="bg-white rounded w-100 shadow">
 
                     <div class="d-flex flex-row p-2">
@@ -54,13 +54,13 @@
                             <div class="row">
 
                                 <div class="col text-center pb-1">
-                                    <button class="btn btn-block" id="edit" name="edit">Edit</button>
+                                    <button class="btn btn-block" id="edit" name="edit"><a href="">Edit</a></button>
                                 </div>
 
                                 <div class="col text-center">
-                                    <a href="">
-                                        <button class="btn btn-block" id="delete" name="delete">Delete</button>
-                                    </a>
+
+                                    <button class="btn btn-block" id="delete" name="delete"><a href="">Delete</a></button>
+
                                 </div>
 
                             </div>
@@ -83,7 +83,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/userPosts.js"></script>
+        
     </body>
 
 </html>

@@ -25,28 +25,69 @@
     <body class="main">
 
         <div id="userHeader"></div>
-        
-        <div class="container">
-            
-            <div class="row">
 
-                <div class="col-2">
-                    <div class="">
-                        <h3>Filters</h3>
-                    </div>
-                    <div class="p-2">
-                        <input type="text" id="category" name="category"/>
-                    </div>
-                    <div class="p-2">
-                        <input type="text" id="brand" name="brand"/>
-                    </div>
-                    <div class="p-2">
-                        <input type="text" id="model" name="model"/>
-                    </div>
-                    <div class="p-2">
-                        <input type="range" id="price" name="price"/>
-                    </div>
+
+
+        <div class="row fixPading">
+
+            <div class="col-2 ml-3 mt-3">
+                <div class="float-left bg-white rounded w-100 p-3">
+                    <form>
+                        <div class="indexDiv d-flex flex-column justify-content-center">
+                            <div class="form-group text-center">
+                                <h4 class="index-search-text">Filters</h4>
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category">
+                                    <option>Sample</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn-sm rounded w-50" id="category" name="category" disabled><a href="">Search</a></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="indexDiv d-flex flex-column justify-content-center pt-4">
+                            <div class="form-group row">
+                                <div class="col-6 text-center">
+                                    <label for="from">CC (from): </label>
+                                    <input type="number" class="form-control" id="from" name="from" min="500" max="5000" step="500" value="500">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="to">CC (to):</label>
+                                    <input type="number" class="form-control" id="to" name="to" min="500" max="5000" step="500">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn-sm rounded w-50" id="cc" name="cc" disabled><a href="">Search</a></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="indexDiv d-flex flex-column justify-content-center pt-4">
+                            <div class="form-group row">
+                                <div class="col-6 text-center">
+                                    <label for="priceFrom">Price (from): </label>
+                                    <input type="number" class="form-control" id="priceFrom" name="priceFrom" min="0" step="5" value="0">
+                                </div>
+                                <div class="col-6 text-center">
+                                    <label for="priceTo">Price (to):</label>
+                                    <input type="number" class="form-control" id="priceTo" name="priceTo" min="0" step="5" value="">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn-sm rounded w-50" id="price" name="price" disabled><a href="">Search</a></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
+
+            <div class="container">
 
                 <div class="col-10">
                     <div class="container">
@@ -54,16 +95,12 @@
                         %>
 
 
-                        <div class="row p-2 shadow">
+                        <div class="row p-3 shadow">
                             <div class="bg-white rounded w-100">
                                 <div class="d-flex flex-row p-2 ">
                                     <div class="col-4">
                                         <div class="">
-
-
-
-
-                                            <img src="data:image/jpg;base64,<%= x.getBase64Image() %>" class="rounded float-left w-100 img-fluid" alt="Photo">
+                                            <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
                                         </div>
                                     </div>
 
@@ -88,14 +125,14 @@
                                     </div>
 
                                     <div class="col-2">
-                                        <div class="d-flex flex-row">
+                                        <div class="d-flex flex-row justify-content-center pt-5">
                                             <%= x.getPrice()%>
                                         </div>
                                         <div class="d-flex flex-row">
-                                            <a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a>
+                                            <button class="btn-sm w-100 rounded"><a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a></button>
                                             <!--                                        <form action="../JSP/rentNow.jsp" method="GET">
-                                                                                        <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
-                                                                                    </form>-->
+                                                                                                                                    <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
+                                                                                                                                </form>-->
                                         </div>
                                     </div>
 
@@ -121,7 +158,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/userPosts.js"></script>
+        <script src="JS/edit.js"></script>
     </body>
 
 </html>

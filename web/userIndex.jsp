@@ -80,7 +80,7 @@
                             <!--                            <a href="searchByLocation">
                                                             <button class="btn-sm w-50 rounded font-weight-bold" id="search">Search</button>
                                                         </a>-->
-                            <button type="submit" class="btn-sm w-50 rounded font-weight-bold">Search</button>
+                            <button class="btn-sm w-100 rounded font-weight-bold"><a href="">Search</a></button>
                         </div>
                     </div>
                 </form>

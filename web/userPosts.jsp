@@ -14,10 +14,10 @@
 
         <div id="adminHeader"></div>
 
-        <div class="container">
+        <div class="container fixPading">
             <div class="search p-2">
                 <input type="search" id="search" name="search" placeholder="Search by username">
-                <button class="btn" name="submit" id="submit">Search</button>
+                <button class="btn" name="submit" id="submit"><a href="">Search</a></button>
             </div>
         </div>
 
@@ -43,9 +43,9 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-2 d-flex justify-content-center">
-                                                <a href="">
-                                                    <button class="btn" name="view" id="view">View</button>
-                                                </a>
+
+                                                <button class="btn" name="view" id="view"><a href="">View</a></button>
+
                                             </div>
                                         </div>
                                     </td>

@@ -27,7 +27,7 @@
 
         <div id="userHeader"></div>
 
-        <div class="container">
+        <div class="container fixPading p-3">
             <div class="row text-center">
                 <div class="col w-100">
                     <h5>
@@ -82,14 +82,6 @@
                                 </div>
                             </div>
 
-                            <div class="row d-flex justify-content-center p-4">
-
-                                <div>
-                                    <button name="rent" id="rent" class="btn" style="background-color: #B22222; color: white">Rent</button>
-                                </div>
-
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -109,7 +101,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/userPosts.js"></script>
     </body>
 
 </html>

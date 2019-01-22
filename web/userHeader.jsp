@@ -4,7 +4,7 @@
     Author     : manli
 --%>
 
-<nav class="navbar navbar-expand-lg navbar-light shadow">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand" href="#">Logo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +16,9 @@
                 <a class="nav-link" href="">Search</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="" id="newPost">New Post</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="" id="myPosts">My Posts</a>
             </li>
             <li class="nav-item">
@@ -23,6 +26,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" id="profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" id="notifications">Notifications</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" id="logout">Logout</a>

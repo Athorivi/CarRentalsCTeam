@@ -22,7 +22,7 @@
 
         <div id="userHeader"></div>
 
-        <div class="container p-2">
+        <div class="container fixPad">
             <div class="row">
                 <div class="rounded bg-white col shadow">
                     <div class="p-3">
@@ -131,12 +131,8 @@
                                 </div>
 
                                 <div class="row p-4">
-                                    <div>
-                                        <form action="receiptData" method="POST">
-                                            <div>
-                                                <input type="submit" name="rent" id="rent" value="Rent"/>
-                                            </div>
-                                        </form>
+                                    <div class="">
+                                        <button class="btn" name="rent" id="rent"><a href="">Rent</a></button>
                                     </div>
                                 </div>
                             </div>

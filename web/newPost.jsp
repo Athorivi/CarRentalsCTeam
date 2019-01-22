@@ -1,6 +1,6 @@
 <%-- 
-    Document   : editPost
-    Created on : Jan 20, 2019, 12:21:51 PM
+    Document   : newPost
+    Created on : Jan 22, 2019, 8:57:26 PM
     Author     : manli
 --%>
 
@@ -22,18 +22,29 @@
 
         <div id="userHeader"></div>
 
-        <div class="container fixPad">
-            <div class="row">
-                <div class="rounded bg-white col">
+        <div class="container p-5">
+            <div class="row fixPading">
+                <div class="rounded bg-white col ">
                     <div class="p-3">
-                        <div class="row">
-                            <%=CarStaticClass.getBrand()%>
-                            <%=CarStaticClass.getModel()%>
-                            <%=CarStaticClass.getReleaseDate()%>
-                        </div>
 
                         <div class="row">
-                            <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
+                            <form>
+
+                                <div class="row pl-3 w-100">
+                                    <img src="" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
+                                </div>
+
+                                <div class="input-group mb-3 pl-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="uploadPhoto">
+                                        <label class="custom-file-label" for="uploadPhoto">Choose file</label>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
 
                         <div class="row">
@@ -123,14 +134,10 @@
                                             <div class="col pt-2">
                                                 <div class="col d-flex justify-content-center">
                                                     <div class="pr-2">
-
                                                         <button id="saveInfo" name="saveInfo" class="btn" disabled><a href="">Save</a></button>
-
                                                     </div>
                                                     <div class="">
-
-                                                        <button id="back" name="back" class="btn"><a href="">Back</a></button>
-
+                                                        <button id="back" name="back" class="btn"><a href="">Cancel</a></button>
                                                     </div>
                                                 </div>
                                             </div>

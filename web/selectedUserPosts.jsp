@@ -21,17 +21,17 @@
     </head>
 
     <body class="main">
-        
+
         <div id="adminHeader"></div>
-        
-        <div class="row pt-2 w-100 shadow">
-            <div class="col d-flex justify-content-start">
+
+        <div class="row w-100 fixPading marg">
+            <div class="col d-flex justify-content-start  pt-4">
                 onoma xrhsth
             </div>
-            <div class="col d-flex justify-content-end">
-                <a href="userPosts">
-                    <button class="btn" id="back" name="back">Back</button>
-                </a>
+            <div class="col d-flex justify-content-end marg pt-3">
+
+                <button class="btn" id="back" name="back"><a href="">Back</a></button>
+
 
             </div>
 
@@ -73,9 +73,9 @@
                         <div class="row">
 
                             <div class="col d-flex justify-content-center ">
-                                <a href="">
-                                    <button class="btn" id="delete" name="delete">Delete</button>
-                                </a>
+
+                                <button class="btn" id="delete" name="delete"><a href="">Delete</a></button>
+
                             </div>
 
                         </div>

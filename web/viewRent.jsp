@@ -21,10 +21,10 @@
     </head>
 
     <body class="main">
-        
+
         <div id="userHeader"></div>
-        
-        <div class="container p-3">
+
+        <div class="container fixPad">
             <div class="row">
                 <div class="rounded bg-white col shadow">
                     <div class="p-3">
@@ -51,9 +51,9 @@
                         <div class="row w-100 pt-3">
                             <div class="col d-flex justify-content-center">
                                 <div class="">
-                                    <a href="">
-                                        <button id="back" name="back" class="btn" onclick="window.location = 'userIndex.jsp';">Back</button>
-                                    </a>
+
+                                    <button id="back" name="back" class="btn"><a href="">Back</a></button>
+
                                 </div>
                             </div>
                         </div>

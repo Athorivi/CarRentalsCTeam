@@ -16,12 +16,10 @@
     </head>
 
     <body class="main">
-        
-        <div id="userHeader"></div>
-        
-        <div id="adminHeader"></div>
 
-        <div class="container p-3">
+        <div id="userHeader"></div>
+
+        <div class="container fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
                 <div class="col-6">
                     <form>
@@ -81,9 +79,7 @@
 
                             <div class="col-sm-10 d-flex justify-content-end pt-3">
 
-                                <a href="">
-                                    <button id="saveInfo" name="saveInfo" class="btn w-50">Save</button>
-                                </a>
+                                <button id="saveInfo" name="saveInfo" class="btn w-50"><a href="">Save</a></button>
 
                             </div>
 
@@ -112,9 +108,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 mx-auto d-block text-center">
-                                    <a href="">
-                                        <button id="savePhoto" name="savePhoto" class="btn w-50">Save</button>
-                                    </a>
+                                    <button id="savePhoto" name="savePhoto" class="btn w-50"><a href="">Save</a></button>
                                 </div>
                             </div>
                         </form>
@@ -122,7 +116,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="footer"></div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -134,7 +128,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/userPosts.js"></script>
+        <script src="JS/edit.js"></script>
     </body>
 
 </html>
