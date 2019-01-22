@@ -132,7 +132,7 @@
 
                                 <div class="row p-4">
                                     <div>
-                                        <form action="../JSP/receipt.jsp" method="POST">
+                                        <form action="receiptData" method="POST">
                                             <div>
                                                 <input type="submit" name="rent" id="rent" value="Rent"/>
                                             </div>

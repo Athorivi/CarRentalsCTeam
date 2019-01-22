@@ -32,6 +32,10 @@
         <servlet-name>userMenu</servlet-name>
         <jsp-file>/userIndex.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>receiptData</servlet-name>
+        <servlet-class>com.Cteam.Servlets.receiptData</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>userMenu</servlet-name>
         <url-pattern>/userMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>receiptData</servlet-name>
+        <url-pattern>/receiptData</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

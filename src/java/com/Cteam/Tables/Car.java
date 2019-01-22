@@ -18,6 +18,7 @@ public class Car {
     private Date releaseDate;
     private String color;
     private InputStream photo;
+    private String base64Image;
 
     public Car() {
     }
@@ -140,6 +141,14 @@ public class Car {
 
     public void setPhoto(InputStream photo) {
         this.photo = photo;
+    }
+
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
     }
 
     @Override

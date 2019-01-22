@@ -63,7 +63,7 @@
 
 
 
-                                            <img src="" class="rounded float-left w-100 img-fluid" alt="Photo">
+                                            <img src="data:image/jpg;base64,<%= x.getBase64Image() %>" class="rounded float-left w-100 img-fluid" alt="Photo">
                                         </div>
                                     </div>
 
@@ -92,7 +92,7 @@
                                             <%= x.getPrice()%>
                                         </div>
                                         <div class="d-flex flex-row">
-                                            <a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">Update</a>
+                                            <a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a>
                                             <!--                                        <form action="../JSP/rentNow.jsp" method="GET">
                                                                                         <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
                                                                                     </form>-->

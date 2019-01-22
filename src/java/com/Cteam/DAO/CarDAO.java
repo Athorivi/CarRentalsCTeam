@@ -7,6 +7,8 @@ package com.Cteam.DAO;
 
 import com.Cteam.Interfaces.CarInterface;
 import com.Cteam.Tables.Car;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.Date;
@@ -14,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -82,8 +85,22 @@ public class CarDAO implements CarInterface {
                         car.setColor(resultset.getString(12));
                         car.setPhoto(resultset.getBlob(13).getBinaryStream());
 
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = car.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        car.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
                         cars.add(car);
                     }
+                } catch (IOException ex) {
+                    Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 

@@ -18,10 +18,13 @@ public class searchByLocation extends HttpServlet {
             throws ServletException, IOException {
 
         String location = request.getParameter("location");
-        String from = request.getParameter("fromDate");
-        String to = request.getParameter("toDate");
+        String from = request.getParameter("from");
+        String to = request.getParameter("to");
         CarDAO carDb = new CarDAO();
         List<Car> carList;
+        System.out.println(location);
+        System.out.println(from);
+        System.out.println(to);
         if (location.isEmpty() && from.isEmpty() && to.isEmpty()) {
             carList = carDb.readCar();
         } else {
