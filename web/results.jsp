@@ -8,7 +8,11 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.Cteam.Tables.Car"%>
 <%@page import="java.util.List"%>
+<<<<<<< HEAD
 <%@page import="com.Cteam.StaticBeans.CarResults"%>
+=======
+<%@page import="com.Cteam.UsefullBeans.CarResults"%>
+>>>>>>> origin/master
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

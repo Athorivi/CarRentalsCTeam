@@ -129,15 +129,14 @@ public class UserRentCarDAO implements UserRentCarInterface {
                         rentResult.setEndDate(resultset.getDate(8));
                         rentResult.setPhoto(resultset.getBlob(9).getBinaryStream());
                         userRentCars.add(rentResult);
-
                     }
                 }
-
+            } catch (SQLException ex) {
+                Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return userRentCars;
     }
-
 }

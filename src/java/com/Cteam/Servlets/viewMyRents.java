@@ -42,8 +42,7 @@ public class viewMyRents extends HttpServlet {
         staticRentResults rentResults = new staticRentResults();
         staticRentResults.setRentsResults(carList);
         
-        
-        
+
         
         
         request.getRequestDispatcher("myRents").forward(request, response);
