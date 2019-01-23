@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.Cteam.StaticBeans;
+package com.Cteam.UsefullBeans;
 
 import com.Cteam.Tables.Car;
 import java.util.ArrayList;

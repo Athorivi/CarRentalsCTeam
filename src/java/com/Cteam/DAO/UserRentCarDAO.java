@@ -2,6 +2,7 @@ package com.Cteam.DAO;
 
 import com.Cteam.Tables.UserRentCar;
 import com.Cteam.Interfaces.UserRentCarInterface;
+import com.Cteam.UsefullBeans.myRentsResults;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -102,6 +103,41 @@ public class UserRentCarDAO implements UserRentCarInterface {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    public ArrayList<myRentsResults> readUserRentCar(int id) {
+
+        ArrayList<myRentsResults> userRentCars = new ArrayList<myRentsResults>();
+        try (Connection connection = Database.getConnection()) {
+            String sql = "select `user_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
+                    + "INNER JOIN `CARS`\n"
+                    + "ON `CARS`.`id` = `USERS_RENT_CARS`.`car_id`\n"
+                    + "having `USERS_RENT_CARS`.`user_id` = ? ;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, id);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+
+                        myRentsResults rentResult = new myRentsResults();
+                        rentResult.setUser_id(resultset.getInt(1));
+                        rentResult.setBrand(resultset.getString(2));
+                        rentResult.setModel(resultset.getString(3));
+                        rentResult.setReleaseDate(resultset.getDate(4));
+                        rentResult.setCategories(resultset.getString(5));
+                        rentResult.setLocation(resultset.getString(6));
+                        rentResult.setStartDate(resultset.getDate(7));
+                        rentResult.setEndDate(resultset.getDate(8));
+                        rentResult.setPhoto(resultset.getBlob(9).getBinaryStream());
+                        userRentCars.add(rentResult);
+
+                    }
+                }
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return userRentCars;
     }
 
 }

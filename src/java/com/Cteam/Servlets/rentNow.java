@@ -5,8 +5,8 @@
  */
 package com.Cteam.Servlets;
 
-import com.Cteam.StaticBeans.CarResults;
-import com.Cteam.StaticBeans.CarStaticClass;
+import com.Cteam.UsefullBeans.CarResults;
+import com.Cteam.UsefullBeans.CarStaticClass;
 import com.Cteam.Tables.Car;
 import java.io.IOException;
 import java.io.PrintWriter;
