@@ -3,12 +3,15 @@ package com.Cteam.DAO;
 import com.Cteam.Tables.UserRentCar;
 import com.Cteam.Interfaces.UserRentCarInterface;
 import com.Cteam.UsefullBeans.myRentsResults;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -105,7 +108,7 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
     }
 
-    public ArrayList<myRentsResults> readUserRentCar(int id) {
+    public ArrayList<myRentsResults> readUserRentCar(int id) throws IOException {
 
         ArrayList<myRentsResults> userRentCars = new ArrayList<myRentsResults>();
         try (Connection connection = Database.getConnection()) {
@@ -128,6 +131,21 @@ public class UserRentCarDAO implements UserRentCarInterface {
                         rentResult.setStartDate(resultset.getDate(7));
                         rentResult.setEndDate(resultset.getDate(8));
                         rentResult.setPhoto(resultset.getBlob(9).getBinaryStream());
+                        
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = rentResult.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        rentResult.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
+                        
+                        
                         userRentCars.add(rentResult);
 
                     }

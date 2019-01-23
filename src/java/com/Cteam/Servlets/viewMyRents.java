@@ -42,7 +42,9 @@ public class viewMyRents extends HttpServlet {
         staticRentResults rentResults = new staticRentResults();
         staticRentResults.setRentsResults(carList);
         
-        
+        for (myRentsResults x : staticRentResults.getRentsResults()) {
+            System.out.println(x.toString());
+        }
         
         
         
