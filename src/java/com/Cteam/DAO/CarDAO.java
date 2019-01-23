@@ -31,10 +31,10 @@ public class CarDAO implements CarInterface {
 
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder()
-                    .append("INSERT INTO `CARS`")
-                    .append("`owner`, `model`, `location`, `brand`, `km`, `fuel`, `cc`, `price`, `categories`, `releaseDate`, `color`, `photo`)")
+                    .append("INSERT INTO `CARS` ")
+                    .append("(`owner`, `model`, `location`, `brand`, `km`, `fuel`, `cc`, `price`, `categories`, `releaseDate`, `color`, `photo`)")
                     .append("VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ;").toString();
-
+            System.out.println(sql);
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, car.getOwner());
                 statement.setString(2, car.getModel());
@@ -161,7 +161,7 @@ public class CarDAO implements CarInterface {
             String sql = "select * from CARS\n"
                     + "INNER JOIN USERS_RENT_CARS\n"
                     + "on CARS.id = USERS_RENT_CARS.car_id\n"
-                    + "having CARS.location = ? AND USERS_RENT_CARS.endDate < ? ;";
+                    + "having CARS.location = ? AND (USERS_RENT_CARS.endDate < ? ||USERS_RENT_CARS.endDate= null);";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, location);
                 statement.setString(2, from);
@@ -184,8 +184,73 @@ public class CarDAO implements CarInterface {
                         car.setReleaseDate(resultset.getDate(11));
                         car.setColor(resultset.getString(12));
                         car.setPhoto(resultset.getBlob(13).getBinaryStream());
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = car.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        car.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
                         cars.add(car);
                     }
+                } catch (IOException ex) {
+                    Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cars;
+    }
+
+    public ArrayList<Car> searchByOwner(int ownerID) {
+
+        ArrayList<Car> cars = null;
+        try (Connection connection = Database.getConnection()) {
+            String sql = "select * from CARS WHERE `owner`= ?;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, ownerID);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+                        if (cars == null) {
+                            cars = new ArrayList();
+                        }
+                        Car car = new Car();
+                        car.setId(resultset.getInt(1));
+                        car.setOwner(resultset.getInt(2));
+                        car.setModel(resultset.getString(3));
+                        car.setLocation(resultset.getString(4));
+                        car.setBrand(resultset.getString(5));
+                        car.setKm(resultset.getLong(6));
+                        car.setFuel(resultset.getString(7));
+                        car.setCc(resultset.getInt(8));
+                        car.setPrice(resultset.getDouble(9));
+                        car.setCategories(resultset.getString(10));
+                        car.setReleaseDate(resultset.getDate(11));
+                        car.setColor(resultset.getString(12));
+                        car.setPhoto(resultset.getBlob(13).getBinaryStream());
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = car.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        car.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
+                        cars.add(car);
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 

@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,11 +34,14 @@ public class login extends HttpServlet {
             out.println(check);
             if (check) {
                 out.println("Logged in");
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
                 if (username.equals("admin")) {
-
-                    response.sendRedirect("adminMenu");
+                    request.getRequestDispatcher("adminMenu").forward(request, response);
+//                    response.sendRedirect("adminMenu");
                 } else {
-                    response.sendRedirect("userMenu");
+                    request.getRequestDispatcher("userMenu").forward(request, response);
+//                    response.sendRedirect("userMenu");
                 }
             } else {
                 out.println("Failed");

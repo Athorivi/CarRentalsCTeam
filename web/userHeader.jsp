@@ -13,16 +13,16 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" id="nav">
             <li class="nav-item">
-                <a class="nav-link" href="">Search</a>
+                <a class="nav-link" href="userIndex.jsp">Search</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" id="newPost">New Post</a>
+                <a class="nav-link" href="newPost.jsp" id="newPost">New Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" id="myPosts">My Posts</a>
+                <a class="nav-link" href="viewMyPosts" id="myPosts">My Posts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" id="myRents">My Rents</a>
+                <a class="nav-link" href="viewMyRents" id="myRents">My Rents</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" id="profile">Profile</a>

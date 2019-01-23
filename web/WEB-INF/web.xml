@@ -36,6 +36,22 @@
         <servlet-name>receiptData</servlet-name>
         <servlet-class>com.Cteam.Servlets.receiptData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>postCar</servlet-name>
+        <servlet-class>com.Cteam.Servlets.postCar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewMyPosts</servlet-name>
+        <servlet-class>com.Cteam.Servlets.viewMyPosts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>myPosts</servlet-name>
+        <jsp-file>/myPosts.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>viewMyRents</servlet-name>
+        <servlet-class>com.Cteam.Servlets.viewMyRents</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -71,6 +87,22 @@
     <servlet-mapping>
         <servlet-name>receiptData</servlet-name>
         <url-pattern>/receiptData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>postCar</servlet-name>
+        <url-pattern>/postCar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewMyPosts</servlet-name>
+        <url-pattern>/viewMyPosts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>myPosts</servlet-name>
+        <url-pattern>/myPosts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewMyRents</servlet-name>
+        <url-pattern>/viewMyRents</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

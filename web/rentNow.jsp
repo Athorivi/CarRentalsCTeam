@@ -30,7 +30,7 @@
                             <%=CarStaticClass.getBrand()%> <%=CarStaticClass.getModel()%> <%=CarStaticClass.getReleaseDate()%>
                         </div>
 
-                        <div class="row">
+                        <div class="row w-100 h-25">
                             <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
                         </div>
 

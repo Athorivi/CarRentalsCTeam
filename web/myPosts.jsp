@@ -3,6 +3,11 @@
     Created on : Jan 19, 2019, 5:48:44 PM
     Author     : manli
 --%>
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.Cteam.Tables.Car"%>
+<%@page import="java.util.List"%>
+<%@page import="com.Cteam.StaticBeans.CarResults"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,33 +25,35 @@
         <div id="userHeader"></div>
 
         <div class="container fixPading">
+            <% for (Car x : CarResults.getCarResults()) {
+            %>
             <div class="row p-3">
                 <div class="bg-white rounded w-100 shadow">
 
                     <div class="d-flex flex-row p-2">
                         <div class="col-4">
                             <div class="">
-                                <img src="img/index-background.jpeg" class="rounded float-left w-100 img-fluid" alt="Photo">
+                                <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="d-flex flex-row">
                                 <div class="d-flex flex-column">
-                                    Brand
+                                    <%=x.getBrand()%>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    Model
+                                    <%=x.getModel()%>
                                 </div>
                             </div>
                             <p class="d-flex flex-row">
-                                Release Date
+                                <%=x.getReleaseDate()%>
                             </p>
                             <p class="d-flex flex-row">
-                                Category
+                                <%=x.getCategories()%>
                             </p>
                             <p class="d-flex flex-row">
-                                Location
+                                <%=x.getLocation()%>
                             </p>
                         </div>
 
@@ -70,6 +77,7 @@
 
                 </div>
             </div>
+            <%}%>
         </div>
 
         <div id="footer"></div>
@@ -83,7 +91,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        
+
     </body>
 
 </html>

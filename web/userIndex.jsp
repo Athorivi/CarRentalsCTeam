@@ -10,6 +10,8 @@
 <%@page import="java.util.List"%>
 <%@page import="com.Cteam.StaticBeans.CarResults"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -26,37 +28,7 @@
 
     <body class="main">
         <div id="userHeader"></div>
-        <!--        <form method="POST" action="login">
-                    <div class="loginRegisterDiv d-flex flex-column">
-                        <div class="d-flex flex-row">
-                            <div class="col-md-7">
-                                <a href="login.jsp" class="navbar-brand">Login</a>
-                            </div>
-                            <div class="col-md-2">
-                                <a href="register.jsp" class="navbar-brand">Register</a>
-                            </div>
-                        </div>
-                        <div class="p-2">
-                            <div>
-                                <span class="username">Username</span>
-                            </div>
-                            <div>
-                                <input type="text" id="username" name="username">
-                            </div>
-                        </div>
-                        <div class="p-2">
-                            <div>
-                                <span class="password">Password</span>
-                            </div>
-                            <div>
-                                <input type="text" id="password" name="password">
-                            </div>
-                        </div>
-                        <div class="login-button p-2 d-flex justify-content-center">
-                            <input type="submit" id="loginButton" value="Login" />
-                        </div>
-                    </div>
-                </form>-->
+        
         <div class="d-flex justify-content-center pading">
             <div class="d-flex justify-content-start bg-white rounded shadow w-25 p-3">
                 <form method="POST" action="searchByLocation">
@@ -77,10 +49,7 @@
                             <input type="date" class="form-control" id="to" name="to">
                         </div>
                         <div class="form-group text-center">
-                            <!--                            <a href="searchByLocation">
-                                                            <button class="btn-sm w-50 rounded font-weight-bold" id="search">Search</button>
-                                                        </a>-->
-                            <button class="btn-sm w-100 rounded font-weight-bold"><a href="">Search</a></button>
+                            <button class="btn-sm w-100 rounded font-weight-bold">Search</button>
                         </div>
                     </div>
                 </form>

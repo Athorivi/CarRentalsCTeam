@@ -4,7 +4,6 @@
     Author     : manli
 --%>
 
-<%@page import="com.Cteam.StaticBeans.CarStaticClass"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,31 +25,10 @@
             <div class="row fixPading">
                 <div class="rounded bg-white col ">
                     <div class="p-3">
-
-                        <div class="row">
-                            <form>
-
-                                <div class="row pl-3 w-100">
-                                    <img src="" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
-                                </div>
-
-                                <div class="input-group mb-3 pl-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="uploadPhoto">
-                                        <label class="custom-file-label" for="uploadPhoto">Choose file</label>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-
                         <div class="row">
                             <div class="col w-100">
                                 <div>
-                                    <form>
+                                    <form action="postCar" method="POST" enctype="multipart/form-data">
                                         <table class="table">
                                             <thead>
                                                 <tr class="form-group">
@@ -61,84 +39,81 @@
                                                 <tr class="form-group">
                                                     <td class="">Brand:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="brand" value="<%=CarStaticClass.getBrand()%>"
-                                                               placeholder="Brand">
+                                                        <input type="text" class="form-control" id="brand" name="brand" required>
+
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Model:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="model" value="<%=CarStaticClass.getModel()%>"
-                                                               placeholder="Model">
+                                                        <input type="text" class="form-control" id="model" name="model" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Price (per day):</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="price" value="<%=CarStaticClass.getPrice()%>"
-                                                               placeholder="Price">
-                                                    </td>
+                                                        <input type="text" class="form-control" id="price" name="price" required>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Category:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="category" value="<%=CarStaticClass.getCategories()%>"
-                                                               placeholder="Category">
+                                                        <input type="text" class="form-control" id="category" name="category" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Release Date:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="releaseDate" value="<%=CarStaticClass.getReleaseDate()%>"
-                                                               placeholder="Release Date">
+                                                        <input type="date" class="form-control" id="releaseDate" name="releaseDate" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Km:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="km" value="<%=CarStaticClass.getKm()%>"
-                                                               placeholder="Km">
+                                                        <input type="number" class="form-control" id="km" name="km" min="0" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Fuel:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="fuel" value="<%=CarStaticClass.getFuel()%>"
-                                                               placeholder="Fuel">
-                                                    </td>
+                                                        <input type="text" class="form-control" id="fuel" name="fuel" required>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">CC:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="cc" value="<%=CarStaticClass.getCc()%>"
-                                                               placeholder="CC">
+                                                        <input type="number" class="form-control" id="cc" min="0" name="cc" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Color:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="color" value="<%=CarStaticClass.getColor()%>"
-                                                               placeholder="Color">
+                                                        <input type="text" class="form-control" id="color" name="color" required>
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Location:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="location" value="<%=CarStaticClass.getLocation()%>"
-                                                               placeholder="Location">
+                                                        <input type="text" class="form-control" id="location" name="location" required>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="input-group mb-3 pl-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" id="uploadPhoto" name="uploadPhoto">
+
+                                            </div>
+                                        </div>
                                         <div classs="form-group">
                                             <div class="col pt-2">
                                                 <div class="col d-flex justify-content-center">
-                                                    <div class="pr-2">
-                                                        <button id="saveInfo" name="saveInfo" class="btn" disabled><a href="">Save</a></button>
-                                                    </div>
-                                                    <div class="">
-                                                        <button id="back" name="back" class="btn"><a href="">Cancel</a></button>
-                                                    </div>
+                                                    <input type="submit" id="saveInfo" name="saveInfo" class="btn" value="Save">
+<!--                                                    <div class="pr-2">
+                                                        <button type="submit" id="saveInfo" name="saveInfo" class="btn" >Save</button>
+                                                    </div>-->
+
                                                 </div>
                                             </div>
                                         </div>

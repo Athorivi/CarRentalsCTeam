@@ -177,4 +177,28 @@ public class UserDAO implements UserInterface {
         return false;
     }
 
+    
+        public int readUser(String username) {
+            int id = 0;
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT `id` FROM `USERS` WHERE `username` = ? ;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, username);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    if (resultset.first()) {
+                        id=resultset.getInt(1);
+                    }
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return id;
+    }
+    
+    
+    
+    
+    
 }
