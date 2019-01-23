@@ -4,7 +4,7 @@
     Author     : manli
 --%>
 
-<%@page import="com.Cteam.StaticBeans.CarStaticClass"%>
+<%@page import="com.Cteam.UsefullBeans.CarStaticClass"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="row w-100 h-25">
-                            <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
+                            <img src="data:image/jpg;base64,<%= CarStaticClass.getBase64Image()%>" class="rounded img-fluid" alt="Photo">
                         </div>
 
                         <div class="row">

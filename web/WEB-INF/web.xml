@@ -56,6 +56,18 @@
         <servlet-name>myRents</servlet-name>
         <jsp-file>/myRents.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>editPosts</servlet-name>
+        <servlet-class>com.Cteam.Servlets.editPosts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewProfile</servlet-name>
+        <servlet-class>com.Cteam.Servlets.viewProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>userProfile</servlet-name>
+        <jsp-file>/userProfile.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -111,6 +123,18 @@
     <servlet-mapping>
         <servlet-name>myRents</servlet-name>
         <url-pattern>/myRents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editPosts</servlet-name>
+        <url-pattern>/editPosts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewProfile</servlet-name>
+        <url-pattern>/viewProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userProfile</servlet-name>
+        <url-pattern>/userProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

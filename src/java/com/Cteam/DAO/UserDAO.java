@@ -2,6 +2,8 @@ package com.Cteam.DAO;
 
 import com.Cteam.Interfaces.UserInterface;
 import com.Cteam.Tables.User;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -9,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -177,16 +180,15 @@ public class UserDAO implements UserInterface {
         return false;
     }
 
-    
-        public int readUser(String username) {
-            int id = 0;
+    public int readUser(String username) {
+        int id = 0;
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT `id` FROM `USERS` WHERE `username` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
                 try (ResultSet resultset = statement.executeQuery()) {
                     if (resultset.first()) {
-                        id=resultset.getInt(1);
+                        id = resultset.getInt(1);
                     }
                 }
             }
@@ -196,9 +198,51 @@ public class UserDAO implements UserInterface {
         }
         return id;
     }
-    
-    
-    
-    
-    
+
+    public User readUserByUsername(String username) {
+        User user = new User();
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT * FROM `USERS` WHERE `username` = ? ;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, username);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    if(resultset.first()) {
+
+                        user.setId(resultset.getInt(1));
+                        user.setUsername(resultset.getString(2));
+                        user.setPassword(resultset.getString(3));
+                        user.setFname(resultset.getString(4));
+                        user.setLname(resultset.getString(5));
+                        user.setDob(resultset.getString(6));
+                        user.setEmail(resultset.getString(7));
+                        user.setAddress(resultset.getString(8));
+                        user.setPhone(resultset.getString(9));
+                        user.setPhoto(resultset.getBlob(10).getBinaryStream());
+
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = user.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        user.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
+                        System.out.println(user.toString());
+
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
+    }
+
 }

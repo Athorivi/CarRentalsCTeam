@@ -9,7 +9,6 @@
 <%@page import="com.Cteam.Tables.Car"%>
 <%@page import="java.util.List"%>
 <%@page import="com.Cteam.UsefullBeans.CarResults"%>
-<%@page import="com.Cteam.UsefullBeans.CarResults"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

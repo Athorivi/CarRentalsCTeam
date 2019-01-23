@@ -18,8 +18,17 @@ public class CarStaticClass {
     static private Date releaseDate;
     static private String color;
     static private InputStream photo;
+    static private String base64Image;
 
     public CarStaticClass() {
+    }
+
+    public static String getBase64Image() {
+        return base64Image;
+    }
+
+    public static void setBase64Image(String aBase64Image) {
+        base64Image = aBase64Image;
     }
 
     public static int getId() {

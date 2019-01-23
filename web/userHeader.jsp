@@ -25,7 +25,7 @@
                 <a class="nav-link" href="viewMyRents" id="myRents">My Rents</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" id="profile">Profile</a>
+                <a class="nav-link" href="viewProfile" id="profile">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" id="notifications">Notifications</a>

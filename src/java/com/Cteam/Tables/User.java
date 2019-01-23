@@ -16,6 +16,7 @@ public class User {
     private String address;
     private String phone;
     private InputStream photo;
+    private String base64Image;
 
     public User() {
     }
@@ -24,7 +25,7 @@ public class User {
         this.id = id;
     }
 
-    public User(int id, String username, String password, String fname, String lname, String dob, String email, String address, String phone, InputStream photo) {
+    public User(int id, String username, String password, String fname, String lname, String dob, String email, String address, String phone, InputStream photo, String base64Image) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -35,7 +36,17 @@ public class User {
         this.address = address;
         this.phone = phone;
         this.photo = photo;
+        this.base64Image = base64Image;
     }
+
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+    }
+
 
     public int getId() {
         return id;

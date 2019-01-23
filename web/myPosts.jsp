@@ -61,7 +61,7 @@
                             <div class="row">
 
                                 <div class="col text-center pb-1">
-                                    <button class="btn btn-block" id="edit" name="edit"><a href="">Edit</a></button>
+                                    <button class="btn btn-block" id="edit" name="edit"><a href="<%=request.getContextPath()%>/editPosts?id=<%= x.getId()%>">Edit</a></button>
                                 </div>
 
                                 <div class="col text-center">

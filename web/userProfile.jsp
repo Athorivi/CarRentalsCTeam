@@ -3,6 +3,9 @@
     Created on : Jan 19, 2019, 5:49:51 PM
     Author     : manli
 --%>
+
+
+<%@page import="com.Cteam.UsefullBeans.UserStaticClass"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,55 +29,55 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-4 col-form-label">First Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="First Name">
+                                <input type="text" class="form-control" name="fname" id="fname" value="<%=UserStaticClass.getFname() %>" placeholder="First Name">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-4 col-form-label">Last Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Last Name">
+                                <input type="text" class="form-control" name="lname" id="lname" value="<%=UserStaticClass.getLname() %>" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="username" class="col-sm-4 col-form-label">Username</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="username" id="username" value="" disabled>
+                                <input type="text" class="form-control" name="username" id="username" value="<%=UserStaticClass.getUsername()%>" disabled>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-sm-4 col-form-label">Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="password" id="password">
+                                <input type="password" class="form-control" name="password" id="password" value="<%=UserStaticClass.getPassword()%>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="repeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword">
+                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword" value="<%=UserStaticClass.getPassword()%>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="dob" class="col-sm-4 col-form-label">Birthday</label>
                             <div class="col-sm-6">
-                                <input type="date" class="form-control" name="dob" id="dob" value="">
+                                <input type="date" class="form-control" name="dob" id="dob" value="<%=UserStaticClass.getDob()%>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label">e-Mail</label>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" name="email" id="email" value="" placeholder="e-Mail">
+                                <input type="email" class="form-control" name="email" id="email" value="<%=UserStaticClass.getEmail()%>" placeholder="e-Mail">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="address" class="col-sm-4 col-form-label">Address</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="address" id="address" value="" placeholder="Address">
+                                <input type="text" class="form-control" name="address" id="address" value="<%=UserStaticClass.getAddress()%>" placeholder="Address">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="phone" class="col-sm-4 col-form-label">Phone</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Phone">
+                                <input type="text" class="form-control" name="phone" id="phone" value="<%=UserStaticClass.getPhone()%>" placeholder="Phone">
                             </div>
 
                             <div class="col-sm-10 d-flex justify-content-end pt-3">
@@ -94,7 +97,7 @@
                     <div class="col">
                         <form action="">
                             <div class="row w-100">
-                                <img src="" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
+                                <img src="data:image/jpg;base64,<%= UserStaticClass.getBase64Image()%>" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
                             </div>
 
                             <div class="input-group mb-3">

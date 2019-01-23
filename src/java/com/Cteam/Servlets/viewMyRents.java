@@ -19,14 +19,10 @@ import javax.servlet.http.HttpSession;
 
 public class viewMyRents extends HttpServlet {
 
-    
-    
-
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String uname = null;
         HttpSession session = request.getSession(false);
         if (session != null) {
@@ -41,27 +37,33 @@ public class viewMyRents extends HttpServlet {
         carList = urcDb.readUserRentCar(id);
         staticRentResults rentResults = new staticRentResults();
         staticRentResults.setRentsResults(carList);
-        
 
-        
-        
         request.getRequestDispatcher("myRents").forward(request, response);
-        
+
     }
 
-//    /**
-//     * Handles the HTTP <code>POST</code> method.
-//     *
-//     * @param request servlet request
-//     * @param response servlet response
-//     * @throws ServletException if a servlet-specific error occurs
-//     * @throws IOException if an I/O error occurs
-//     */
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 //        processRequest(request, response);
-//    }
+        String uname = null;
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            uname = (String) session.getAttribute("username");
+            System.out.println("Hello, " + uname + " Welcome to MyRents");
+        }
+
+        UserDAO userDb = new UserDAO();
+        int id = userDb.readUser(uname);
+        UserRentCarDAO urcDb = new UserRentCarDAO();
+        ArrayList<myRentsResults> carList;
+        carList = urcDb.readUserRentCar(id);
+        staticRentResults rentResults = new staticRentResults();
+        staticRentResults.setRentsResults(carList);
+
+        request.getRequestDispatcher("myRents").forward(request, response);
+
+    }
 //
 //    /**
 //     * Returns a short description of the servlet.
