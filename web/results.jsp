@@ -30,7 +30,7 @@
 
         <div class="row fixPading">
 
-            <div class="col-2 ml-3 mt-3">
+            <div class="col-2 ml-3 mt-3 filters fixed-top">
                 <div class="float-left bg-white rounded w-100 p-3">
                     <form>
                         <div class="indexDiv d-flex flex-column justify-content-center">
@@ -87,65 +87,65 @@
                 </div>
             </div>
 
-            <div class="container">
-
-                <div class="col-10">
-                    <div class="container">
-                        <% for (Car x : CarResults.getCarResults()) {
-                        %>
 
 
-                        <div class="row p-3 shadow">
-                            <div class="bg-white rounded w-100">
-                                <div class="d-flex flex-row p-2 ">
-                                    <div class="col-4">
-                                        <div class="">
-                                            <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
-                                        </div>
+            <div class="col-10 pt-3">
+                <div class="container filtersVoid">
+                    <% for (Car x : CarResults.getCarResults()) {
+                    %>
+
+
+                    <div class="row p-2">
+                        <div class="bg-white rounded shadow w-100">
+                            <div class="d-flex flex-row p-2">
+                                <div class="col-4">
+                                    <div class="">
+                                        <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
                                     </div>
-
-                                    <div class="col-6">
-                                        <div class="d-flex flex-row">
-                                            <div class="d-flex flex-column pr-1">
-                                                Brand: <%= x.getBrand()%>
-                                            </div>
-                                            <div class="d-flex flex-column">
-                                                <%= x.getModel()%>
-                                            </div>
-                                        </div>
-                                        <p class="d-flex flex-row">
-                                            Release Date:  <%= x.getReleaseDate()%>
-                                        </p>
-                                        <p class="d-flex flex-row">
-                                            <%= x.getCategories()%>
-                                        </p>
-                                        <p class="d-flex flex-row">
-                                            <%= x.getLocation()%>
-                                        </p>
-                                    </div>
-
-                                    <div class="col-2">
-                                        <div class="d-flex flex-row justify-content-center pt-5">
-                                            <%= x.getPrice()%>
-                                        </div>
-                                        <div class="d-flex flex-row">
-                                            <button class="btn-sm w-100 rounded"><a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a></button>
-                                            <!--                                        <form action="../JSP/rentNow.jsp" method="GET">
-                                                                                                                                    <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
-                                                                                                                                </form>-->
-                                        </div>
-                                    </div>
-
                                 </div>
+
+                                <div class="col-6">
+                                    <div class="d-flex flex-row">
+                                        <div class="d-flex flex-column pr-1">
+                                            Brand: <%= x.getBrand()%>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <%= x.getModel()%>
+                                        </div>
+                                    </div>
+                                    <p class="d-flex flex-row">
+                                        Release Date:  <%= x.getReleaseDate()%>
+                                    </p>
+                                    <p class="d-flex flex-row">
+                                        <%= x.getCategories()%>
+                                    </p>
+                                    <p class="d-flex flex-row">
+                                        <%= x.getLocation()%>
+                                    </p>
+                                </div>
+
+                                <div class="col-2">
+                                    <div class="d-flex flex-row justify-content-center pt-5">
+                                        <%= x.getPrice()%>
+                                    </div>
+                                    <div class="d-flex flex-row">
+                                        <button class="btn-sm w-100 rounded"><a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a></button>
+                                        <!--                                        <form action="../JSP/rentNow.jsp" method="GET">
+                                                                                                                                <input type="submit" name="rentNow" id="rentNow" value="Rent Now" />
+                                                                                                                            </form>-->
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
-                        <%}%>
-
                     </div>
+
+                    <%}%>
+
                 </div>
             </div>
         </div>
+
 
         <div id="footer"></div>
 

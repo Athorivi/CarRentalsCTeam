@@ -1,3 +1,6 @@
+body{
+    height: 100%;
+}
 .main{
     background-color: #DEB887;
 }
@@ -7,18 +10,28 @@
 a{
     color: #FFFFFF !important;
 }
-/*.shadoww{
-    box-shadow: 0px 0px 1.2px;
-    border-radius: 3px;
-}*/
+.footer{
+    background-color: #8B0000 !important;
+    color: white !important;
+}
+.indexFooter{
+    color: white !important;
+}
 .pading{
-    padding-top: 12.5%;
+    padding-top: 11%;
+    padding-bottom: 9%;
 }
 .fixPading{
     padding-top: 3.5%;
 }
 .fixPad{
     padding-top: 5%;
+}
+.filters{
+    padding-top: 4%;
+}
+.filtersVoid{
+    padding-left: 25%;
 }
 .marg{
     margin-left: 14.1%;
@@ -31,6 +44,10 @@ input, button{
     background-color: #8B0000;
 }
 button{
+    background-color: #B22222 !important;
+    color: white !important;
+}
+input[type=submit]{
     background-color: #B22222 !important;
     color: white !important;
 }

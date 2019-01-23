@@ -12,24 +12,6 @@ $(document).ready(function () {
 
     });
     
-    $("input").click(function () {
-
-        $('button#saveInfo').prop('disabled', false);
-        $('button#savePhoto').prop('disabled', false);
-    });
-    
-    $("select").click(function () {
-
-        $('button#category').prop('disabled', false);
-        
-    });
-    
-    $("button#category").click(function () {
-        
-        $('button#catogory').prop('disabled', true);
-        
-    });
-    
     $("button#saveInfo").click(function () {
         
         $('#saveInfo').prop('disabled', true);

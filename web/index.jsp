@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
         <meta charset="utf-8" />
@@ -16,12 +16,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
               crossorigin="anonymous" />
         <link rel="stylesheet" type="text/css" media="screen" href="CSS/index.css" />
-
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="CSS/index2.css" />
 
     </head>
 
@@ -38,87 +33,85 @@
                 </button>
                 <div class="collapse navbar-collapse col-md-2" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-item" href="#">About <span class="sr-only">(current)</span></a>
+                        <li class="nav-item d-flex justify-content-end">
+                            <a class="nav-item" href="#">About</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <section class="d-flex flex-row justify-content-center">
-            <!--            <form method="POST" action="searchByLocation">
-                            <div class="indexDiv d-flex flex-column justify-content-center">
-                                <div class="index-search p-2">
-                                    <span class="index-search-text">Rent the car that suits to your needs.</span>
-                                </div>
-                                <div class="index-search p-2">
-                                    <div id="locationText">
-                                        <span>Location</span>
-                                    </div>
-                                    <div class="location-text">
-                                        <input type="text" id="location" name="location" placeholder="City..">
-                                    </div>
-                                </div>
-                                <div class="index-search p-2">
-                                    <div id="from">
-                                        <span>From</span>
-                                    </div>
-                                    <div class="date-text">
-                                        <input type="date" id="fromDate" name="fromDate">
-                                    </div>
-                                </div>
-                                <div class="index-search p-2">
-                                    <div id="to">
-                                        <span>To</span>
-                                    </div>
-                                    <div class="date-text">
-                                        <input type="date" id="toDate" name="toDate">
-                                    </div>
-                                </div>
-                                <div class="index-search p-2">
-                                    <a href="#">More Options</a>
-                                </div>
-                                <div class="index-search-button p-2">
-                                    <button id="searchButton">Search</button>
-                                </div>
-            
-                            </div>
-                        </form>-->
+        <div class="container">
 
-            <form method="POST" action="login">
-                <div class="loginRegisterDiv d-flex flex-column">
-                    <div class="d-flex flex-row">
-                        <div class="col-md-7">
-                            <a href="login.jsp" class="navbar-brand">Login</a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="register.jsp" class="navbar-brand">Register</a>
-                        </div>
-                    </div>
-                    <div class="p-2">
-                        <div>
-                            <span class="username">Username</span>
-                        </div>
-                        <div>
-                            <input type="text" id="username" name="username">
-                        </div>
-                    </div>
-                    <div class="p-2">
-                        <div>
-                            <span class="password">Password</span>
-                        </div>
-                        <div>
-                            <input type="text" id="password" name="password">
-                        </div>
-                    </div>
-                    <div class="login-button p-2 d-flex justify-content-center">
-                        <input type="submit" id="loginButton" value="Login" />
+            <div id="content">
+                <div class="row d-flex justify-content-center pading">
+                    <div class="col-4 p-0 bg-white rounded shadow">
+                        <form method="POST" action="login">
+                            <div class="loginRegisterDiv w-100 p-0">
+                                <ul class="nav nav-tabs w-100">
+                                    <li class="nav-item w-50">
+                                        <a class="this nav-link text-center active" href="" id="login">Login</a>
+                                    </li>
+                                    <li class="nav-item w-50">
+                                        <a class="this nav-link text-center navbarColor" href="" id="register">Register</a>
+                                    </li>
+                                </ul>
+
+                                <div class="form-group pt-3 pl-4 pr-4">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                </div>
+                                <div class="form-group pl-4 pr-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="login-button pb-3 d-flex justify-content-center">
+                                    <input type="submit" class="btn rounded" id="loginButton" value="Login" />
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
-        </section>
 
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="row p-4 indexFooter">
+                <div class="col">
+                    <div class="d-flex justify-content-start">
+                        <span><b><u>Contact Info</u></b></span>
+                    </div>
+
+                    <div class="d-flex justify-content-start">
+                        <span>Location: Athens, Greece</span>
+                    </div>
+
+                    <div class="d-flex justify-content-start">
+                        <span>e-Mail: info@cteam.gr</span>
+                    </div>
+
+                    <div class="d-flex justify-content-start">
+                        <span>Phone Number: +30 210 9999999</span>
+                        <div class="col-10 d-flex justify-content-end">
+                            <span>All rights reserved by C_Team.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script src="JS/index.js"></script>
 
 </html>

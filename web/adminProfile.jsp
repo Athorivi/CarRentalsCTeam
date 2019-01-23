@@ -95,18 +95,9 @@
                 <div class="col">
                     <div class="col">
                         <form action="">
-                            <div class="row w-100">
-                                <img src="" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="uploadPhoto">
-                                    <label class="custom-file-label" for="uploadPhoto">Choose file</label>
-                                </div>
+                            <div class="form-group row">
+                                <label for="photo">Choose a profile picture:</label>
+                                <input type="file" id="photo" name="photo" required>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 mx-auto d-block text-center">
