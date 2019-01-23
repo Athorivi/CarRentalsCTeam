@@ -27,7 +27,7 @@
     </head>
 
     <body class="main">
-        <div id="userHeader"></div>
+        <header id="userHeader"></header>
         
         <div class="d-flex justify-content-center pading">
             <div class="d-flex justify-content-start bg-white rounded shadow w-25 p-3">

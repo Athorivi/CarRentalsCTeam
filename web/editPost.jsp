@@ -20,7 +20,7 @@
 
     <body class="main">
 
-        <div id="userHeader"></div>
+        <header id="userHeader"></header>
 
         <div class="container fixPad">
             <div class="row">
@@ -124,7 +124,7 @@
                                                 <div class="col d-flex justify-content-center">
                                                     <div class="pr-2">
 
-                                                        <button id="saveInfo" name="saveInfo" class="btn" disabled><a href="">Save</a></button>
+                                                        <input type="submit" id="saveInfo" name="saveInfo" class="btn" value="Save">
 
                                                     </div>
                                                     <div class="">
@@ -145,7 +145,7 @@
             </div>
         </div>
 
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

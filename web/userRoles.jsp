@@ -15,12 +15,12 @@
 
     <body class="main">
 
-        <div id="adminHeader"></div>
+        <header id="adminHeader"></header>
 
         <div class="container fixPading">
             <div class="row">
                 <div class="search p-2">
-                    <input type="search" id="search" name="search" placeholder="Search by username">
+                    <input type="search" id="search" name="search" placeholder="Search by username" required>
                     <button class="btn" name="submit" id="submit"><a href="">Search</a></button>
                 </div>
             </div>
@@ -42,21 +42,21 @@
                                     <tr class="form-group">
                                         <td class="col-sm-1 align-items-end">
                                             <input type="text" class="form-control" id="id" value="id"
-                                                   placeholder="id">
+                                                   placeholder="id" disabled>
                                         </td>
                                         <td class="col-sm-3 align-items-end">
                                             <input type="text" class="form-control" id="username" value="username"
-                                                   placeholder="username">
+                                                   placeholder="username" disabled>
                                         </td>
                                         <td class="col-sm-2 align-items-end">
                                             <input type="text" class="form-control" id="roles" value="role"
-                                                   placeholder="roles">
+                                                   placeholder="roles" required>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-2">
 
-                                                    <button class="btn" name="update" id="update" disabled><a href="">Update</a></button>
+                                                    <input type="submit" class="btn" name="update" id="update" value="Update">
 
                                                 </div>
 
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

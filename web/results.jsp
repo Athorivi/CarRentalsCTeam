@@ -25,7 +25,7 @@
 
     <body class="main">
 
-        <div id="userHeader"></div>
+        <header id="userHeader"></header>
 
 
 
@@ -40,12 +40,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="category">Category</label>
-                                <select class="form-control" id="category">
+                                <select class="form-control" id="category" required>
                                     <option>Sample</option>
                                 </select>
                             </div>
                             <div class="text-center">
-                                <button class="btn-sm rounded w-50" id="category" name="category" disabled><a href="">Search</a></button>
+                                <input type="submit" class="btn-sm rounded w-50" id="category" name="category" value="Search">
                             </div>
                         </div>
                     </form>
@@ -55,15 +55,15 @@
                             <div class="form-group row">
                                 <div class="col-6 text-center">
                                     <label for="from">CC (from): </label>
-                                    <input type="number" class="form-control" id="from" name="from" min="500" max="5000" step="500" value="500">
+                                    <input type="number" class="form-control" id="from" name="from" min="500" max="5000" step="500" value="500" required>
                                 </div>
                                 <div class="col-6 text-center">
                                     <label for="to">CC (to):</label>
-                                    <input type="number" class="form-control" id="to" name="to" min="500" max="5000" step="500">
+                                    <input type="number" class="form-control" id="to" name="to" min="500" max="5000" step="500" required>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn-sm rounded w-50" id="cc" name="cc" disabled><a href="">Search</a></button>
+                                <input type="submit" class="btn-sm rounded w-50" id="cc" name="cc" value="Search">
                             </div>
                         </div>
                     </form>
@@ -73,15 +73,15 @@
                             <div class="form-group row">
                                 <div class="col-6 text-center">
                                     <label for="priceFrom">Price (from): </label>
-                                    <input type="number" class="form-control" id="priceFrom" name="priceFrom" min="0" step="5" value="0">
+                                    <input type="number" class="form-control" id="priceFrom" name="priceFrom" min="0" step="5" value="0" required>
                                 </div>
                                 <div class="col-6 text-center">
                                     <label for="priceTo">Price (to):</label>
-                                    <input type="number" class="form-control" id="priceTo" name="priceTo" min="0" step="5" value="">
+                                    <input type="number" class="form-control" id="priceTo" name="priceTo" min="0" step="5" value="" required>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn-sm rounded w-50" id="price" name="price" disabled><a href="">Search</a></button>
+                                <input type="submit" class="btn-sm rounded w-50" id="price" name="price" value="Search">
                             </div>
                         </div>
                     </form>
@@ -148,7 +148,7 @@
         </div>
 
 
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
