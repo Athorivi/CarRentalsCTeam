@@ -14,12 +14,12 @@
 
     <body class="main">
 
-        <div id="adminHeader"></div>
+        <header id="adminHeader"></header>
 
         <div class="container fixPading">
             <div class="row">
                 <div class="search p-2">
-                    <input type="search" id="search" name="search" placeholder="Search by username">
+                    <input type="search" id="search" name="search" placeholder="Search by username" required>
                     <button class="btn" name="submit" id="submit"><a href="">Search</a></button>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                                             <div class="row">
                                                 <div class="col-2 d-flex justify-content-center">
 
-                                                    <button class="btn" name="view" id="view"><a href="">View</a></button>
+                                                    <input type="submit" class="btn" name="view" id="view" value="View">
 
                                                 </div>
                                             </div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

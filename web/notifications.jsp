@@ -1,5 +1,14 @@
-<%@page import="com.Cteam.UsefullBeans.staticRentResults"%>
-<%@page import="com.Cteam.UsefullBeans.myRentsResults"%>
+<%-- 
+    Document   : notifications
+    Created on : Jan 23, 2019, 8:03:03 PM
+    Author     : manli
+--%>
+
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.Cteam.Tables.Car"%>
+<%@page import="java.util.List"%>
+<%@page import="com.Cteam.StaticBeans.CarResults"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,17 +25,11 @@
 
         <header id="userHeader"></header>
 
-        <div class="container pt-3">
-
-
-
-
-            <% for (myRentsResults x : staticRentResults.getRentsResults()) {
+        <div class="container fixPading">
+            <% for (Car x : CarResults.getCarResults()) {
             %>
-            <div class="row fixPad">
+            <div class="row p-3">
                 <div class="bg-white rounded w-100 shadow">
-
-
 
                     <div class="d-flex flex-row p-2">
                         <div class="col-4">
@@ -38,11 +41,9 @@
                         <div class="col-6">
                             <div class="d-flex flex-row">
                                 <div class="d-flex flex-column">
-
                                     <%=x.getBrand()%>
                                 </div>
                                 <div class="d-flex flex-column">
-
                                     <%=x.getModel()%>
                                 </div>
                             </div>
@@ -61,14 +62,12 @@
                             <div class="row">
 
                                 <div class="col text-center pb-1">
-
-                                    <button class="btn btn-block" id="view" name="view"><a href="">View</a></button>
-
+                                    <button class="btn btn-block" id="edit" name="edit"><a href="">Edit</a></button>
                                 </div>
 
                                 <div class="col text-center">
 
-                                    <button class="btn btn-block" id="cancel" name="cancel"><a href="">Cancel</a></button>
+                                    <button class="btn btn-block" id="delete" name="delete"><a href="">Delete</a></button>
 
                                 </div>
 
@@ -76,7 +75,6 @@
                         </div>
 
                     </div>
-
 
                 </div>
             </div>

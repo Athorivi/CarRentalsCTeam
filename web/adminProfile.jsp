@@ -19,7 +19,7 @@
 
     <body class="main">
 
-        <div id="adminHeader"></div>
+        <header id="adminHeader"></header>
 
         <div class="container fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
@@ -28,13 +28,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-4 col-form-label">First Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="First Name">
+                                <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="First Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-4 col-form-label">Last Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Last Name">
+                                <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -46,42 +46,42 @@
                         <div class="form-group row">
                             <label for="password" class="col-sm-4 col-form-label">Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="password" id="password">
+                                <input type="password" class="form-control" name="password" id="password" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="repeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword">
+                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="dob" class="col-sm-4 col-form-label">Birthday</label>
                             <div class="col-sm-6">
-                                <input type="date" class="form-control" name="dob" id="dob" value="">
+                                <input type="date" class="form-control" name="dob" id="dob" value="" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label">e-Mail</label>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" name="email" id="email" value="" placeholder="e-Mail">
+                                <input type="email" class="form-control" name="email" id="email" value="" placeholder="e-Mail" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="address" class="col-sm-4 col-form-label">Address</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="address" id="address" value="" placeholder="Address">
+                                <input type="text" class="form-control" name="address" id="address" value="" placeholder="Address" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="phone" class="col-sm-4 col-form-label">Phone</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Phone">
+                                <input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Phone" required>
                             </div>
 
                             <div class="col-sm-10 d-flex justify-content-end pt-3">
 
-                                <button id="saveInfo" name="saveInfo" class="btn w-50"><a href="">Save</a></button>
+                                <input id="saveInfo" name="saveInfo" class="btn w-50" value="Save">
 
                             </div>
 
@@ -95,22 +95,13 @@
                 <div class="col">
                     <div class="col">
                         <form action="">
-                            <div class="row w-100">
-                                <img src="" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="uploadPhoto">
-                                    <label class="custom-file-label" for="uploadPhoto">Choose file</label>
-                                </div>
+                            <div class="form-group row">
+                                <label for="photo">Choose a profile picture:</label>
+                                <input type="file" id="photo" name="photo" required>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 mx-auto d-block text-center">
-                                    <button id="savePhoto" name="savePhoto" class="btn w-50"><a href="">Save</a></button>
+                                    <input type="submit" id="savePhoto" name="savePhoto" class="btn w-50" value="Save">
                                 </div>
                             </div>
                         </form>
@@ -119,7 +110,7 @@
             </div>
         </div>
 
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

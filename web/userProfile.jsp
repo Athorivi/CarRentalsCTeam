@@ -20,7 +20,7 @@
 
     <body class="main">
 
-        <div id="userHeader"></div>
+        <header id="userHeader"></header>
 
         <div class="container fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
@@ -29,13 +29,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-4 col-form-label">First Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="fname" id="fname" value="<%=UserStaticClass.getFname() %>" placeholder="First Name">
+                                <input type="text" class="form-control" name="fname" id="fname" value="<%=UserStaticClass.getFname() %>" placeholder="First Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-4 col-form-label">Last Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="lname" id="lname" value="<%=UserStaticClass.getLname() %>" placeholder="Last Name">
+                                <input type="text" class="form-control" name="lname" id="lname" value="<%=UserStaticClass.getLname() %>" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -47,42 +47,42 @@
                         <div class="form-group row">
                             <label for="password" class="col-sm-4 col-form-label">Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="password" id="password" value="<%=UserStaticClass.getPassword()%>">
+                                <input type="password" class="form-control" name="password" id="password" value="<%=UserStaticClass.getPassword()%>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="repeatPassword" class="col-sm-4 col-form-label">Repeat Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword" value="<%=UserStaticClass.getPassword()%>">
+                                <input type="password" class="form-control" name="fnarepeatPasswordme" id="repeatPassword" value="<%=UserStaticClass.getPassword()%>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="dob" class="col-sm-4 col-form-label">Birthday</label>
                             <div class="col-sm-6">
-                                <input type="date" class="form-control" name="dob" id="dob" value="<%=UserStaticClass.getDob()%>">
+                                <input type="date" class="form-control" name="dob" id="dob" value="<%=UserStaticClass.getDob()%>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label">e-Mail</label>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" name="email" id="email" value="<%=UserStaticClass.getEmail()%>" placeholder="e-Mail">
+                                <input type="email" class="form-control" name="email" id="email" value="<%=UserStaticClass.getEmail()%>" placeholder="e-Mail" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="address" class="col-sm-4 col-form-label">Address</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="address" id="address" value="<%=UserStaticClass.getAddress()%>" placeholder="Address">
+                                <input type="text" class="form-control" name="address" id="address" value="<%=UserStaticClass.getAddress()%>" placeholder="Address" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="phone" class="col-sm-4 col-form-label">Phone</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="phone" id="phone" value="<%=UserStaticClass.getPhone()%>" placeholder="Phone">
+                                <input type="text" class="form-control" name="phone" id="phone" value="<%=UserStaticClass.getPhone()%>" placeholder="Phone" required>
                             </div>
 
                             <div class="col-sm-10 d-flex justify-content-end pt-3">
 
-                                <button id="saveInfo" name="saveInfo" class="btn w-50"><a href="">Save</a></button>
+                                <input type="submit" id="saveInfo" name="saveInfo" class="btn w-50" value="Save">
 
                             </div>
 
@@ -111,7 +111,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10 mx-auto d-block text-center">
-                                    <button id="savePhoto" name="savePhoto" class="btn w-50"><a href="">Save</a></button>
+                                    <input type="submit" id="savePhoto" name="savePhoto" class="btn w-50" value="Save">
                                 </div>
                             </div>
                         </form>
@@ -120,7 +120,7 @@
             </div>
         </div>
 
-        <div id="footer"></div>
+        <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

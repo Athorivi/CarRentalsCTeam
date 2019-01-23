@@ -10,17 +10,9 @@ $(document).ready(function () {
         $("#userHeader").load("userHeader.jsp");
         $("#adminHeader").load("adminHeader.jsp");
         $("#footer").load("footer.jsp");
+        $("#indexFooter").load("indexFooter.jsp");
+        
     });
-    
-//    $("ul#nav li a").click(function () {
-//        var page = $(this).attr('id');
-//        $('#nav li a').removeClass('active');
-//        $(this).addClass('active');
-//       // document.getElementById('bottom').innerHTML = loadPage(page + '.jsp');
-//       window.location.replace = (page + '.jsp');
-//
-//        return false;
-//    });
 
 //    $("#myPosts").click(function(){
 //        window.location.href = 'myPosts.jsp';

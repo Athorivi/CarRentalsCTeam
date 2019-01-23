@@ -4,135 +4,79 @@
     Author     : manli
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-          crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/register.css" />
-</head>
-<body>
-    <section class="">
-        <section class="d-flex justify-content-center">
-            <form method="POST" action="register" enctype="multipart/form-data">
-                <div class="loginRegisterDiv d-flex flex-column">
-                    <div class="d-flex flex-row justify-content-center">
-                        <div class="d-flex flex-column col-md-6">
-                            <a class="navbar-brand " href="login.jsp">Login</a>
-                        </div>
-                        <div class="d-flex flex-column col-md-3">
-                            <a class="navbar-brand " href="register.jsp">Register</a>
-                        </div>
+<div class="row d-flex justify-content-center p-5">
+    <div class="col-6 p-0 bg-white rounded shadow">
+        <form method="POST" action="register">
+            <div class="loginRegisterDiv w-100 p-0">
+                <ul class="nav nav-tabs w-100">
+                    <li class="nav-item w-50">
+                        <a class="this nav-link text-center navbarColor" href="" id="login">Login</a>
+                    </li>
+                    <li class="nav-item w-50">
+                        <a class="this nav-link text-center active" href="" id="register">Register</a>
+                    </li>
+                </ul>
+
+                <div class="form-group row pt-3 pl-4 pr-4">
+                    <div class="col-6">
+                        <label for="fName">First Name</label>
+                        <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name" required>
                     </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>First Name</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="fName" id="fName">
-                            </div>
-                        </div>
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Last Name</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="lName" id="lName">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Username</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="username" id="username">
-                            </div>
-                        </div>
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Password</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="password" id="password">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="p-1 d-flex flex-column">
-                            <div class="p-1">
-                                <span>Repeat Password</span>
-                            </div>
-                            <div class="repeatPassword p-1">
-                                <input type="text" id="repeatPassword" name="repeatPassword">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>e-Mail</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="email" id="email">
-                            </div>
-                        </div>
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Birthday</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="date" name="birthday" id="birthday">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Address</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="address" id="address">
-                            </div>
-                        </div>
-                        <div class="flex-column">
-                            <div class="p-1">
-                                <span>Phone</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="text" name="phone" id="phone">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1 d-flex flex-row">
-                        <div class="p-1 d-flex flex-column">
-                            <div class="p-1">
-                                <span>Upload Photo</span>
-                            </div>
-                            <div class="p-1">
-                                <input type="file" id="uploadPhoto" name="uploadPhoto" value="Upload Photo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="register-button p-1 d-flex justify-content-center">
-                        <input type="submit" id="registerButton" value="Register" />
+                    <div class="col-6">
+                        <label for="lName">Last Name</label>
+                        <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name" required>
                     </div>
                 </div>
-            </form>
-        </section>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-</body>
-</html>
+
+                <div class="form-group row pl-4 pr-4">
+                    <div class="col-6">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-4 pr-4">
+                    <div class="col-12">
+                        <label for="repeatPassword">Repeat Password</label>
+                        <input type="password" class="form-control" id="repeatPassword" name="repeatPassword" required>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-4 pr-4">
+                    <div class="col-6">
+                        <label for="email">e-Mail</label>
+                        <input type="email" class="form-control" id="emaile" name="email" placeholder="e-Mail" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="dob">Birthday</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-4 pr-4">
+                    <div class="col-6">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group row pl-4 pr-4">
+                    <label for="photo">Choose a profile picture:</label>
+                    <input type="file" id="photo" name="photo" required>
+                </div>
+                <div class="register-button pb-4 d-flex justify-content-center">
+                    <input type="submit" class="btn rounded" id="registerButton" value="Register" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
