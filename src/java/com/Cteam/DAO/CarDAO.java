@@ -160,7 +160,7 @@ public class CarDAO implements CarInterface {
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT * FROM cteam.CARS WHERE `location` = ? \n"
                     + "AND CARS.`id` NOT IN(SELECT `car_id` FROM cteam.USERS_RENT_CARS "
-                    + "WHERE `startDate` = ? AND `endDate` = ? ;";
+                    + "WHERE `startDate` = ? AND `endDate` = ?) ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, location);
                 statement.setString(2, startDate);
