@@ -1,4 +1,4 @@
-package com.Cteam.StaticBeans;
+package com.Cteam.UsefullBeans;
 
 import java.io.InputStream;
 import java.util.Date;

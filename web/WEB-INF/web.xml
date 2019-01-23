@@ -52,6 +52,10 @@
         <servlet-name>viewMyRents</servlet-name>
         <servlet-class>com.Cteam.Servlets.viewMyRents</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>myRents</servlet-name>
+        <jsp-file>/myRents.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>viewMyRents</servlet-name>
         <url-pattern>/viewMyRents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>myRents</servlet-name>
+        <url-pattern>/myRents</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

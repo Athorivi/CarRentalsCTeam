@@ -1,7 +1,7 @@
 package com.Cteam.Servlets;
 
 import com.Cteam.DAO.CarDAO;
-import com.Cteam.StaticBeans.CarResults;
+import com.Cteam.UsefullBeans.CarResults;
 import com.Cteam.Tables.Car;
 import java.io.IOException;
 import java.util.ArrayList;

@@ -2,12 +2,16 @@ package com.Cteam.DAO;
 
 import com.Cteam.Tables.UserRentCar;
 import com.Cteam.Interfaces.UserRentCarInterface;
+import com.Cteam.UsefullBeans.myRentsResults;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -104,4 +108,55 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
     }
 
+    public ArrayList<myRentsResults> readUserRentCar(int id) {
+
+        ArrayList<myRentsResults> userRentCars = new ArrayList<myRentsResults>();
+        try (Connection connection = Database.getConnection()) {
+            String sql = "select `user_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
+                    + "INNER JOIN `CARS`\n"
+                    + "ON `CARS`.`id` = `USERS_RENT_CARS`.`car_id`\n"
+                    + "having `USERS_RENT_CARS`.`user_id` = ? ;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, id);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+
+                        myRentsResults rentResult = new myRentsResults();
+                        rentResult.setUser_id(resultset.getInt(1));
+                        rentResult.setBrand(resultset.getString(2));
+                        rentResult.setModel(resultset.getString(3));
+                        rentResult.setReleaseDate(resultset.getDate(4));
+                        rentResult.setCategories(resultset.getString(5));
+                        rentResult.setLocation(resultset.getString(6));
+                        rentResult.setStartDate(resultset.getDate(7));
+                        rentResult.setEndDate(resultset.getDate(8));
+                        rentResult.setPhoto(resultset.getBlob(9).getBinaryStream());
+                        
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[4096];
+                        int bytesRead = -1;
+
+                        while ((bytesRead = rentResult.getPhoto().read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+
+                        byte[] imageBytes = outputStream.toByteArray();
+
+                        rentResult.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
+                        
+                        
+                        userRentCars.add(rentResult);
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return userRentCars;
+    }
 }
