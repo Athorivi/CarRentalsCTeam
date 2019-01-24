@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col w-100">
                                 <div>
-                                    <form>
+                                    <form action="saveInfo" method="post">
                                         <table class="table">
                                             <thead>
                                                 <tr class="form-group">
@@ -123,13 +123,13 @@
                                             <div class="col pt-2">
                                                 <div class="col d-flex justify-content-center">
                                                     <div class="pr-2">
-
+                                              
                                                         <input type="submit" id="saveInfo" name="saveInfo" class="btn" value="Save">
 
                                                     </div>
                                                     <div class="">
 
-                                                        <button id="back" name="back" class="btn"><a href="">Back</a></button>
+                                                        <button id="back" name="back" class="btn"><a href="myPosts.jsp">Back</a></button>
 
                                                     </div>
                                                 </div>

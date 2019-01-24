@@ -104,6 +104,10 @@
         <servlet-name>deleteRent</servlet-name>
         <servlet-class>com.Cteam.Servlets.deleteRent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>saveInfo</servlet-name>
+        <servlet-class>com.Cteam.Servlets.saveInfo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>deleteRent</servlet-name>
         <url-pattern>/deleteRent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>saveInfo</servlet-name>
+        <url-pattern>/saveInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
