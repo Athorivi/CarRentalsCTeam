@@ -90,7 +90,7 @@
 
 
             <div class="col-10 pt-3">
-                <div class="container filtersVoid">
+                <div class="container divHeight filtersVoid">
                     <% for (Car x : CarResults.getCarResults()) {
                     %>
 
@@ -104,29 +104,53 @@
                                     </div>
                                 </div>
 
-                                <div class="col-6">
-                                    <div class="d-flex flex-row">
-                                        <div class="d-flex flex-column pr-1">
-                                            Brand: <%= x.getBrand()%>
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-4 pr-2 d-flex justify-content-start">
+                                            <u>Brand:</u>
                                         </div>
-                                        <div class="d-flex flex-column">
+                                        <div class="col-4 d-flex justify-content-start">
+                                            <%= x.getBrand()%>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 pr-2 d-flex justify-content-start">
+                                            <u> Model:</u>
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-start">
                                             <%= x.getModel()%>
                                         </div>
                                     </div>
-                                    <p class="d-flex flex-row">
-                                        Release Date:  <%= x.getReleaseDate()%>
-                                    </p>
-                                    <p class="d-flex flex-row">
-                                        <%= x.getCategories()%>
-                                    </p>
-                                    <p class="d-flex flex-row">
-                                        <%= x.getLocation()%>
-                                    </p>
+                                    <div class="row">
+                                        <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                            <u>Release Date:</u>
+                                        </div>
+                                        <div class="col-4 pt-2 d-flex justify-content-start">
+                                            <%= x.getReleaseDate()%>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                            <u>Category:</u>
+                                        </div>
+                                        <div class="col-4 pt-2 d-flex justify-content-start">
+                                            <%= x.getCategories()%>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                            <u>Location:</u>
+                                        </div>
+                                        <div class="col-4 pt-2 d-flex justify-content-start">
+                                            <h6><%= x.getLocation()%></h6>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col-2">
+                                <div class="col-3">
                                     <div class="d-flex flex-row justify-content-center pt-5">
-                                        <%= x.getPrice()%>
+                                        <h6><%= x.getPrice()%> € / Day</h6>
                                     </div>
                                     <div class="d-flex flex-row">
                                         <button class="btn-sm w-100 rounded"><a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">View More</a></button>

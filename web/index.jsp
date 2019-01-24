@@ -20,12 +20,12 @@
 
     </head>
 
-    <body>
+    <body class="mydivclass">
 
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="collapse navbar-collapse col-md-10">
-                    <a class="navbar-brand " href="#">Logo</a>
+                    <a class="navbar-brand " href="index.jsp">Logo</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
             </nav>
         </header>
 
-        <div class="container">
+        <div class="container divHeight">
 
             <div id="content">
                 <div class="row d-flex justify-content-center pading">

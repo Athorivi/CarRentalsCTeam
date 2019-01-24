@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+/* global x */
+
 //set min value for today
 var today = new Date();
 var dd = today.getDate();
@@ -33,3 +35,16 @@ document.getElementById("from").onchange = function () {
     input.min = this.value;
 
 };
+
+let x = document.getElementById("from").value;
+let y = document.getElementById("to").value;
+
+function setValueFrom() {
+    document.getElementById("from").setAttribute("min", x);
+    document.getElementById("from").setAttribute("value", x);
+}
+
+function setValueTo(){
+    document.getElementById("to").setAttribute("min", y);
+    document.getElementById("to").setAttribute("value", y);
+}

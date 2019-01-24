@@ -24,7 +24,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="row">
                 <div class="rounded bg-white col shadow">
                     <div class="p-3">
@@ -34,7 +34,7 @@
                             <%=CarStaticClass.getReleaseDate()%>
                         </div>
 
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
                             <img src="img/index-background.jpeg" class="rounded img-fluid" alt="Photo">
                         </div>
 

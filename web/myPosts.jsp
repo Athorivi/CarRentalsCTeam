@@ -23,63 +23,87 @@
     <body class="main">
 
         <header id="userHeader"></header>
+        <div class="">
+            <div class="container divHeight fixPading">
+                <% for (Car x : CarResults.getCarResults()) {
+                %>
+                <div class="row p-3">
+                    <div class="bg-white rounded w-100 shadow">
 
-        <div class="container fixPading">
-            <% for (Car x : CarResults.getCarResults()) {
-            %>
-            <div class="row p-3">
-                <div class="bg-white rounded w-100 shadow">
-
-                    <div class="d-flex flex-row p-2">
-                        <div class="col-4">
-                            <div class="">
-                                <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div class="d-flex flex-row">
-                                <div class="d-flex flex-column">
-                                    <%=x.getBrand()%>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <%=x.getModel()%>
+                        <div class="d-flex flex-row p-2">
+                            <div class="col-4">
+                                <div class="">
+                                    <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid image" alt="Photo">
                                 </div>
                             </div>
-                            <p class="d-flex flex-row">
-                                <%=x.getReleaseDate()%>
-                            </p>
-                            <p class="d-flex flex-row">
-                                <%=x.getCategories()%>
-                            </p>
-                            <p class="d-flex flex-row">
-                                <%=x.getLocation()%>
-                            </p>
-                        </div>
 
-                        <div class="col-2 d-flex align-items-center">
-                            <div class="row">
-
-                                <div class="col text-center pb-1">
-                                    <button class="btn btn-block" id="edit" name="edit"><a href="<%=request.getContextPath()%>/editPosts?id=<%= x.getId()%>">Edit</a></button>
-                                </div>
-
-                                <div class="col text-center">
-
-                                    <button class="btn btn-block" id="delete" name="delete"><a href="">Delete</a></button>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-4 pr-2 d-flex justify-content-start">
+                                        <u>Brand:</u>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-start">
+                                        <%= x.getBrand()%>
+                                    </div>
 
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-4 pr-2 d-flex justify-content-start">
+                                        <u> Model:</u>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-start">
+                                        <%= x.getModel()%>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                        <u>Release Date:</u>
+                                    </div>
+                                    <div class="col-4 pt-2 d-flex justify-content-start">
+                                        <%= x.getReleaseDate()%>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                        <u>Category:</u>
+                                    </div>
+                                    <div class="col-4 pt-2 d-flex justify-content-start">
+                                        <%= x.getCategories()%>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 pt-2 pr-2 d-flex justify-content-start">
+                                        <u>Location:</u>
+                                    </div>
+                                    <div class="col-4 pt-2 d-flex justify-content-start">
+                                        <h6><%= x.getLocation()%></h6>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="col-2 d-flex align-items-center">
+                                <div class="row">
+
+                                    <div class="col text-center pb-1">
+                                        <button class="btn btn-block" id="edit" name="edit"><a href="<%=request.getContextPath()%>/editPosts?id=<%= x.getId()%>">Edit</a></button>
+                                    </div>
+
+                                    <div class="col text-center">
+
+                                        <button class="btn btn-block" id="delete" name="delete"><a href="">Delete</a></button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
+                <%}%>
             </div>
-            <%}%>
         </div>
-
         <footer id="footer"></footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

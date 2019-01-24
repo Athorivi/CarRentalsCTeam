@@ -17,7 +17,7 @@
 
         <header id="adminHeader"></header>
 
-        <div class="container fixPading">
+        <div class="container divHeight fixPading">
             <div class="row">
                 <div class="search p-2">
                     <input type="search" id="search" name="search" placeholder="Search by username" required>

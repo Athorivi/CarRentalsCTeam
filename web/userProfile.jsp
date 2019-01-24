@@ -22,7 +22,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
                 <div class="col-6">
                     <form>
