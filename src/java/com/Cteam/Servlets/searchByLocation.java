@@ -3,6 +3,7 @@ package com.Cteam.Servlets;
 import com.Cteam.DAO.CarDAO;
 import com.Cteam.UsefullBeans.CarResults;
 import com.Cteam.Tables.Car;
+import com.Cteam.UsefullBeans.CategoriesStaticClass;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,35 +23,34 @@ public class searchByLocation extends HttpServlet {
         String from = request.getParameter("from");
         String to = request.getParameter("to");
         CarDAO carDb = new CarDAO();
-        List<Car> carList;
+        List<Car> carList = null;
         System.out.println(location);
         System.out.println(from);
         System.out.println(to);
         if (location.isEmpty() && from.isEmpty() && to.isEmpty()) {
             carList = carDb.readCar();
+        } else if (location.isEmpty() && !from.isEmpty() && !to.isEmpty()) {
+            carList = carDb.searchByDates(from, to);
         } else {
-            
-
             carList = carDb.searchByLocation(location, from, to);
         }
         CarResults cr = new CarResults();
-
         CarResults.setCarResults((ArrayList<Car>) carList);
         System.out.println("mpike sto controller");
-        for(Car x : CarResults.getCarResults()){
+        for (Car x : CarResults.getCarResults()) {
             System.out.println(x.toString());
         }
+        CategoriesStaticClass categories = new CategoriesStaticClass();
+        CategoriesStaticClass.setCategories(carDb.getCategories());
 
 //        HttpSession session = request.getSession(false);
 //        if (session != null) {
 //            String username = (String) session.getAttribute("username");
 //            System.out.println(username);
-
-            request.getRequestDispatcher("results").forward(request, response);
+        request.getRequestDispatcher("results").forward(request, response);
 //            response.sendRedirect("results");
 
 //        
-        }
-
     }
 
+}

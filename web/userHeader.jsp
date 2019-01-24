@@ -31,7 +31,7 @@
                 <a class="nav-link" href="" id="notifications">Notifications</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" id="logout">Logout</a>
+                <a class="nav-link" href="logout" id="logout">Logout</a>
             </li>
         </ul>
     </div>

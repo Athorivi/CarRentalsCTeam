@@ -14,6 +14,7 @@ import java.util.Date;
  */
 public class myRentsResults {
 
+    private int car_id;
     private int user_id;
     private String brand;
     private String model;
@@ -111,6 +112,14 @@ public class myRentsResults {
     @Override
     public String toString() {
         return "myRentsResults{" + "user_id=" + user_id + ", brand=" + brand + ", model=" + model + ", releaseDate=" + releaseDate + ", categories=" + categories + ", location=" + location + ", startDate=" + startDate + ", endDate=" + endDate + ", photo=" + photo + ", base64Image=" + base64Image + '}';
+    }
+
+    public int getCar_id() {
+        return car_id;
+    }
+
+    public void setCar_id(int car_id) {
+        this.car_id = car_id;
     }
 
 }

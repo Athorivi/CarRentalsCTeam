@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="location">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" placeholder="Search by location">
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Search by location" >
                         </div>
                         <div class="form-group">
                             <label for="from">From</label>

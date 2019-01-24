@@ -6,7 +6,7 @@
 
 <div class="row d-flex justify-content-center p-5">
     <div class="col-6 p-0 bg-white rounded shadow">
-        <form method="POST" action="register">
+        <form method="POST" action="register" enctype="multipart/form-data">
             <div class="loginRegisterDiv w-100 p-0">
                 <ul class="nav nav-tabs w-100">
                     <li class="nav-item w-50">
