@@ -48,15 +48,15 @@
                             <form method="POST" action="updateRole">
                                 <tr class="form-group">
                                     <td class="col-sm-1 align-items-end">
-                                        <input type="text" class="form-control" id="id" value="<%=u.getId()%>"
+                                        <input type="text" class="form-control" id="id" name="id" value="<%=u.getId()%>"
                                                placeholder="id" disabled>
                                     </td>
                                     <td class="col-sm-3 align-items-end">
-                                        <input type="text" class="form-control" id="username" value="<%=u.getUsername()%>"
+                                        <input type="text" class="form-control" id="username" name="username" value="<%=u.getUsername()%>"
                                                placeholder="username" disabled>
                                     </td>
                                     <td class="col-sm-2 align-items-end">
-                                        <input type="text" class="form-control" id="roles" value="<%=u.getRolename()%>"
+                                        <input type="text" class="form-control" id="roles" name="roles" value="<%=u.getRolename()%>"
                                                placeholder="roles" required>
                                     </td>
                                     <td>

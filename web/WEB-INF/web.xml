@@ -120,6 +120,14 @@
         <servlet-name>userRoles</servlet-name>
         <servlet-class>com.Cteam.Servlets.userRoles</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>userPosts</servlet-name>
+        <servlet-class>com.Cteam.Servlets.userPosts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>selectedUserPosts</servlet-name>
+        <servlet-class>com.Cteam.Servlets.selectedUserPosts</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -239,6 +247,14 @@
     <servlet-mapping>
         <servlet-name>userRoles</servlet-name>
         <url-pattern>/userRoles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userPosts</servlet-name>
+        <url-pattern>/userPosts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>selectedUserPosts</servlet-name>
+        <url-pattern>/selectedUserPosts</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

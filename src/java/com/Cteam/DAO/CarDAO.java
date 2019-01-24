@@ -7,6 +7,7 @@ package com.Cteam.DAO;
 
 import com.Cteam.Interfaces.CarInterface;
 import com.Cteam.Tables.Car;
+import com.Cteam.UsefullBeans.UsernameId;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -134,10 +135,10 @@ public class CarDAO implements CarInterface {
                 statement.setBlob(12, car.getPhoto());
                 statement.setInt(13, car.getId());
                 int rowsAffected = statement.executeUpdate();
-                if(rowsAffected>0){
-                    
-                System.out.println("The car was successfully updated");
-                }else{
+                if (rowsAffected > 0) {
+
+                    System.out.println("The car was successfully updated");
+                } else {
                     System.out.println("failed");
                 }
             }
@@ -225,7 +226,7 @@ public class CarDAO implements CarInterface {
                 statement.setInt(1, ownerID);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        
+
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));
@@ -532,6 +533,28 @@ public class CarDAO implements CarInterface {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return categories;
+    }
+
+    public ArrayList<UsernameId> getUsernameId() {
+
+        ArrayList<UsernameId> list = new ArrayList();;
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT `USERS`.`id`, `USERS`.`username`\n"
+                    + "FROM `USERS` WHERE `USERS`.`id` IN (SELECT DISTINCT `CARS`.`owner` FROM `CARS`);";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+                        UsernameId user = new UsernameId();
+                        user.setId(resultset.getInt(1));
+                        user.setUsername(resultset.getString(2));
+                        list.add(user);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
 }

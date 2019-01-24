@@ -1,3 +1,5 @@
+<%@page import="com.Cteam.UsefullBeans.UsernameIdStatic"%>
+<%@page import="com.Cteam.UsefullBeans.UsernameId"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,33 +31,37 @@
                 <div class="row">
                     <div class="col rounded bg-white w-100 shadow">
                         <div>
-                            <form>
-                                <table class="table">
-                                    <thead>
-                                        <tr class="form-group">
-                                            <th class="col-1 border-0">ID</th>
-                                            <th class="col-3 border-0">Username</th>
-                                            <th class="col-2 border-0 d-flex justify-content-start">View Posts</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="form-group">
-                                            <td>id</td>
-                                            <td>Username</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="col-2 d-flex justify-content-center">
 
-                                                        <input type="submit" class="btn" name="view" id="view" value="View">
+                            <table class="table">
+                                <thead>
+                                    <tr class="form-group">
+                                        <th class="col-1 border-0">ID</th>
+                                        <th class="col-3 border-0">Username</th>
+                                        <th class="col-2 border-0 d-flex justify-content-start">View Posts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<!--                                <form method="POST" action="selectedUserPosts">-->
+                                    <% for (UsernameId u : UsernameIdStatic.getList()) {%>
+                                    <tr class="form-group">
+                                        <td><input type="text" name="id" value="<%=u.getId()%>" disabled></td>
+                                        <td><input type="text" name="username" value="<%=u.getUsername()%>" disabled></td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-2 d-flex justify-content-center">
 
-                                                    </div>
+                                                    <!--<button type="submit" class="btn" name="view" id="view" value="View"></button>-->
+                                                    <button type="submit" class="btn"><a href="<%=request.getContextPath()%>/selectedUserPosts?id=<%=u.getId()%>">View</a></button>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                <!--</form>-->
+                                </tbody>
+                            </table>
 
-                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -74,7 +80,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        
+
     </body>
 
 </html>
