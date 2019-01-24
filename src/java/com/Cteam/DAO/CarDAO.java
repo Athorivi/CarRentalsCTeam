@@ -146,8 +146,8 @@ public class CarDAO implements CarInterface {
             String sql = "DELETE FROM `CARS` WHERE `id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, id);
-                statement.executeUpdate();
-                System.out.println("The car Deleted");
+                int rowsAffected = statement.executeUpdate();
+                System.out.println(rowsAffected + "The car Deleted");
             }
         } catch (SQLException ex) {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -321,7 +321,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(2, to);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        
+
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));
@@ -372,7 +372,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(2, to);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                       
+
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));

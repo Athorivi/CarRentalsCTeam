@@ -93,12 +93,12 @@ public class UserRentCarDAO implements UserRentCarInterface {
     }
 
     @Override
-    public void deleteUserRentCar(UserRentCar userRentCar) {
+    public void deleteUserRentCar(int car_id) {
 
         try (Connection connection = Database.getConnection()) {
-            String sql = "DELETE FROM `USERS_RENT_CARS` WHERE `id` = ? ;";
+            String sql = "DELETE FROM `USERS_RENT_CARS` WHERE `car_id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, userRentCar.getId());
+                statement.setInt(1, car_id);
                 statement.executeUpdate();
                 System.out.println("The User with the car was deleted");
             }

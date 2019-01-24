@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Category</label>
-                                    <select class="form-control" id="category" required>
+                                    <select class="form-control" id="category" name="category" required>
                                         <% for (String x : CategoriesStaticClass.getCategories()) {%>
                                         <option value="<%=x%>"><%=x%></option>
                                         <%}%>
@@ -84,12 +84,9 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-10 pt-3">
                     <div class="container filtersVoid">
-                        <% for (Car x : CarResults.getCarResults()) {
-                        %>
+                        <% for (Car x : CarResults.getCarResults()) {%>
 
 
                         <div class="row p-2">
