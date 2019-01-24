@@ -22,7 +22,7 @@
                 <a class="nav-link header" href="userRents">User's Rents</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link header" href="profile">Profile</a>
+                <a class="nav-link header" href="viewAdminProfile">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link header" href="logout">Logout</a>

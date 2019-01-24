@@ -1,4 +1,6 @@
-<%@page import="com.Cteam.StaticBeans.CarStaticClass"%>
+<%@page import="com.Cteam.UsefullBeans.UserRole"%>
+<%@page import="com.Cteam.UsefullBeans.UserRoleStatic"%>
+<%@page import="com.Cteam.UsefullBeans.CarStaticClass"%>
 <!DOCTYPE html>
 <html>
 
@@ -29,51 +31,57 @@
             <div class="row">
                 <div class="col rounded bg-white w-100 shadow">
                     <div>
-                        <form>
-                            <table class="table">
-                                <thead>
-                                    <tr class="form-group">
-                                        <th class="border-0">ID</th>
-                                        <th class="border-0">Username</th>
-                                        <th class="border-0">Role</th>
-                                        <th class="border-0">Update / Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="form-group">
-                                        <td class="col-sm-1 align-items-end">
-                                            <input type="text" class="form-control" id="id" value="id"
-                                                   placeholder="id" disabled>
-                                        </td>
-                                        <td class="col-sm-3 align-items-end">
-                                            <input type="text" class="form-control" id="username" value="username"
-                                                   placeholder="username" disabled>
-                                        </td>
-                                        <td class="col-sm-2 align-items-end">
-                                            <input type="text" class="form-control" id="roles" value="role"
-                                                   placeholder="roles" required>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-2">
 
-                                                    <input type="submit" class="btn" name="update" id="update" value="Update">
+                        <table class="table">
+                            <thead>
+                                <tr class="form-group">
+                                    <th class="border-0">ID</th>
+                                    <th class="border-0">Username</th>
+                                    <th class="border-0">Role</th>
+                                    <th class="border-0">Update / Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (UserRole u : UserRoleStatic.getUserRole()) {%>
 
-                                                </div>
 
-                                                <div class="col-2">
+                            <form method="POST" action="updateRole">
+                                <tr class="form-group">
+                                    <td class="col-sm-1 align-items-end">
+                                        <input type="text" class="form-control" id="id" value="<%=u.getId()%>"
+                                               placeholder="id" disabled>
+                                    </td>
+                                    <td class="col-sm-3 align-items-end">
+                                        <input type="text" class="form-control" id="username" value="<%=u.getUsername()%>"
+                                               placeholder="username" disabled>
+                                    </td>
+                                    <td class="col-sm-2 align-items-end">
+                                        <input type="text" class="form-control" id="roles" value="<%=u.getRolename()%>"
+                                               placeholder="roles" required>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-2">
 
-                                                    <button class="btn" name="delete" id="delete"><a href="">Delete</a></button>
-
-                                                </div>
+                                                <input type="submit" class="btn" name="update" id="update" value="Update">
 
                                             </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
 
-                        </form>
+                                            <div class="col-2">
+
+                                                <button class="btn" name="delete" id="delete"><a href="">Delete</a></button>
+
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </form>
+                            <%}%>
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
             </div>
@@ -91,7 +99,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        
+
     </body>
 
 </html>

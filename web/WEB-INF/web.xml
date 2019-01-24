@@ -108,6 +108,18 @@
         <servlet-name>saveInfo</servlet-name>
         <servlet-class>com.Cteam.Servlets.saveInfo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>adminProfile</servlet-name>
+        <jsp-file>/adminProfile.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>viewAdminProfile</servlet-name>
+        <servlet-class>com.Cteam.Servlets.viewAdminProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>userRoles</servlet-name>
+        <servlet-class>com.Cteam.Servlets.userRoles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -215,6 +227,18 @@
     <servlet-mapping>
         <servlet-name>saveInfo</servlet-name>
         <url-pattern>/saveInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminProfile</servlet-name>
+        <url-pattern>/adminProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewAdminProfile</servlet-name>
+        <url-pattern>/viewAdminProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userRoles</servlet-name>
+        <url-pattern>/userRoles</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

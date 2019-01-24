@@ -2,6 +2,7 @@ package com.Cteam.DAO;
 
 import com.Cteam.Tables.UsersRoles;
 import com.Cteam.Interfaces.UserRoleInterface;
+import com.Cteam.UsefullBeans.UserRole;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,6 +97,37 @@ public class UserRoleDAO implements UserRoleInterface {
         } catch (SQLException ex) {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+    }
+
+    public ArrayList<UserRole> readUserRoleInner() {
+
+        ArrayList<UserRole> usersRoles = new ArrayList();
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT `USERS`.`id`, `USERS`.`username`, `ROLES`.`name` \n"
+                    + "FROM `USERS_ROLES`\n"
+                    + "INNER JOIN `USERS`\n"
+                    + "ON `USERS`.`id` = `USERS_ROLES`.`user_id`\n"
+                    + "INNER JOIN `ROLES`\n"
+                    + "ON `ROLES`.`id` = `USERS_ROLES`.`role_id`;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+
+                        UserRole userRole = new UserRole();
+                        userRole.setId(resultset.getInt(1));
+                        userRole.setUsername(resultset.getString(2));
+                        userRole.setRolename(resultset.getString(3));
+                        
+                        usersRoles.add(userRole);
+                    }
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return usersRoles;
 
     }
 
