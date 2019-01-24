@@ -21,27 +21,27 @@
                 </ul>
 
     </head>
-
+    
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse col-md-10">
+                <a class="navbar-brand " href="index.jsp">Logo</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse col-md-2" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item d-flex justify-content-end">
+                        <a class="nav-item" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
     <body>
-
-        <header>
-            <nav class="navbar navbar-expand-lg">
-                <div class="collapse navbar-collapse col-md-10">
-                    <a class="navbar-brand " href="index.jsp">Logo</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse col-md-2" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item d-flex justify-content-end">
-                            <a class="nav-item" href="#">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
 
         <div class="container divHeight">
 
@@ -123,36 +123,36 @@
             </div>
         </div>
 
-        <footer>
-            <div class="row p-4">
-                <div class="col">
-                    <div class="d-flex justify-content-start">
-                        <span><b><u>Contact Info</u></b></span>
-                    </div>
 
-                    <div class="d-flex justify-content-start">
-                        <span>Location: Athens, Greece</span>
-                    </div>
-
-                    <div class="d-flex justify-content-start">
-                        <span>e-Mail: info@cteam.gr</span>
-                    </div>
-
-                    <div class="d-flex justify-content-start">
-                        <span>Phone Number: +30 210 9999999</span>
-                        <div class="col-10 d-flex justify-content-end">
-                            <span>All rights reserved by C_Team.</span>
-                        </div>
-                    </div>
-
+    </body>
+    <footer>
+        <div class="row p-4">
+            <div class="col">
+                <div class="d-flex justify-content-start">
+                    <span><b><u>Contact Info</u></b></span>
                 </div>
 
+                <div class="d-flex justify-content-start">
+                    <span>Location: Athens, Greece</span>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <span>e-Mail: info@cteam.gr</span>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <span>Phone Number: +30 210 9999999</span>
+                    <div class="col-10 d-flex justify-content-end">
+                        <span>All rights reserved by C_Team.</span>
+                    </div>
+                </div>
 
             </div>
 
-        </footer>
-    </body>
 
+        </div>
+
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
