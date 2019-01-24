@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="CSS/index2.css">
     </head>
 
-    <body class="main">
+    <body>
         <header id="userHeader"></header>
         
         <div class="d-flex justify-content-center pading">
@@ -49,7 +49,7 @@
                             <input type="date" class="form-control" id="to" name="to">
                         </div>
                         <div class="form-group text-center">
-                            <button class="btn-sm w-100 rounded font-weight-bold">Search</button>
+                            <button class="btn-sm w-100 rounded font-weight-bold" id="search">Search</button>
                         </div>
                     </div>
                 </form>

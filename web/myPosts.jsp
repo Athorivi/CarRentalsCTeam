@@ -32,7 +32,7 @@
 
                         <div class="d-flex flex-row p-2">
                             <div class="col-4">
-                                <div class="">
+                                <div class="ml-4 image">
                                     <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid image" alt="Photo">
                                 </div>
                             </div>
