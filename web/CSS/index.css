@@ -9,11 +9,17 @@ and open the template in the editor.
 */
 
 body{
+    height: 100vh !important;
     background-image: url(../img/index-background.jpeg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
     overflow-x: hidden; 
     overflow-y: auto;
+}
+
+header{
+    width: 100% !important;
 }
 
 .navbar-brand, 
@@ -50,6 +56,7 @@ input[type=submit]{
 footer{
     background-color: #8B0000 !important;
     color: white !important;
+    padding-bottom: 0px !important;
 }
 
 .divHeight{

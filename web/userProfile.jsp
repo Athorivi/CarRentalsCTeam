@@ -111,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <footer id="footer"></footer>
@@ -124,7 +125,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/edit.js"></script>
+        
     </body>
 
 </html>

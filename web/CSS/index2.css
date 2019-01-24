@@ -1,85 +1,117 @@
 body{
+    height: 100vh !important;
     background-image: url(../img/road.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
-    
     overflow-x: hidden; 
     overflow-y: auto;
 }
+
+header{
+    width: 100% !important;
+}
+
 .image {
     width: 250px;
     height: 150px;
     opacity: 1.0 !important;
 }
+
 .navbar{
     background-color: #B22222 !important;
 }
+
 a{
     color: #FFFFFF !important;
 }
+
 .divHeight{
     height: 100vh !important;
-    opacity: 0.9;
-    filter: alpha(opacity=50);
+    opacity: 0.9 !important;
 }
+
 .footer{
     background-color: #8B0000 !important;
     color: white !important;
 }
+
 .indexFooter{
     color: white !important;
 }
+
 .pading{
     padding-top: 11%;
     padding-bottom: 9%;
 }
+
 .fixPading{
     padding-top: 5%;
     padding-bottom: 5%;
 }
+
 .fixPad{
     padding-top: 5%;
 }
+
 .filters{
     padding-top: 4%;
 }
+
 .filtersVoid{
     padding-left: 25%;
 }
+
 .marg{
     margin-left: 14.1%;
     margin-right: 28.2%;
 }
+
 input, button{
     border: 0;
 }
+
 .active{
     background-color: #8B0000;
 }
+
 button{
     background-color: #B22222 !important;
     color: white !important;
 }
+
 input[type=submit]{
     background-color: #B22222 !important;
     color: white !important;
 }
+
 .search{
     display: flex;
     flex-direction: row;
 }
+
 .search > #search{
     flex: 6 1 0;
     padding-left: 10px !important;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
+
 .search > #submit{
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     flex: 1 1 0;
     transition: 0.5s;
 }
+
 h6{
     font-weight: bold !important;
+}
+
+.main{
+    height: 100vh !important;
+}
+
+.footerBot{
+padding-bottom: 0px;
 }

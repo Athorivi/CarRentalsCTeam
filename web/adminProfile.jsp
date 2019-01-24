@@ -22,6 +22,7 @@
         <header id="adminHeader"></header>
 
         <div class="container fixPad divHeight">
+
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
                 <div class="col-6">
                     <form>
@@ -108,6 +109,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <footer id="footer"></footer>
@@ -121,7 +123,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="JS/menuIndex.js"></script>
-        <script src="JS/edit.js"></script>
+        
     </body>
 
 </html>
