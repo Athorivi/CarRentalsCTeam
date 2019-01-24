@@ -62,13 +62,13 @@
 
                                     <div class="col text-center pb-1">
 
-                                        <button class="btn btn-block" id="view" name="view"><a href="">View</a></button>
+                                        <button class="btn btn-block" id="view" name="view"><a href="<%=request.getContextPath()%>/viewRent?id=<%=x.getCar_id()%>">View</a></button>
 
                                     </div>
 
                                     <div class="col text-center">
 
-                                        <button class="btn btn-block" id="cancel" name="cancel"><a href="">Cancel</a></button>
+                                        <button class="btn btn-block" id="cancel" name="cancel"><a href="<%=request.getContextPath()%>/deleteRent?id=<%=x.getCar_id()%>">Cancel</a></button>
 
                                     </div>
 

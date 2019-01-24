@@ -5,7 +5,6 @@ import com.Cteam.Tables.User;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +14,6 @@ import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.http.Part;
 
 public class UserDAO implements UserInterface {
 
@@ -85,9 +83,10 @@ public class UserDAO implements UserInterface {
     public void updateUser(User user) {
 
         try (Connection connection = Database.getConnection()) {
-            String sql = new StringBuilder().append("INSERT INTO `USERS` SET")
+            String sql = new StringBuilder().append("UPDATE `USERS` SET ")
                     .append("`username` = ?, `password` = ?, `fname` = ?, "
-                            + "`lname` = ?, `dob` = ?, `email` = ?, `address` = ?, `phone` ?, `photo` = ? WHERE `id` = ? ;").toString();
+                            + "`lname` = ?, `dob` = ?, `email` = ?, `address` = ?, `phone`=?, `photo` = ? WHERE `id` = ? ;").toString();
+            System.out.println(sql);
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, user.getUsername());
                 statement.setString(2, user.getPassword());
@@ -97,9 +96,14 @@ public class UserDAO implements UserInterface {
                 statement.setString(6, user.getEmail());
                 statement.setString(7, user.getAddress());
                 statement.setString(8, user.getPhone());
-                statement.setBlob(9, (Blob) user.getPhoto());
-                statement.executeUpdate();
-                System.out.println("The User was successfully Updated");
+                statement.setBlob(9, user.getPhoto());
+                statement.setInt(10, user.getId());
+                int rowsAffected = statement.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("The User was successfully Updated");
+                } else {
+                    System.out.println("Not updated");
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -206,7 +210,7 @@ public class UserDAO implements UserInterface {
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
                 try (ResultSet resultset = statement.executeQuery()) {
-                    if(resultset.first()) {
+                    if (resultset.first()) {
 
                         user.setId(resultset.getInt(1));
                         user.setUsername(resultset.getString(2));
@@ -243,6 +247,29 @@ public class UserDAO implements UserInterface {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return user;
+    }
+
+    public void updateUserPhoto(int id, InputStream inputStream) {
+
+        try (Connection connection = Database.getConnection()) {
+            String sql = new StringBuilder().append("UPDATE `USERS` SET ")
+                    .append("`photo` = ? WHERE `id` = ? ;").toString();
+            System.out.println(sql);
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+
+                statement.setBlob(1, inputStream);
+                statement.setInt(2, id);
+                int rowsAffected = statement.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("The User Photo was successfully Updated");
+                } else {
+                    System.out.println("Not updated");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

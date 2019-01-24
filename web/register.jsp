@@ -7,15 +7,18 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-              crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" media="screen" href="CSS/index.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="CSS/loginRegister.css" />
+<div class="row d-flex justify-content-center p-5">
+    <div class="col-6 p-0 bg-white rounded shadow">
+        <form method="POST" action="register" enctype="multipart/form-data">
+            <div class="loginRegisterDiv w-100 p-0">
+                <ul class="nav nav-tabs w-100">
+                    <li class="nav-item w-50">
+                        <a class="this nav-link text-center navbarColor" href="" id="login">Login</a>
+                    </li>
+                    <li class="nav-item w-50">
+                        <a class="this nav-link text-center active" href="" id="register">Register</a>
+                    </li>
+                </ul>
 
     </head>
     

@@ -1,9 +1,4 @@
-<%-- 
-    Document   : results
-    Created on : Jan 17, 2019, 9:58:27 PM
-    Author     : manli
---%>
-
+<%@page import="com.Cteam.UsefullBeans.CategoriesStaticClass"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.Cteam.Tables.Car"%>
@@ -32,15 +27,17 @@
 
                 <div class="col-2 ml-3 mt-3 filters fixed-top">
                     <div class="float-left bg-white rounded w-100 p-3">
-                        <form>
+                        <form method="POST" action="searchByCategory">
                             <div class="indexDiv d-flex flex-column justify-content-center">
                                 <div class="form-group text-center">
                                     <h4 class="index-search-text">Filters</h4>
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Category</label>
-                                    <select class="form-control" id="category" required>
-                                        <option>Sample</option>
+                                    <select class="form-control" id="category" name="category" required>
+                                        <% for (String x : CategoriesStaticClass.getCategories()) {%>
+                                        <option value="<%=x%>"><%=x%></option>
+                                        <%}%>
                                     </select>
                                 </div>
                                 <div class="text-center">
@@ -49,7 +46,7 @@
                             </div>
                         </form>
 
-                        <form>
+                        <form method="POST" action="searchByCc">
                             <div class="indexDiv d-flex flex-column justify-content-center pt-4">
                                 <div class="form-group row">
                                     <div class="col-6 text-center">
@@ -67,7 +64,7 @@
                             </div>
                         </form>
 
-                        <form>
+                        <form action="searchByPrice" method="POST">
                             <div class="indexDiv d-flex flex-column justify-content-center pt-4">
                                 <div class="form-group row">
                                     <div class="col-6 text-center">
@@ -87,12 +84,9 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-10 pt-3">
                     <div class="container filtersVoid">
-                        <% for (Car x : CarResults.getCarResults()) {
-                        %>
+                        <% for (Car x : CarResults.getCarResults()) {%>
 
 
                         <div class="row p-2">
@@ -150,7 +144,7 @@
 
                                     <div class="col-3">
                                         <div class="d-flex flex-row justify-content-center pt-5">
-                                            
+
                                             <h6><%=x.getPrice()%> € / Day</h6>
                                         </div>
                                         <div class="d-flex flex-row">

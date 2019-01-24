@@ -93,12 +93,12 @@ public class UserRentCarDAO implements UserRentCarInterface {
     }
 
     @Override
-    public void deleteUserRentCar(UserRentCar userRentCar) {
+    public void deleteUserRentCar(int car_id) {
 
         try (Connection connection = Database.getConnection()) {
-            String sql = "DELETE FROM `USERS_RENT_CARS` WHERE `id` = ? ;";
+            String sql = "DELETE FROM `USERS_RENT_CARS` WHERE `car_id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, userRentCar.getId());
+                statement.setInt(1, car_id);
                 statement.executeUpdate();
                 System.out.println("The User with the car was deleted");
             }
@@ -112,7 +112,7 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
         ArrayList<myRentsResults> userRentCars = new ArrayList<myRentsResults>();
         try (Connection connection = Database.getConnection()) {
-            String sql = "select `user_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
+            String sql = "select  `user_id`, `car_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
                     + "INNER JOIN `CARS`\n"
                     + "ON `CARS`.`id` = `USERS_RENT_CARS`.`car_id`\n"
                     + "having `USERS_RENT_CARS`.`user_id` = ? ;";
@@ -123,14 +123,15 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
                         myRentsResults rentResult = new myRentsResults();
                         rentResult.setUser_id(resultset.getInt(1));
-                        rentResult.setBrand(resultset.getString(2));
-                        rentResult.setModel(resultset.getString(3));
-                        rentResult.setReleaseDate(resultset.getDate(4));
-                        rentResult.setCategories(resultset.getString(5));
-                        rentResult.setLocation(resultset.getString(6));
-                        rentResult.setStartDate(resultset.getDate(7));
-                        rentResult.setEndDate(resultset.getDate(8));
-                        rentResult.setPhoto(resultset.getBlob(9).getBinaryStream());
+                        rentResult.setCar_id(resultset.getInt(2));
+                        rentResult.setBrand(resultset.getString(3));
+                        rentResult.setModel(resultset.getString(4));
+                        rentResult.setReleaseDate(resultset.getDate(5));
+                        rentResult.setCategories(resultset.getString(6));
+                        rentResult.setLocation(resultset.getString(7));
+                        rentResult.setStartDate(resultset.getDate(8));
+                        rentResult.setEndDate(resultset.getDate(9));
+                        rentResult.setPhoto(resultset.getBlob(10).getBinaryStream());
                         
                         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                         byte[] buffer = new byte[4096];
