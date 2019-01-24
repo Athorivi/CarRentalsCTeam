@@ -2,6 +2,7 @@ package com.Cteam.DAO;
 
 import com.Cteam.Tables.UserRentCar;
 import com.Cteam.Interfaces.UserRentCarInterface;
+import com.Cteam.UsefullBeans.myRent;
 import com.Cteam.UsefullBeans.myRentsResults;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -23,14 +24,15 @@ public class UserRentCarDAO implements UserRentCarInterface {
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder()
                     .append("INSERT INTO `USERS_RENT_CARS`")
-                    .append("`startDate`, `endDate`, `userId`, `carId`)")
-                    .append("VALUES(?, ?, ?, ?) ;").toString();
+                    .append("`startDate`, `endDate`, `userId`, `carId`, `totalPrice`)")
+                    .append("VALUES(?, ?, ?, ?, ?) ;").toString();
 
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setDate(1, (Date) userRentCar.getStartDate());
                 statement.setDate(2, (Date) userRentCar.getEndDate());
                 statement.setInt(3, userRentCar.getUserId());
                 statement.setInt(4, userRentCar.getCarId());
+                statement.setDouble(5, userRentCar.getTotalPrice());
 
                 int rowsAffected = statement.executeUpdate();
                 if (rowsAffected > 0) {
@@ -60,6 +62,7 @@ public class UserRentCarDAO implements UserRentCarInterface {
                         userRentCar.setEndDate(resultset.getDate(2));
                         userRentCar.setUserId(resultset.getInt(3));
                         userRentCar.setCarId(resultset.getInt(4));
+                        userRentCar.setTotalPrice(resultset.getDouble(5));
                         usersRentCars.add(userRentCar);
                     }
                 }
@@ -77,13 +80,14 @@ public class UserRentCarDAO implements UserRentCarInterface {
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder()
                     .append("UPDATE `USERS_RENT_CARS`")
-                    .append("SET `startDate`= ?, `endDate` = ?, `userId` = ?, `carId` = ?")
+                    .append("SET `startDate`= ?, `endDate` = ?, `userId` = ?, `carId` = ?, `totalPrice = ?")
                     .append("WHERE  `id` = ? ;").toString();
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setDate(1, (Date) userRentCar.getStartDate());
                 statement.setDate(2, (Date) userRentCar.getEndDate());
                 statement.setInt(3, userRentCar.getUserId());
-                statement.setInt(4, userRentCar.getCarId());
+                statement.setDouble(4, userRentCar.getTotalPrice());
+                statement.setInt(5, userRentCar.getCarId());
                 int rowsAffected = statement.executeUpdate();
                 System.out.println("The car was successfully updated");
             }
@@ -110,9 +114,9 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
     public ArrayList<myRentsResults> readUserRentCar(int id) {
 
-        ArrayList<myRentsResults> userRentCars = new ArrayList<myRentsResults>();
+        ArrayList<myRentsResults> userRentCars = new ArrayList<>();
         try (Connection connection = Database.getConnection()) {
-            String sql = "select  `user_id`, `car_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
+            String sql = "select `USERS_RENT_CARS`.`id`, `user_id`, `car_id`, `brand`, `model`, `releaseDate`, `categories`, `location`, `startDate`, `endDate`, `photo` from `USERS_RENT_CARS` \n"
                     + "INNER JOIN `CARS`\n"
                     + "ON `CARS`.`id` = `USERS_RENT_CARS`.`car_id`\n"
                     + "having `USERS_RENT_CARS`.`user_id` = ? ;";
@@ -122,17 +126,18 @@ public class UserRentCarDAO implements UserRentCarInterface {
                     while (resultset.next()) {
 
                         myRentsResults rentResult = new myRentsResults();
-                        rentResult.setUser_id(resultset.getInt(1));
-                        rentResult.setCar_id(resultset.getInt(2));
-                        rentResult.setBrand(resultset.getString(3));
-                        rentResult.setModel(resultset.getString(4));
-                        rentResult.setReleaseDate(resultset.getDate(5));
-                        rentResult.setCategories(resultset.getString(6));
-                        rentResult.setLocation(resultset.getString(7));
-                        rentResult.setStartDate(resultset.getDate(8));
-                        rentResult.setEndDate(resultset.getDate(9));
-                        rentResult.setPhoto(resultset.getBlob(10).getBinaryStream());
-                        
+                        rentResult.setId(resultset.getInt(1));
+                        rentResult.setUser_id(resultset.getInt(2));
+                        rentResult.setCar_id(resultset.getInt(3));
+                        rentResult.setBrand(resultset.getString(4));
+                        rentResult.setModel(resultset.getString(5));
+                        rentResult.setReleaseDate(resultset.getDate(6));
+                        rentResult.setCategories(resultset.getString(7));
+                        rentResult.setLocation(resultset.getString(8));
+                        rentResult.setStartDate(resultset.getDate(9));
+                        rentResult.setEndDate(resultset.getDate(10));
+                        rentResult.setPhoto(resultset.getBlob(11).getBinaryStream());
+
                         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                         byte[] buffer = new byte[4096];
                         int bytesRead = -1;
@@ -145,8 +150,6 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
                         rentResult.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
 
-                        
-                        
                         userRentCars.add(rentResult);
                     }
                 } catch (IOException ex) {
@@ -160,4 +163,28 @@ public class UserRentCarDAO implements UserRentCarInterface {
         }
         return userRentCars;
     }
+
+    public void readRent(int id) {
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT * FROM `USERS_RENT_CARS` WHERE `id`= ?;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, id);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    if (resultset.first()) {
+                        myRent.setId(resultset.getInt(1));
+                        myRent.setUserId(resultset.getInt(2));
+                        myRent.setCarId(resultset.getInt(3));
+                        myRent.setStartDate(resultset.getDate(4));
+                        myRent.setEndDate(resultset.getDate(5));
+                        myRent.setTotalPrice(resultset.getDouble(6));
+                        
+                    }
+                }
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserRentCarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

@@ -6,8 +6,10 @@
 package com.Cteam.Servlets;
  
 import com.Cteam.DAO.CarDAO;
+import com.Cteam.DAO.UserRentCarDAO;
 import com.Cteam.Tables.Car;
 import com.Cteam.UsefullBeans.CarStaticClass;
+import com.Cteam.UsefullBeans.myRent;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,13 +30,24 @@ public class viewRent extends HttpServlet {
         System.out.println("the id is");
         System.out.println(id);
         
+        
+        UserRentCarDAO rent = new UserRentCarDAO();
+        rent.readRent(id);
+        
+        
+        
+        
+        
         CarDAO carDb = new CarDAO();
         Car x;
-        x = carDb.searchById(id);
-        CarStaticClass cr = new CarStaticClass();
- 
-
+        x = carDb.searchById(myRent.getCarId());
         
+        
+        
+        
+        
+        
+        CarStaticClass cr = new CarStaticClass();
         CarStaticClass.setId(id);
         CarStaticClass.setOwner(x.getOwner());
         CarStaticClass.setModel(x.getModel());
@@ -49,6 +62,7 @@ public class viewRent extends HttpServlet {
         CarStaticClass.setColor(x.getColor());
         CarStaticClass.setPhoto(x.getPhoto());
         CarStaticClass.setBase64Image(x.getBase64Image());
+        
         RequestDispatcher rd = request.getRequestDispatcher("viewRent.jsp");
         rd.forward(request, response);
  

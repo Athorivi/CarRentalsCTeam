@@ -62,7 +62,7 @@
 
                                     <div class="col text-center pb-1">
 
-                                        <button class="btn btn-block" id="view" name="view"><a href="<%=request.getContextPath()%>/viewRent?id=<%=x.getCar_id()%>">View</a></button>
+                                        <button class="btn btn-block" id="view" name="view"><a href="<%=request.getContextPath()%>/viewRent?id=<%=x.getId()%>">View</a></button>
 
                                     </div>
 

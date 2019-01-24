@@ -4,6 +4,7 @@
     Author     : manli
 --%>
 
+<%@page import="com.Cteam.UsefullBeans.myRent"%>
 <%@page import="com.Cteam.UsefullBeans.CarStaticClass"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,11 +41,11 @@
 
                         <div class="row w-100 p-2">
                             <div class="col-6">
-                                <input type="date" id="from" name="from" class="w-100" disabled>
+                                <input type="date" id="from" name="from" class="w-100" value="<%=myRent.getStartDate()%>" disabled>
                             </div>
 
                             <div class="col-6">
-                                <input type="date" id="to" name="to" class="w-100" disabled>
+                                <input type="date" id="to" name="to" class="w-100" value="<%=myRent.getEndDate() %>" disabled>
                             </div>
                         </div>
 
