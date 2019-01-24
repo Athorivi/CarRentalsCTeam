@@ -114,10 +114,11 @@ public class CarDAO implements CarInterface {
     public void updateCar(Car car) {
 
         try (Connection connection = Database.getConnection()) {
-            String sql = new StringBuilder().append("UPDATE `CARS`")
+            String sql = new StringBuilder().append("UPDATE `CARS` ")
                     .append("SET `owner`= ?, `model` = ?,`location` = ?, `brand` = ?, `km` = ?, `fuel` = ?"
-                            + ", `cc` = ?, `price` = ?, `categories` = ?, `releaseDate` = ?, `color` = ?, `photo` = ?)")
+                            + ", `cc` = ?, `price` = ?, `categories` = ?, `releaseDate` = ?, `color` = ?, `photo` = ? ")
                     .append("WHERE  `id` = ? ;").toString();
+            System.out.println(sql);
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, car.getOwner());
                 statement.setString(2, car.getModel());
@@ -131,8 +132,14 @@ public class CarDAO implements CarInterface {
                 statement.setDate(10, (Date) car.getReleaseDate());
                 statement.setString(11, car.getColor());
                 statement.setBlob(12, car.getPhoto());
+                statement.setInt(13, car.getId());
                 int rowsAffected = statement.executeUpdate();
+                if(rowsAffected>0){
+                    
                 System.out.println("The car was successfully updated");
+                }else{
+                    System.out.println("failed");
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -211,16 +218,14 @@ public class CarDAO implements CarInterface {
 
     public ArrayList<Car> searchByOwner(int ownerID) {
 
-        ArrayList<Car> cars = null;
+        ArrayList<Car> cars = new ArrayList<Car>();
         try (Connection connection = Database.getConnection()) {
             String sql = "select * from CARS WHERE `owner`= ?;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, ownerID);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        if (cars == null) {
-                            cars = new ArrayList();
-                        }
+                        
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));
@@ -460,19 +465,18 @@ public class CarDAO implements CarInterface {
 
     public ArrayList<Car> searchByDates(String from, String to) {
 
-        ArrayList<Car> cars = null;
+        ArrayList<Car> cars = new ArrayList<>();
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT * FROM cteam.CARS WHERE  \n"
                     + "                   CARS.`id` NOT IN(SELECT `car_id` FROM cteam.USERS_RENT_CARS\n"
                     + "                    WHERE `startDate` = ? AND `endDate` = ?) ;";
+            System.out.println(sql);
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, from);
                 statement.setString(2, to);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        if (cars == null) {
-                            cars = new ArrayList();
-                        }
+                        System.out.println("while searchByDates");
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));

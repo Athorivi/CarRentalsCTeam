@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="col-10 pt-3">
+                <div class="col-10 pt-3 pb-5">
                     <div class="container filtersVoid">
                         <% for (Car x : CarResults.getCarResults()) {%>
 
