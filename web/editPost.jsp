@@ -50,70 +50,70 @@
                                                 <tr class="form-group">
                                                     <td class="">Brand:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="brand" value="<%=CarStaticClass.getBrand()%>"
+                                                        <input type="text" class="form-control" id="brand" name="brand" value="<%=CarStaticClass.getBrand()%>"
                                                                placeholder="Brand">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Model:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="model" value="<%=CarStaticClass.getModel()%>"
+                                                        <input type="text" class="form-control" id="model" name="model" value="<%=CarStaticClass.getModel()%>"
                                                                placeholder="Model">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Price (per day):</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="price" value="<%=CarStaticClass.getPrice()%>"
+                                                        <input type="text" class="form-control" id="price" name="price" value="<%=CarStaticClass.getPrice()%>"
                                                                placeholder="Price">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Category:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="category" value="<%=CarStaticClass.getCategories()%>"
+                                                        <input type="text" class="form-control" id="category" name="category" value="<%=CarStaticClass.getCategories()%>"
                                                                placeholder="Category">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Release Date:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="releaseDate" value="<%=CarStaticClass.getReleaseDate()%>"
+                                                        <input type="text" class="form-control" id="releaseDate" name="releaseDate" value="<%=CarStaticClass.getReleaseDate()%>"
                                                                placeholder="Release Date">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Km:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="km" value="<%=CarStaticClass.getKm()%>"
+                                                        <input type="text" class="form-control" id="km" name="km" value="<%=CarStaticClass.getKm()%>"
                                                                placeholder="Km">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Fuel:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="fuel" value="<%=CarStaticClass.getFuel()%>"
+                                                        <input type="text" class="form-control" id="fuel" name="fuel" value="<%=CarStaticClass.getFuel()%>"
                                                                placeholder="Fuel">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">CC:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="cc" value="<%=CarStaticClass.getCc()%>"
+                                                        <input type="text" class="form-control" id="cc" name="cc" value="<%=CarStaticClass.getCc()%>"
                                                                placeholder="CC">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Color:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="color" value="<%=CarStaticClass.getColor()%>"
+                                                        <input type="text" class="form-control" id="color" name="color" value="<%=CarStaticClass.getColor()%>"
                                                                placeholder="Color">
                                                     </td>
                                                 </tr>
                                                 <tr class="form-group">
                                                     <td class="">Location:</td>
                                                     <td class="col-sm-6 align-items-end">
-                                                        <input type="text" class="form-control" id="location" value="<%=CarStaticClass.getLocation()%>"
+                                                        <input type="text" class="form-control" id="location" name="location" value="<%=CarStaticClass.getLocation()%>"
                                                                placeholder="Location">
                                                     </td>
                                                 </tr>

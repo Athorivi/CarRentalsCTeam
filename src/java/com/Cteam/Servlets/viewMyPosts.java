@@ -38,6 +38,28 @@ public class viewMyPosts extends HttpServlet {
         CarResults cr = new CarResults();
         CarResults.setCarResults((ArrayList<Car>) carList);
         
+       
+        request.getRequestDispatcher("myPosts").forward(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String uname = null;
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            uname = (String) session.getAttribute("username");
+            System.out.println("Hello, " + uname + " Welcome to MyPosts");
+        }
+
+        UserDAO userDb = new UserDAO();
+        int id = userDb.readUser(uname);
+        CarDAO carDb = new CarDAO();
+        List<Car> carList;
+        carList = carDb.searchByOwner(id);
+        CarResults cr = new CarResults();
+        CarResults.setCarResults((ArrayList<Car>) carList);
+        
         
         
         
