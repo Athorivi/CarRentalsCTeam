@@ -61,8 +61,9 @@ public class savePhotoProfile extends HttpServlet {
             byte[] imageBytes = outputStream.toByteArray();
 
             UserStaticClass.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+            System.out.println(UserStaticClass.getBase64Image());
 
-            request.getRequestDispatcher("userProfile").forward(request, response);
+            request.getRequestDispatcher("viewProfile").forward(request, response);
 
         }
     }

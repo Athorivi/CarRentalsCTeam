@@ -25,7 +25,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPading">
+        <div class="container divHeight fixPading">
             <% for (Car x : CarResults.getCarResults()) {
             %>
             <div class="row p-3">

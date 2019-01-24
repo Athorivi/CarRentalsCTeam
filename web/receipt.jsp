@@ -26,69 +26,70 @@
     <body class="main">
 
         <header id="userHeader"></header>
-
-        <div class="container fixPading p-3">
-            <div class="row text-center">
-                <div class="col w-100">
-                    <h5>
-                        Your Reservation for,
-                        <%=CarStaticClass.getBrand()%>
-                        <%=CarStaticClass.getModel()%>
-                        <%=CarStaticClass.getReleaseDate()%> has successfully stored!
-                    </h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="container p-2">
-            <div class="row">
-                <div class="rounded bg-white col shadow">
-                    <div class="">
-                        <div class="p-3">
-
-                            <div class="row d-flex justify-content-center p-4">
-                                <div class="col-3 d-flex justify-content-start">
-                                    <span>Price (per day) x Days</span>
-                                </div>
-                                <div class="col-3 d-flex justify-content-end">
-                                    <span>Price</span>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center p-4">
-                                <div class="col-3 d-flex justify-content-start">
-                                    <input type="date" name="fromDate" id="fromDate" class="w-100" disabled />
-                                </div>
-                                <div class="col-3 d-flex justify-content-end">
-                                    <input type="date" name="toDate" id="toDate" class="w-100" disabled />
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center p-4">
-                                <div class="col-3 d-flex justify-content-start">
-                                    <span>Supply of Services</span>
-                                </div>
-                                <div class="col-3 d-flex justify-content-end">
-                                    <span>10% of Price</span>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center p-4">
-                                <div class="col-3 d-flex justify-content-start">
-                                    <h2>Total</h2>
-                                </div>
-                                <div class="col-3 d-flex justify-content-end">
-                                    <h3>Price</h3>
-                                </div>
-                            </div>
-
-                        </div>
+        <div class="divHeight">
+            <div class="container fixPading p-3">
+                <div class="row text-center">
+                    <div class="col w-100">
+                        <h5>
+                            Your Reservation for,
+                            <%=CarStaticClass.getBrand()%>
+                            <%=CarStaticClass.getModel()%>
+                            <%=CarStaticClass.getReleaseDate()%> has successfully stored!
+                        </h5>
                     </div>
                 </div>
-
             </div>
 
-        </div>  
+            <div class="container p-2">
+                <div class="row">
+                    <div class="rounded bg-white col shadow">
+                        <div class="">
+                            <div class="p-3">
+
+                                <div class="row d-flex justify-content-center p-4">
+                                    <div class="col-3 d-flex justify-content-start">
+                                        <span>Price (per day) x Days</span>
+                                    </div>
+                                    <div class="col-3 d-flex justify-content-end">
+                                        <span>Price</span>
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex justify-content-center p-4">
+                                    <div class="col-3 d-flex justify-content-start">
+                                        <input type="date" name="fromDate" id="fromDate" class="w-100" disabled />
+                                    </div>
+                                    <div class="col-3 d-flex justify-content-end">
+                                        <input type="date" name="toDate" id="toDate" class="w-100" disabled />
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex justify-content-center p-4">
+                                    <div class="col-3 d-flex justify-content-start">
+                                        <span>Supply of Services</span>
+                                    </div>
+                                    <div class="col-3 d-flex justify-content-end">
+                                        <span>10% of Price</span>
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex justify-content-center p-4">
+                                    <div class="col-3 d-flex justify-content-start">
+                                        <h2>Total</h2>
+                                    </div>
+                                    <div class="col-3 d-flex justify-content-end">
+                                        <h3>Price</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>  
+        </div>
 
         <footer id="footer"></footer>
 

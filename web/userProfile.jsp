@@ -1,10 +1,3 @@
-<%-- 
-    Document   : profile
-    Created on : Jan 19, 2019, 5:49:51 PM
-    Author     : manli
---%>
-
-
 <%@page import="com.Cteam.UsefullBeans.UserStaticClass"%>
 <!DOCTYPE html>
 <html>
@@ -22,7 +15,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
                 <div class="col-6">
                     <form method="POST" action="saveProfile">

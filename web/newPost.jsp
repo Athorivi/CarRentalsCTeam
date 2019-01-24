@@ -21,8 +21,8 @@
 
         <header id="userHeader"></header>
 
-        <div class="container p-5">
-            <div class="row fixPading">
+        <div class="container fixPading">
+            <div class="row divHeight">
                 <div class="rounded bg-white col ">
                     <div class="p-3">
                         <div class="row">

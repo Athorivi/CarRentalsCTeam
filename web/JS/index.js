@@ -6,14 +6,6 @@
 
 $(document).ready(function () {
 
-    $('#login').click(function () {
-        $('#content').load("login.jsp");
-    });
-
-    $('#register').click(function () {
-        $('#content').load("register.jsp");
-    });
-
     $('.this').click(function () {
 
         $('.this').removeClass('active');

@@ -1,14 +1,26 @@
 body{
-    height: 100%;
+    background-image: url(../img/road.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
-.main{
-    background-color: #DEB887;
+.image {
+    width: 250px;
+    height: 150px;
+    opacity: 1.0 !important;
 }
 .navbar{
     background-color: #B22222 !important;
 }
 a{
     color: #FFFFFF !important;
+}
+.divHeight{
+    height: 100vh !important;
+    opacity: 0.9;
+    filter: alpha(opacity=50);
 }
 .footer{
     background-color: #8B0000 !important;
@@ -22,7 +34,8 @@ a{
     padding-bottom: 9%;
 }
 .fixPading{
-    padding-top: 3.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .fixPad{
     padding-top: 5%;
@@ -66,4 +79,7 @@ input[type=submit]{
     border-bottom-left-radius: 0px !important;
     flex: 1 1 0;
     transition: 0.5s;
+}
+h6{
+    font-weight: bold !important;
 }

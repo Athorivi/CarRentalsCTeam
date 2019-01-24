@@ -12,8 +12,8 @@ body{
     background-image: url(../img/index-background.jpeg);
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 100%;
-    height: 100%;
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 .navbar-brand, 
@@ -24,31 +24,8 @@ body{
     background-color: transparent;
 }
 
-.indexDiv{
-    background-color: white;
-    width: 250px;
-    height: 370px;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    box-shadow: 0px 0px 3px;
-    border-radius: 3px;
-}
-
-.index-search-button > #searchButton{
-    display: block;
-    width: 35%;
-    font-size: 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #B22222;
-    color: white;
-    
-    
-}
-
-#searchButton :hover{
-    background-color: #8B0000;
-    transition: 0.7s;
+.navbar{
+    background-color: #B22222 !important;
 }
 
 .navbarColor{
@@ -57,4 +34,24 @@ body{
 
 .active{
     background-color: #B22222 !important;
+    color: white !important;
+}
+
+.pading{
+    padding-top: 11%;
+    padding-bottom: 9%;
+}
+
+input[type=submit]{
+    background-color: #B22222 !important;
+    color: white !important;
+}
+
+footer{
+    background-color: #8B0000 !important;
+    color: white !important;
+}
+
+.divHeight{
+    height: 100vh !important;
 }
