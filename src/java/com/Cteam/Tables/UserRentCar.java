@@ -9,18 +9,26 @@ public class UserRentCar {
     private Date endDate;
     private int userId;
     private int carId;
+    private double totalPrice;
 
     public UserRentCar() {
     }
 
-    public UserRentCar(Integer id) {
-        this.id = id;
-    }
-
-    public UserRentCar(Integer id, Date startDate, Date endDate) {
+    public UserRentCar(Integer id, Date startDate, Date endDate, int userId, int carId, double totalPrice) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.userId = userId;
+        this.carId = carId;
+        this.totalPrice = totalPrice;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public Integer getId() {

@@ -14,6 +14,7 @@ import java.util.Date;
  */
 public class myRentsResults {
 
+    private int id;
     private int car_id;
     private int user_id;
     private String brand;
@@ -27,6 +28,14 @@ public class myRentsResults {
     String base64Image;
 
     public myRentsResults() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUser_id() {
