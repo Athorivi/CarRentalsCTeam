@@ -15,24 +15,23 @@
     <body class="main">
 
         <header id="userHeader"></header>
-        <div class="resultDiv">
-            <div class="container divHeight pt-3">
+
+        <div class="container divHeight pt-3">
 
 
 
 
-                <% for (myRentsResults x : staticRentResults.getRentsResults()) {
-                %>
-                <div class="row fixPad">
-                    <div class="bg-white rounded w-100 shadow">
+            <% for (myRentsResults x : staticRentResults.getRentsResults()) {
+            %>
+            <div class="row fixPad">
+                <div class="bg-white rounded w-100 shadow">
 
 
 
-                        <div class="d-flex flex-row p-2">
-                            <div class="col-4">
-                                <div class="">
-                                    <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
-                                </div>
+                    <div class="d-flex flex-row p-2">
+                        <div class="col-4">
+                            <div class="">
+                                <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
                             </div>
 
                             <div class="col-6">
@@ -77,11 +76,53 @@
 
                         </div>
 
+                        <div class="col-6">
+                            <div class="d-flex flex-row">
+                                <div class="d-flex flex-column">
+
+                                    <%=x.getBrand()%>
+                                </div>
+                                <div class="d-flex flex-column">
+
+                                    <%=x.getModel()%>
+                                </div>
+                            </div>
+                            <p class="d-flex flex-row">
+                                <%=x.getReleaseDate()%>
+                            </p>
+                            <p class="d-flex flex-row">
+                                <%=x.getCategories()%>
+                            </p>
+                            <p class="d-flex flex-row">
+                                <%=x.getLocation()%>
+                            </p>
+                        </div>
+
+                        <div class="col-2 d-flex align-items-center">
+                            <div class="row">
+
+                                <div class="col text-center pb-1">
+
+                                    <button class="btn btn-block" id="view" name="view"><a href="<%=request.getContextPath()%>/viewRent?id=<%=x.getCar_id()%>">View</a></button>
+
+                                </div>
+
+                                <div class="col text-center">
+
+                                    <button class="btn btn-block" id="cancel" name="cancel"><a href="<%=request.getContextPath()%>/deleteRent?id=<%=x.getCar_id()%>">Cancel</a></button>
+
+                                </div>
+
+                            </div>
+                        </div>
 
                     </div>
+
+
                 </div>
-                <%}%>
             </div>
+            <%}%>
+
         </div>
 
         <footer id="footer"></footer>

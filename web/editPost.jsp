@@ -123,7 +123,7 @@
                                             <div class="col pt-2">
                                                 <div class="col d-flex justify-content-center">
                                                     <div class="pr-2">
-                                              
+
                                                         <input type="submit" id="saveInfo" name="saveInfo" class="btn" value="Save">
 
                                                     </div>
