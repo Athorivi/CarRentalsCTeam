@@ -22,7 +22,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="row">
                 <div class="rounded bg-white col">
                     <div class="p-3">

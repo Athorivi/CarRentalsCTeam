@@ -69,6 +69,30 @@
         <jsp-file>/userProfile.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.Cteam.Servlets.logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>saveProfile</servlet-name>
+        <servlet-class>com.Cteam.Servlets.saveProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>savePhotoProfile</servlet-name>
+        <servlet-class>com.Cteam.Servlets.savePhotoProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchByCategory</servlet-name>
+        <servlet-class>com.Cteam.Servlets.searchByCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchByCc</servlet-name>
+        <servlet-class>com.Cteam.Servlets.searchByCc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchByPrice</servlet-name>
+        <servlet-class>com.Cteam.Servlets.searchByPrice</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteMyPost</servlet-name>
         <servlet-class>com.Cteam.Servlets.DeleteMyPost</servlet-class>
     </servlet>
@@ -147,6 +171,30 @@
     <servlet-mapping>
         <servlet-name>userProfile</servlet-name>
         <url-pattern>/userProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>saveProfile</servlet-name>
+        <url-pattern>/saveProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>savePhotoProfile</servlet-name>
+        <url-pattern>/savePhotoProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchByCategory</servlet-name>
+        <url-pattern>/searchByCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchByCc</servlet-name>
+        <url-pattern>/searchByCc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchByPrice</servlet-name>
+        <url-pattern>/searchByPrice</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteMyPost</servlet-name>

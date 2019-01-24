@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.Cteam.Servlets;
-
+ 
 import com.Cteam.DAO.CarDAO;
 import com.Cteam.Tables.Car;
 import com.Cteam.UsefullBeans.CarStaticClass;
@@ -14,13 +14,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+ 
 /**
  *
  * @author herth
  */
 public class viewRent extends HttpServlet {
-
+ 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class viewRent extends HttpServlet {
         Car x;
         x = carDb.searchById(id);
         CarStaticClass cr = new CarStaticClass();
-
+ 
 
         
         CarStaticClass.setId(id);
@@ -51,7 +51,8 @@ public class viewRent extends HttpServlet {
         CarStaticClass.setBase64Image(x.getBase64Image());
         RequestDispatcher rd = request.getRequestDispatcher("viewRent.jsp");
         rd.forward(request, response);
-
+ 
         
     }
 }
+ 

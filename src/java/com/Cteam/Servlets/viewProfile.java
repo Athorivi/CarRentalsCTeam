@@ -39,15 +39,39 @@ public class viewProfile extends HttpServlet {
         UserStaticClass.setPhone(user.getPhone());
         UserStaticClass.setPhoto(user.getPhoto());
         UserStaticClass.setBase64Image(user.getBase64Image());
-        
+
         request.getRequestDispatcher("userProfile").forward(request, response);
-        
+
     }
 
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//
-//    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String uname = null;
+        HttpSession session = request.getSession(false);
+        System.out.println(session);
+        if (session != null) {
+            uname = (String) session.getAttribute("username");
+            System.out.println("Hello, " + uname + " Welcome to your Profile");
+        }
+        System.out.println(uname);
+
+        UserDAO userDb = new UserDAO();
+        User user = userDb.readUserByUsername(uname);
+        UserStaticClass userStatic = new UserStaticClass();
+        UserStaticClass.setId(user.getId());
+        UserStaticClass.setUsername(user.getUsername());
+        UserStaticClass.setPassword(user.getPassword());
+        UserStaticClass.setFname(user.getFname());
+        UserStaticClass.setLname(user.getLname());
+        UserStaticClass.setDob(user.getDob());
+        UserStaticClass.setEmail(user.getEmail());
+        UserStaticClass.setAddress(user.getAddress());
+        UserStaticClass.setPhone(user.getPhone());
+        UserStaticClass.setPhoto(user.getPhoto());
+        UserStaticClass.setBase64Image(user.getBase64Image());
+
+        request.getRequestDispatcher("userProfile").forward(request, response);
+    }
 
 }

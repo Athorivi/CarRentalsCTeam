@@ -93,12 +93,12 @@ public class UserRentCarDAO implements UserRentCarInterface {
     }
 
     @Override
-    public void deleteUserRentCar(int id) {
+    public void deleteUserRentCar(int car_id) {
 
         try (Connection connection = Database.getConnection()) {
             String sql = "DELETE FROM `USERS_RENT_CARS` WHERE `car_id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, id);
+                statement.setInt(1, car_id);
                 statement.executeUpdate();
                 System.out.println("The User with the car was deleted");
             }
@@ -132,7 +132,7 @@ public class UserRentCarDAO implements UserRentCarInterface {
                         rentResult.setStartDate(resultset.getDate(8));
                         rentResult.setEndDate(resultset.getDate(9));
                         rentResult.setPhoto(resultset.getBlob(10).getBinaryStream());
-
+                        
                         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                         byte[] buffer = new byte[4096];
                         int bytesRead = -1;
@@ -145,6 +145,8 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
                         rentResult.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
 
+                        
+                        
                         userRentCars.add(rentResult);
                     }
                 } catch (IOException ex) {

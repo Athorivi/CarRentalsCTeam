@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.Cteam.Servlets;
 
 import com.Cteam.DAO.UserRentCarDAO;
 import com.Cteam.UsefullBeans.myRentsResults;
 import com.Cteam.UsefullBeans.staticRentResults;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,14 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author herth
+ * @author User
  */
 public class deleteRent extends HttpServlet {
 
-    @Override
+    
+
+     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+ 
         System.out.println("You are inside DoPostdeleteRent");
         String i = request.getParameter("id");
         int id = Integer.parseInt(i);
@@ -35,9 +34,17 @@ public class deleteRent extends HttpServlet {
         carList = userRentCarDao.readUserRentCar(id);
         staticRentResults rentResults = new staticRentResults();
         staticRentResults.setRentsResults(carList);
-        RequestDispatcher rd = request.getRequestDispatcher("myRents.jsp");
-        rd.forward(request, response);
-
+        request.getRequestDispatcher("viewMyRents").forward(request, response);
+ 
     }
+       
+    
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//      
+//    }
+
+   
 
 }

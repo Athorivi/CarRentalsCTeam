@@ -14,6 +14,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.logging.Level;
@@ -139,20 +140,18 @@ public class CarDAO implements CarInterface {
     }
 
     @Override
-    public int deleteCar(int id) {
+    public void deleteCar(Integer id) {
 
         try (Connection connection = Database.getConnection()) {
             String sql = "DELETE FROM `CARS` WHERE `id` = ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, id);
                 int rowsAffected = statement.executeUpdate();
-                System.out.println("The car was deleted");
-                return rowsAffected;
+                System.out.println(rowsAffected + "The car Deleted");
             }
         } catch (SQLException ex) {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return -1;
     }
 
     public ArrayList<Car> searchByLocation(String location, String startDate, String endDate) {
@@ -314,7 +313,7 @@ public class CarDAO implements CarInterface {
 
     public ArrayList<Car> searchByCc(String from, String to) {
 
-        ArrayList<Car> cars = null;
+        ArrayList<Car> cars = new ArrayList<>();
         try (Connection connection = Database.getConnection()) {
             String sql = "select * from CARS WHERE `cc` >= ? AND `cc` <= ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -322,9 +321,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(2, to);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        if (cars == null) {
-                            cars = new ArrayList();
-                        }
+
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));
@@ -350,6 +347,7 @@ public class CarDAO implements CarInterface {
                         byte[] imageBytes = outputStream.toByteArray();
 
                         car.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+                        System.out.println(car.toString());
 
                         cars.add(car);
                     }
@@ -366,7 +364,7 @@ public class CarDAO implements CarInterface {
 
     public ArrayList<Car> searchByPrice(String from, String to) {
 
-        ArrayList<Car> cars = null;
+        ArrayList<Car> cars = new ArrayList();
         try (Connection connection = Database.getConnection()) {
             String sql = "select * from CARS WHERE `price` >= ? AND `price` <= ? ;";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -374,9 +372,7 @@ public class CarDAO implements CarInterface {
                 statement.setString(2, to);
                 try (ResultSet resultset = statement.executeQuery()) {
                     while (resultset.next()) {
-                        if (cars == null) {
-                            cars = new ArrayList();
-                        }
+
                         Car car = new Car();
                         car.setId(resultset.getInt(1));
                         car.setOwner(resultset.getInt(2));
@@ -463,6 +459,7 @@ public class CarDAO implements CarInterface {
     }
 
     public ArrayList<Car> searchByDates(String from, String to) {
+
         ArrayList<Car> cars = null;
         try (Connection connection = Database.getConnection()) {
             String sql = "SELECT * FROM cteam.CARS WHERE  \n"
@@ -493,21 +490,44 @@ public class CarDAO implements CarInterface {
                         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                         byte[] buffer = new byte[4096];
                         int bytesRead = -1;
+
                         while ((bytesRead = car.getPhoto().read(buffer)) != -1) {
                             outputStream.write(buffer, 0, bytesRead);
                         }
+
                         byte[] imageBytes = outputStream.toByteArray();
+
                         car.setBase64Image(Base64.getEncoder().encodeToString(imageBytes));
+
                         cars.add(car);
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return cars;
+    }
+
+    public ArrayList<String> getCategories() {
+
+        ArrayList<String> categories = new ArrayList();;
+        try (Connection connection = Database.getConnection()) {
+            String sql = "select DISTINCT categories from CARS;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                try (ResultSet resultset = statement.executeQuery()) {
+                    while (resultset.next()) {
+                        categories.add(resultset.getString(1));
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return categories;
     }
 
 }

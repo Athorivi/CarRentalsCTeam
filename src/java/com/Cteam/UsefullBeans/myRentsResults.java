@@ -14,8 +14,8 @@ import java.util.Date;
  */
 public class myRentsResults {
 
-    private int user_id;
     private int car_id;
+    private int user_id;
     private String brand;
     private String model;
     private Date releaseDate;
@@ -35,14 +35,6 @@ public class myRentsResults {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
-    }
-    
-    public int getCar_id() {
-        return car_id;
-    }
-    
-    public void setCar_id(int car_id) {
-        this.car_id = car_id;
     }
 
     public String getBrand() {
@@ -120,6 +112,14 @@ public class myRentsResults {
     @Override
     public String toString() {
         return "myRentsResults{" + "user_id=" + user_id + ", brand=" + brand + ", model=" + model + ", releaseDate=" + releaseDate + ", categories=" + categories + ", location=" + location + ", startDate=" + startDate + ", endDate=" + endDate + ", photo=" + photo + ", base64Image=" + base64Image + '}';
+    }
+
+    public int getCar_id() {
+        return car_id;
+    }
+
+    public void setCar_id(int car_id) {
+        this.car_id = car_id;
     }
 
 }

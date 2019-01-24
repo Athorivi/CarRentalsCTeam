@@ -24,7 +24,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="row">
                 <div class="rounded bg-white col shadow">
                     <div class="p-3">
@@ -34,7 +34,7 @@
                             <%=CarStaticClass.getReleaseDate()%>
                         </div>
 
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
                             <img src="data:image/jpg;base64,<%= CarStaticClass.getBase64Image()%>" class="rounded img-fluid" alt="Photo">
                         </div>
 
@@ -52,7 +52,7 @@
                             <div class="col d-flex justify-content-center">
                                 <div class="">
 
-                                    <button id="back" name="back" class="btn"><a href="myRents.jsp">Back</a></button>
+                                    <button id="back" name="back" class="btn"><a href="">Back</a></button>
 
                                 </div>
                             </div>

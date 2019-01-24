@@ -8,7 +8,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.Cteam.Tables.Car"%>
 <%@page import="java.util.List"%>
-<%@page import="com.Cteam.StaticBeans.CarResults"%>
+<%@page import="com.Cteam.UsefullBeans.CarResults"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +25,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPading">
+        <div class="container divHeight fixPading">
             <% for (Car x : CarResults.getCarResults()) {
             %>
             <div class="row p-3">

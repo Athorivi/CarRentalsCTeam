@@ -5,10 +5,16 @@
  */
 package com.Cteam.Servlets;
 
+import com.Cteam.DAO.CarDAO;
+import com.Cteam.DAO.UserDAO;
 import com.Cteam.Tables.Car;
 import com.Cteam.UsefullBeans.CarResults;
 import com.Cteam.UsefullBeans.CarStaticClass;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

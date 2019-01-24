@@ -1,10 +1,3 @@
-<%-- 
-    Document   : profile
-    Created on : Jan 19, 2019, 5:49:51 PM
-    Author     : manli
---%>
-
-
 <%@page import="com.Cteam.UsefullBeans.UserStaticClass"%>
 <!DOCTYPE html>
 <html>
@@ -22,20 +15,20 @@
 
         <header id="userHeader"></header>
 
-        <div class="container fixPad">
+        <div class="container divHeight fixPad">
             <div class="bg-white rounded row pt-3 pb-3 w-100 shadow">
                 <div class="col-6">
-                    <form>
+                    <form method="POST" action="saveProfile">
                         <div class="form-group row">
                             <label for="fname" class="col-sm-4 col-form-label">First Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="fname" id="fname" value="<%=UserStaticClass.getFname() %>" placeholder="First Name" required>
+                                <input type="text" class="form-control" name="fname" id="fname" value="<%=UserStaticClass.getFname()%>" placeholder="First Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname" class="col-sm-4 col-form-label">Last Name</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="lname" id="lname" value="<%=UserStaticClass.getLname() %>" placeholder="Last Name" required>
+                                <input type="text" class="form-control" name="lname" id="lname" value="<%=UserStaticClass.getLname()%>" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -95,9 +88,9 @@
 
                 <div class="col">
                     <div class="col">
-                        <form action="">
+                        <form action="savePhotoProfile" method="POST" enctype="multipart/form-data">
                             <div class="row w-100">
-                                <img src="data:image/jpg;base64,<%= UserStaticClass.getBase64Image()%>" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
+                                <img src="data:image/jpg;base64,<%=UserStaticClass.getBase64Image()%>" id="photo" name="photo" class="rounded mx-auto d-block img-thumbnail" alt="Photo">
                             </div>
 
                             <div class="input-group mb-3">
@@ -105,7 +98,7 @@
                                     <span class="input-group-text">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="uploadPhoto">
+                                    <input type="file" class="custom-file-input" id="uploadPhoto" name="uploadPhoto">
                                     <label class="custom-file-label" for="uploadPhoto">Choose file</label>
                                 </div>
                             </div>
