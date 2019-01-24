@@ -15,6 +15,7 @@ import java.util.Date;
 public class myRentsResults {
 
     private int user_id;
+    private int car_id;
     private String brand;
     private String model;
     private Date releaseDate;
@@ -34,6 +35,14 @@ public class myRentsResults {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+    
+    public int getCar_id() {
+        return car_id;
+    }
+    
+    public void setCar_id(int car_id) {
+        this.car_id = car_id;
     }
 
     public String getBrand() {

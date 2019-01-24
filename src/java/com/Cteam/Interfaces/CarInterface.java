@@ -11,5 +11,5 @@ public interface CarInterface {
 
     public void updateCar(Car car);
 
-    public void deleteCar(Integer id);
+    public int deleteCar(int id);
 }

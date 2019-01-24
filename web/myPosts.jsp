@@ -66,7 +66,7 @@
 
                                 <div class="col text-center">
 
-                                    <button class="btn btn-block" id="delete" name="delete"><a href="">Delete</a></button>
+                                    <button class="btn btn-block" id="delete" name="delete"><a href="<%=request.getContextPath()%>/DeleteMyPost?id=<%= x.getId()%>">Delete</a></button>
 
                                 </div>
 

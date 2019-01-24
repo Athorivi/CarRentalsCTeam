@@ -68,6 +68,18 @@
         <servlet-name>userProfile</servlet-name>
         <jsp-file>/userProfile.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteMyPost</servlet-name>
+        <servlet-class>com.Cteam.Servlets.DeleteMyPost</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewRent</servlet-name>
+        <servlet-class>com.Cteam.Servlets.viewRent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteRent</servlet-name>
+        <servlet-class>com.Cteam.Servlets.deleteRent</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -135,6 +147,18 @@
     <servlet-mapping>
         <servlet-name>userProfile</servlet-name>
         <url-pattern>/userProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteMyPost</servlet-name>
+        <url-pattern>/DeleteMyPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewRent</servlet-name>
+        <url-pattern>/viewRent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteRent</servlet-name>
+        <url-pattern>/deleteRent</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

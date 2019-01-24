@@ -11,6 +11,6 @@ public interface UserRentCarInterface {
 
     public void updateUserRentCar(UserRentCar userRentCar);
 
-    public void deleteUserRentCar(UserRentCar userRentCar);
+    public void deleteUserRentCar(int id);
 
 }
