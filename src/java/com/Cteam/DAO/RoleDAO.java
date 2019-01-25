@@ -88,4 +88,24 @@ public class RoleDAO implements RoleInterface {
 
     }
 
+    public int readRoleByName(String roleName) {
+
+        ArrayList<Roles> readroles = null;
+        try (Connection connection = Database.getConnection()) {
+            String sql = "SELECT `id` FROM `ROLES` WHERE `name`=?;";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, roleName);
+                try (ResultSet resultset = statement.executeQuery()) {
+                    if (resultset.next()) {
+                        return resultset.getInt(1);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RoleDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+
+    }
+
 }

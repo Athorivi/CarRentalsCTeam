@@ -69,9 +69,9 @@ public class UserRoleDAO implements UserRoleInterface {
 
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder()
-                    .append("UPDATE `USERS_ROLES`")
-                    .append("SET `userId`= ?, `roleId` = ?")
-                    .append("WHERE  `id` = ? ;").toString();
+                    .append("UPDATE `USERS_ROLES` ")
+                    .append("SET  `role_Id` = ? ")
+                    .append("WHERE  `user_Id`= ? ;").toString();
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, userRole.getUserId());
                 statement.setInt(2, userRole.getRoleId());

@@ -5,7 +5,7 @@
 --%>
 
 <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top">
-    <a class="navbar-brand" href="adminIndex.jsp" class="header">Logo</a>
+    <a class="navbar-brand" href="adminIndex.jsp" class="header"><img src="img/Logo.png" width="50" height="45"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

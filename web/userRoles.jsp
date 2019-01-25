@@ -47,20 +47,20 @@
 
                             <form method="POST" action="updateRole">
                                 <tr class="form-group">
-                                    <td class="col-sm-1 align-items-end">
+                                    <td class="col-sm-1 col-1 align-items-end">
                                         <input type="text" class="form-control" id="id" name="id" value="<%=u.getId()%>"
-                                               placeholder="id" disabled>
+                                               placeholder="id" readonly>
                                     </td>
-                                    <td class="col-sm-3 align-items-end">
+                                    <td class="col-sm-3 col-3 align-items-end">
                                         <input type="text" class="form-control" id="username" name="username" value="<%=u.getUsername()%>"
-                                               placeholder="username" disabled>
+                                               placeholder="username" readonly>
                                     </td>
-                                    <td class="col-sm-2 align-items-end">
+                                    <td class="col-sm-2 col-2 align-items-end">
                                         <input type="text" class="form-control" id="roles" name="roles" value="<%=u.getRolename()%>"
-                                               placeholder="roles" required>
+                                               placeholder="roles">
                                     </td>
                                     <td>
-                                        <div class="row">
+                                        <div class="row col-6">
                                             <div class="col-2">
 
                                                 <input type="submit" class="btn" name="update" id="update" value="Update">
@@ -69,7 +69,7 @@
 
                                             <div class="col-2">
 
-                                                <button class="btn" name="delete" id="delete"><a href="">Delete</a></button>
+                                                <button class="btn" name="delete" id="deleteUser"><a href="">Delete</a></button>
 
                                             </div>
 

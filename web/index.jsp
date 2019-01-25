@@ -24,8 +24,8 @@
 
         <header class="p-0 m-0">
             <nav class="navbar navbar-expand-lg">
-                <div class="collapse navbar-collapse col-md-10">
-                    <a class="navbar-brand " href="index.jsp">Logo</a>
+                <div class="collapse navbar-collapse col-md-11">
+                    <a class="navbar-brand " href="index.jsp"><img src="img/Logo.png" width="50" height="45"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">

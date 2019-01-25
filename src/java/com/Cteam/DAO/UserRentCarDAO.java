@@ -23,10 +23,10 @@ public class UserRentCarDAO implements UserRentCarInterface {
 
         try (Connection connection = Database.getConnection()) {
             String sql = new StringBuilder()
-                    .append("INSERT INTO `USERS_RENT_CARS`")
-                    .append("`startDate`, `endDate`, `userId`, `carId`, `totalPrice`)")
+                    .append("INSERT INTO `USERS_RENT_CARS` ")
+                    .append("(`startDate`, `endDate`, `user_Id`, `car_Id`, `totalPrice`) ")
                     .append("VALUES(?, ?, ?, ?, ?) ;").toString();
-
+            System.out.println(sql);
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setDate(1, (Date) userRentCar.getStartDate());
                 statement.setDate(2, (Date) userRentCar.getEndDate());

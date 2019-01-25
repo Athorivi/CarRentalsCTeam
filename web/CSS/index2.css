@@ -10,14 +10,11 @@ body{
 
 header{
     width: 100% !important;
+    opacity: 0.9 !important;
 }
-
-.image {
-    width: 250px;
-    height: 150px;
-    opacity: 1.0 !important;
+footer{
+    opacity: 0.9 !important;
 }
-
 .navbar{
     background-color: #B22222 !important;
 }
@@ -28,7 +25,6 @@ a{
 
 .divHeight{
     height: 100vh !important;
-    opacity: 0.9 !important;
 }
 
 .footer{
@@ -113,5 +109,5 @@ h6{
 }
 
 .footerBot{
-padding-bottom: 0px;
+    padding-bottom: 0px;
 }

@@ -4,6 +4,8 @@
     Author     : manli
 --%>
 
+<%@page import="com.Cteam.UsefullBeans.CarResults"%>
+<%@page import="com.Cteam.Tables.Car"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -31,7 +33,7 @@
             </div>
             <div class="col d-flex justify-content-end marg pt-3">
 
-                <button class="btn" id="back" name="back"><a href="">Back</a></button>
+                <button class="btn" id="back" name="back"><a href="/userPosts">Back</a></button>
 
 
             </div>
@@ -40,33 +42,35 @@
 
     </div>
     <div class="container divHeight">
+        <% for (Car x : CarResults.getCarResults()) {
+        %>
         <div class="row p-2">
             <div class="bg-white rounded w-100">
 
                 <div class="d-flex flex-row p-2">
                     <div class="col-4">
                         <div class="row">
-                            <img src="" class="rounded float-left w-100 img-fluid" alt="Photo">
+                            <img src="data:image/jpg;base64,<%= x.getBase64Image()%>" class="rounded float-left w-100 img-fluid" alt="Photo">
                         </div>
                     </div>
 
                     <div class="col-6">
                         <div class="d-flex flex-row">
                             <div class="d-flex flex-column">
-                                Brand
+                                Brand: <%=x.getBrand()%>
                             </div>
                             <div class="d-flex flex-column">
-                                Model
+                                Model: <%=x.getModel()%>
                             </div>
                         </div>
                         <p class="d-flex flex-row">
-                            Release Date
+                            Release Date: <%=x.getReleaseDate()%>
                         </p>
                         <p class="d-flex flex-row">
-                            Category
+                            Category: <%=x.getCategories()%>
                         </p>
                         <p class="d-flex flex-row">
-                            Location
+                            Location: <%=x.getLocation()%>
                         </p>
                     </div>
 
@@ -75,7 +79,7 @@
 
                             <div class="col d-flex justify-content-center ">
 
-                                <button class="btn" id="delete" name="delete"><a href="">Delete</a></button>
+                                <button class="btn" id="delete" name="delete"><a href="<%=request.getContextPath()%>/rentNow?id=<%= x.getId()%>">Delete</a></button>
 
                             </div>
 
@@ -86,9 +90,10 @@
 
             </div>
         </div>
+        <%}%>
 
     </div>
-    
+
     <footer id="footer"></footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

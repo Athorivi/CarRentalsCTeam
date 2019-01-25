@@ -22,8 +22,8 @@
 
         <header>
             <nav class="navbar navbar-expand-lg">
-                <div class="collapse navbar-collapse col-md-10">
-                    <a class="navbar-brand " href="index.jsp">Logo</a>
+                <div class="collapse navbar-collapse col-md-11">
+                    <a class="navbar-brand " href="index.jsp"><img src="img/Logo.png" width="50" height="45"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
 
             <div class="row d-flex justify-content-center p-5">
                 <div class="col-6 p-0 bg-white rounded shadow">
-                    <form method="POST" action="register">
+                    <form method="POST" action="register" enctype="multipart/form-data">
                         <div class="loginRegisterDiv w-100 p-0">
                             <ul class="nav nav-tabs w-100">
                                 <li class="nav-item w-50">
@@ -107,7 +107,7 @@
 
                             <div class="form-group row pl-4 pr-4">
                                 <label for="photo">Choose a profile picture:</label>
-                                <input type="file" id="photo" name="photo" required>
+                                <input type="file" id="photo" name="uploadPhoto" required>
                             </div>
                             <div class="register-button pb-4 d-flex justify-content-center">
                                 <input type="submit" class="btn rounded" id="registerButton" value="Register" />

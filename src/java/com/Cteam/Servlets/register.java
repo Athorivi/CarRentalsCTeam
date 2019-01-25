@@ -24,7 +24,7 @@ public class register extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         user.setFname(request.getParameter("fName"));
         user.setLname(request.getParameter("lName"));
-        user.setDob(request.getParameter("birthday"));
+        user.setDob(request.getParameter("dob"));
         user.setEmail(request.getParameter("email"));
         user.setAddress(request.getParameter("address"));
         user.setPhone(request.getParameter("phone"));
@@ -48,6 +48,10 @@ public class register extends HttpServlet {
         UserDAO userDb = new UserDAO();
         System.out.println(user.getUsername());
         userDb.createUser(user);
+        
+        
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+        
 
     }
 

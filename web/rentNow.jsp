@@ -24,7 +24,7 @@
 
         <header id="userHeader"></header>
 
-        <div class="container divHeight fixPad">
+        <div class="container  fixPad">
             <div class="row">
                 <div class="rounded bg-white col shadow">
                     <div class="p-3">
@@ -96,48 +96,52 @@
                                     <span class="font-weight-bold">Price (per day)</span>
                                     <hr>
                                 </div>
-                                <div class="row p-4">
-                                    <div class="col-6">
-                                        <input type="date" name="fromDate" id="fromDate" required>
+                                <form method="POST" action="rent?id=<%=CarStaticClass.getId() %>">
+                                    <div class="row p-4">
+                                        <div class="col-6">
+                                            <input type="date" name="fromDate" id="fromDate" required>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="date" name="toDate" id="toDate" required>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <input type="date" name="toDate" id="toDate" required>
-                                    </div>
-                                </div>
 
-                                <div class="row p-4">
-                                    <div class="col-6">
-                                        <span>Price (per day) x Days</span>
+                                    <div class="row p-4">
+                                        <div class="col-6">
+                                            <span>Price (per day) x Days</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>Price</span>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <span>Price</span>
-                                    </div>
-                                </div>
 
-                                <div class="row p-4">
-                                    <div class="col-6">
-                                        <span>Supply of Services</span>
+                                    <div class="row p-4">
+                                        <div class="col-6">
+                                            <span>Supply of Services</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>10% of Price</span>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <span>10% of Price</span>
-                                    </div>
-                                </div>
 
-                                <div class="row p-4">
-                                    <div class="col-6">
-                                        <h2>Total</h2>
+                                    <div class="row p-4">
+                                        <div class="col-6">
+                                            <h2>Total</h2>
+                                        </div>
+                                        <div class="col-4">
+                                            <h3>Price</h3>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <h3>Price</h3>
-                                    </div>
-                                </div>
 
-                                <div class="row p-4">
-                                    <div class="">
-                                        <button class="btn" name="rent" id="rent"><a href="">Rent</a></button>
+                                    <div class="row p-4">
+                                        <div>
+                                            <input type="submit"  class="btn rounded" value="Rent" /> 
+                                            <!--<button class="btn" name="rent" id="rent"><a href="">Rent</a></button>-->
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

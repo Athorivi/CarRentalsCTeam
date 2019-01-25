@@ -20,8 +20,11 @@ body{
 
 header{
     width: 100% !important;
+    opacity: 0.9 !important;
 }
-
+footer{
+    opacity: 0.9 !important;
+}
 .navbar-brand, 
 .nav-item{
     color: white;

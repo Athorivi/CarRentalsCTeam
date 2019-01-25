@@ -11,31 +11,23 @@ $(document).ready(function () {
         $("#adminHeader").load("adminHeader.jsp");
         $("#footer").load("footer.jsp");
         $("#indexFooter").load("indexFooter.jsp");
-        
+
     });
 
-//    $("#myPosts").click(function(){
-//        window.location.href = 'myPosts.jsp';
-//    });
-//    
-//    $("#edit").click(function () {
-//
-//        window.location.href = 'editPost.jsp';
-//    });
-//
-//    $("#view").click(function () {
-//
-//        window.location.href = 'viewRent.jsp';
-//    });
-//
-//    $("#back").click(function () {
-//
-//        window.location.href = ('userIndex.jsp');
-//    });
-//
-//    $("#search").click(function () {
-//
-//        $('#content').load('results.jsp');
-//    });
+    $("#registerButton").click(function () {
+        var pass = document.getElementById("password").value;
+        var repeatPass = document.getElementById("repeatPassword").value;
+        if (!(pass === repeatPass)) {
+            alert("Wrong password missmatch!\nPlease make sure you typed it right.");
+        }
+    });
+
+    $("#delete").click(function () {
+        confirm("Are you sure you want to delete this item?!");
+    });
+
+    $("#deleteUser").click(function () {
+        confirm("Are you sure?!");
+    });
 
 });

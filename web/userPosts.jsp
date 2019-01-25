@@ -41,23 +41,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-<!--                                <form method="POST" action="selectedUserPosts">-->
                                     <% for (UsernameId u : UsernameIdStatic.getList()) {%>
+                                <form method="POST" action="selectedUserPosts">
+
                                     <tr class="form-group">
-                                        <td><input type="text" name="id" value="<%=u.getId()%>" disabled></td>
-                                        <td><input type="text" name="username" value="<%=u.getUsername()%>" disabled></td>
+                                        <td><input type="text" name="id" value="<%=u.getId()%>" readonly></td>
+                                        <td><input type="text" name="username" value="<%=u.getUsername()%>" readonly></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-2 d-flex justify-content-center">
 
-                                                    <!--<button type="submit" class="btn" name="view" id="view" value="View"></button>-->
-                                                    <button type="submit" class="btn"><a href="<%=request.getContextPath()%>/selectedUserPosts?id=<%=u.getId()%>">View</a></button>
+                                                    <input type="submit" class="btn" name="view" id="view" value="View">
+
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
-                                    <%}%>
-                                <!--</form>-->
+
+                                </form>
+                                <%}%>
                                 </tbody>
                             </table>
 

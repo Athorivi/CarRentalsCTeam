@@ -128,6 +128,14 @@
         <servlet-name>selectedUserPosts</servlet-name>
         <servlet-class>com.Cteam.Servlets.selectedUserPosts</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>rent</servlet-name>
+        <servlet-class>com.Cteam.Servlets.rent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateRole</servlet-name>
+        <servlet-class>com.Cteam.Servlets.updateRole</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchByLocation</servlet-name>
         <url-pattern>/searchByLocation</url-pattern>
@@ -255,6 +263,14 @@
     <servlet-mapping>
         <servlet-name>selectedUserPosts</servlet-name>
         <url-pattern>/selectedUserPosts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rent</servlet-name>
+        <url-pattern>/rent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateRole</servlet-name>
+        <url-pattern>/updateRole</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
